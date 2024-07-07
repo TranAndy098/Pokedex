@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fcfcfc;
+  background-color: #add8e6;
   position: relative;
 }
 
@@ -13,4 +13,28 @@
   top: 50%;
   display: flex;
   gap: 20px;
+}
+
+.container {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+}
+
+.box {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.left-box {
+  background-color: #add8e6; /* Light blue */
+  width: 20%;
+}
+
+.right-box {
+  background-color: #90ee90; /* Light green */
+  width: 80%;
 }

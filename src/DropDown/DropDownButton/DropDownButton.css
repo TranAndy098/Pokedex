@@ -1,21 +1,38 @@
 .dropdown-btn {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  padding: 1rem;
+  display: block;
+  align-items: right;
+  width: 100%;
+  padding: 0.25rem;
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   cursor: pointer;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .toggle-icon {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-left: 1rem;
+  justify-content: right;
+  width: 100%;
 }
 
 .button-open {
   border: rgb(147, 197, 253) 2px solid;
+}
+.outer-wrapper {
+  overflow: hidden;
+  height: 0.8em;
+  line-height: 0.8em;
+  margin: 0.1em;
+}
+.outer-wrapper::before {
+  content: "";
+  display: inline-block;
+}
+.inner-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 80%;
 }

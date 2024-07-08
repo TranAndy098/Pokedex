@@ -11,7 +11,9 @@ const DropDownButton = forwardRef((props, ref) => {
       className={`dropdown-btn ${open ? "button-open" : null}`}
       ref={ref as React.RefObject<HTMLDivElement>}
     >
-      {buttonText}
+      <div className="outer-wrapper">
+        <div className="inner-wrapper">{buttonText}</div>
+      </div>
       <span className="toggle-icon">
         {open ? <FaChevronUp /> : <FaChevronDown />}
       </span>

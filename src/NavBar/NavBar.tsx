@@ -12,6 +12,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="navbar_container">
         <a href="/" id="navbar_logo">
+          <img src="../pokedex.png" />
           Pokedex
         </a>
         <div

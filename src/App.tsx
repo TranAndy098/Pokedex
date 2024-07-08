@@ -8,14 +8,18 @@ import "./App.css";
 import gens from "./data/gen.json";
 
 const App: React.FC = () => {
-  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const genNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   const [curPokemon, setPokemon] = useState("");
   const [curDropPokemon, setDropPokemon] = useState("");
+  const [scratch, setScratch] = useState("");
 
   const [value, setValue] = useState("");
 
   const [curGen, setGen] = useState(0);
+
+  const [openGen, setOpenGen] = useState(false);
+  const [openPokemon, setOpenPokemon] = useState(false);
 
   function goClick(curDropPokemon) {
     if (curDropPokemon !== "") {
@@ -39,27 +43,39 @@ const App: React.FC = () => {
             setValue={setValue}
           />
           <div className="App">
+            <div className="dropdown-label">Generation:</div>
             <DropDown
-              buttonText={`Generation ${curGen !== 0 ? curGen : ""}`}
+              buttonText={` ${curGen !== 0 ? curGen : ""}`}
+              open={openGen}
+              setOpen={setOpenGen}
               content={
                 <>
-                  {items.map((item) => (
+                  {genNumbers.map((genNumbers) => (
                     <DropDownItem
-                      content={item}
-                      setMode={setGen}
+                      content={genNumbers}
+                      check={curGen}
+                      setMode1={setGen}
+                      setMode2={setDropPokemon}
+                      setOpen={setOpenGen}
                     ></DropDownItem>
                   ))}
                 </>
               }
             />
+            <div className="dropdown-label">Pokemon:</div>
             <DropDown
               buttonText={curDropPokemon}
+              open={openPokemon}
+              setOpen={setOpenPokemon}
               content={
                 <>
                   {gens[curGen].map((name) => (
                     <DropDownItem
                       content={name}
-                      setMode={setDropPokemon}
+                      check={curDropPokemon}
+                      setMode1={setDropPokemon}
+                      setMode2={setScratch}
+                      setOpen={setOpenPokemon}
                     ></DropDownItem>
                   ))}
                 </>

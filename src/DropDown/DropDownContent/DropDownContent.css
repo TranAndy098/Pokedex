@@ -17,6 +17,7 @@
   transform: translateY(-5%);
   transition: transform 150ms ease-in-out, opacity 100ms ease-in-out;
   pointer-events: none;
+  width: 100%;
 }
 
 .dropdown-content::-webkit-scrollbar {
@@ -28,4 +29,5 @@
   opacity: 1;
   transform: translateY(0);
   pointer-events: all;
+  z-index: 1;
 }

@@ -1,9 +1,13 @@
 import React from "react";
 import "./DropDownItem.css";
 
-const DropDownItem = ({ content, setMode, key }) => {
+const DropDownItem = ({ content, check, setMode1, setMode2, setOpen }) => {
   function selectOption(value) {
-    setMode(value);
+    if (check !== value) {
+      setMode1(value);
+      setMode2("");
+    }
+    setOpen(false);
   }
 
   return (

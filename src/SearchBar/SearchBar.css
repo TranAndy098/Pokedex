@@ -8,9 +8,10 @@
 }
 
 h1 {
-  margin: 10px;
-  font-size: 40px;
+  display: center;
+  font-size: 20px;
   color: rgb(1, 1, 59);
+  margin-bottom: 5%;
 }
 
 .search {
@@ -23,10 +24,12 @@ ul li {
 
 .search-bar {
   width: 100%;
+  margin-bottom: 5%;
 }
 
 .search-btn {
   width: 100%;
+  margin-bottom: 5%;
 }
 
 .dropdown {

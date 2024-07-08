@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./SearchBar.css";
-import data from "./data.json";
+import data from "../data/data.json";
+import allMons from "../data/all.json";
+import { all } from "axios";
 
 export default function SearchBar({
   setPokemon,
@@ -8,6 +10,8 @@ export default function SearchBar({
   setDropPokemon,
   value,
   setValue,
+  pageState,
+  setpageState,
 }) {
   function onChange(event: any) {
     setValue(event?.target?.value);
@@ -19,12 +23,32 @@ export default function SearchBar({
     console.log("Search", searchTerm);
   }
 
+  function validMon(pokemon) {
+    for (let i = 0; i < allMons.length; i++) {
+      if (allMons[i].toLowerCase() === pokemon.toLowerCase()) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function properMon(pokemon) {
+    for (let i = 0; i < allMons.length; i++) {
+      if (allMons[i].toLowerCase() === pokemon.toLowerCase()) {
+        return allMons[i];
+      }
+    }
+  }
+
   function searchClick(searchTerm: string) {
-    if (searchTerm !== "") {
-      setPokemon(searchTerm);
+    if (searchTerm !== "" && validMon(searchTerm)) {
+      setPokemon(properMon(searchTerm));
       setValue("");
       setGen(0);
       setDropPokemon("");
+      if (pageState !== "Entry" && pageState !== "Locations") {
+        setpageState("Entry");
+      }
     }
   }
 

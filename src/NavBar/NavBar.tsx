@@ -1,12 +1,25 @@
 import React, { useState } from "react";
 import "./NavBar.css"; // Assuming you have a CSS file for styling
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC = ({ setpageState, curPokemon, setPokemon }) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleMenuClick = () => {
     setIsActive(!isActive);
   };
+
+  function handleClick(value) {
+    if (curPokemon !== "") {
+      setpageState(value);
+      setIsActive(!isActive);
+    }
+  }
+
+  function handleHomeClick() {
+    setpageState("");
+    setPokemon("");
+    setIsActive(!isActive);
+  }
 
   return (
     <nav className="navbar">
@@ -26,24 +39,27 @@ const Navbar: React.FC = () => {
         </div>
         <ul className={`navbar_menu ${isActive ? "active" : ""}`}>
           <li className="navbar_item">
-            <a href="/" className="navbar_links">
+            <p className="navbar_links" onClick={() => handleHomeClick()}>
               Home
-            </a>
+            </p>
           </li>
           <li className="navbar_item">
-            <a href="/" className="navbar_links">
+            <p className="navbar_links" onClick={() => handleClick("Entry")}>
               Entry
-            </a>
+            </p>
           </li>
           <li className="navbar_item">
-            <a href="/" className="navbar_links">
+            <p
+              className="navbar_links"
+              onClick={() => handleClick("Locations")}
+            >
               Locations
-            </a>
+            </p>
           </li>
           <li className="navbar_btn">
-            <a href="/" className="button">
+            <p className="button" onClick={() => handleClick("Scan")}>
               Scan
-            </a>
+            </p>
           </li>
         </ul>
       </div>

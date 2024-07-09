@@ -11,7 +11,7 @@ export default function SearchBar({
   value,
   setValue,
   pageState,
-  setpageState,
+  setPageState,
 }) {
   function onChange(event: any) {
     setValue(event?.target?.value);
@@ -47,7 +47,7 @@ export default function SearchBar({
       setGen(0);
       setDropPokemon("");
       if (pageState !== "Entry" && pageState !== "Locations") {
-        setpageState("Entry");
+        setPageState("Entry");
       }
     }
   }

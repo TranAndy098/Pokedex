@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./NavBar.css"; // Assuming you have a CSS file for styling
 
-const Navbar: React.FC = ({ setpageState, curPokemon, setPokemon }) => {
+const Navbar: React.FC = ({ setPageState, curPokemon, setPokemon }) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleMenuClick = () => {
@@ -10,13 +10,13 @@ const Navbar: React.FC = ({ setpageState, curPokemon, setPokemon }) => {
 
   function handleClick(value) {
     if (curPokemon !== "") {
-      setpageState(value);
+      setPageState(value);
       setIsActive(!isActive);
     }
   }
 
   function handleHomeClick() {
-    setpageState("");
+    setPageState("");
     setPokemon("");
     setIsActive(!isActive);
   }
@@ -54,6 +54,20 @@ const Navbar: React.FC = ({ setpageState, curPokemon, setPokemon }) => {
               onClick={() => handleClick("Locations")}
             >
               Locations
+            </p>
+          </li>
+          <li className="navbar_item">
+            <p
+              className="navbar_links"
+              onClick={() => handleClick("Locations")}
+            >
+              Moves
+            </p>
+            <p
+              className="navbar_links"
+              onClick={() => handleClick("Locations")}
+            >
+              Types
             </p>
           </li>
           <li className="navbar_btn">

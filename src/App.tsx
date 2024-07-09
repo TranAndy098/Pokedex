@@ -6,10 +6,10 @@ import DropDownItem from "./DropDown/DropDownItem/DropDownItem";
 import Display from "./Display/Display";
 import "./App.css";
 import gens from "./data/gen.json";
-import Entry from "./NavBar/Entry";
-import Locations from "./NavBar/Locations";
-import Scan from "./NavBar/Scan";
-import Home from "./NavBar/Home";
+import Entry from "./Pages/Entry";
+import Locations from "./Pages/Locations";
+import Scan from "./Pages/Scan";
+import Home from "./Pages/Home";
 import all_mon from "./data/all.json";
 
 const App: React.FC = () => {
@@ -26,7 +26,9 @@ const App: React.FC = () => {
   const [openGen, setOpenGen] = useState(false);
   const [openPokemon, setOpenPokemon] = useState(false);
 
-  const [pageState, setpageState] = useState("");
+  const [pageState, setPageState] = useState("");
+
+  const [shinyMode, setShinyMode] = useState(false);
 
   function goClick(curDropPokemon) {
     if (curDropPokemon !== "") {
@@ -36,15 +38,19 @@ const App: React.FC = () => {
       setSearch("");
 
       if (pageState !== "Entry" && pageState !== "Locations") {
-        setpageState("Entry");
+        setPageState("Entry");
       }
     }
+  }
+
+  function shinyClick() {
+    setShinyMode(!shinyMode);
   }
 
   return (
     <>
       <Navbar
-        setpageState={setpageState}
+        setPageState={setPageState}
         curPokemon={curPokemon}
         setPokemon={setPokemon}
       />
@@ -56,7 +62,7 @@ const App: React.FC = () => {
             setDropPokemon={setDropPokemon}
             value={search}
             setValue={setSearch}
-            setpageState={setpageState}
+            setPageState={setPageState}
             pageState={pageState}
           />
           <div className="App">
@@ -115,13 +121,30 @@ const App: React.FC = () => {
             <button className="go-btn" onClick={() => goClick(curDropPokemon)}>
               Go
             </button>
+            <button
+              className={`shiny-btn ${shinyMode ? "is-active" : ""}`}
+              onClick={() => shinyClick()}
+            >
+              <div>
+                Shiny
+                {shinyMode ? (
+                  <img className="shiny-icon" src="./shiny.png" />
+                ) : (
+                  ""
+                )}
+              </div>
+            </button>
           </div>
         </div>
         {/* Other components or content */}
         <div className="box right-box">
           <div className="pokemon-data-box">
             {pageState === "" ? <Home /> : <p />}
-            {pageState === "Entry" ? <Entry curPokemon={curPokemon} /> : <p />}
+            {pageState === "Entry" ? (
+              <Entry curPokemon={curPokemon} shinyMode={shinyMode} />
+            ) : (
+              <p />
+            )}
             {pageState === "Locations" ? (
               <Locations curPokemon={curPokemon} />
             ) : (
@@ -133,6 +156,7 @@ const App: React.FC = () => {
             <p>Curent Page: {pageState}</p>
             <p>Curent Pokemon: {curPokemon}</p>
             <p>Curent Gen: {curGen}</p>
+            <p>Shiny: {shinyMode ? "true" : "false"}</p>
             <p>Need to do: when dropdown is clicked, close it</p>
             <Display curPokemon={curPokemon} />
           </div>

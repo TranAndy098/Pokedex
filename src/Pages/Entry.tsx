@@ -7,6 +7,11 @@ import allSpecialPokemonForms from "../data/pokemonData/allSpecialPokemonForms.j
 import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
 import typeAPIToDisplay from "../data/typeData/typeAPIToDisplay.json";
 import moveAPIToDisplay from "../data/moveData/moveAPIToDisplay.json";
+import allTypeLogos from "../data/typeData/allTypeLogos.json";
+import allDamageClassLogos from "../data/moveData/allDamageClassLogos.json";
+import abilitiesAPIToDisplay from "../data/abilitiesData/abilitiesAPIToDisplay.json";
+import statsAPIToDisplay from "../data/statsData/statsAPIToDisplay.json";
+import moveTargetAPIToDisplay from "../data/moveTargetData/moveTargetAPIToDisplay.json";
 
 function Entry({ curPokemon, shinyMode }) {
   const [value, setValue] = useState([]);
@@ -15,53 +20,60 @@ function Entry({ curPokemon, shinyMode }) {
   const [forms, setForms] = useState(false);
   console.log(curPokemon);
 
-  interface moveStruct {
-    Name: string;
-    URL: string;
-    Accuracy: number | string;
-    EffectChance: number | string;
-    DamageClass: string;
-    Effect: string;
-    Power: number | string;
-    PP: number;
-    Target: string;
-    Type: string;
-  }
-
   function fetchMoveData(APImove) {
-    let cur: moveStruct = {
-      Name: "",
-      URL: "",
-      Accuracy: "",
-      EffectChance: "",
-      DamageClass: "",
-      Effect: "",
-      Power: "",
-      PP: 0,
-      Target: "",
-      Type: "",
-    };
-    cur.Name = allMoveData[APImove].realName;
+    console.log("move data");
+    return (
+      <div>
+        <div className="name">
+          <h1>{moveAPIToDisplay[APImove]}</h1>
+        </div>
 
-    cur.Accuracy = allMoveData[APImove].Accuracy;
-    cur.EffectChance = allMoveData[APImove]["Effect Chance"];
-    cur.DamageClass = allMoveData[APImove]["Damage Class"];
-    cur.EffectEntry = allMoveData[APImove].Effects;
+        <div className="accuracy">
+          <h1>Accuracy</h1>
+          <h3>{allMoveData[APImove].Accuracy}</h3>
+        </div>
 
-    cur.Power = allMoveData[APImove].Power;
-    cur.PP = allMoveData[APImove].PP;
-    cur.Target = allMoveData[APImove].Target;
-    cur.Type = allMoveData[APImove].Type;
+        <div className="effect-chance">
+          <h1>Effect Chance</h1>
+          <h3>{allMoveData[APImove]["Effect Chance"]}</h3>
+        </div>
 
-    return `Name: ${cur.Name}, Accuracy: ${
-      typeof cur.Accuracy === "number" ? cur.Accuracy : "---"
-    }, EffectChance: ${
-      typeof cur.EffectChance === "number" ? cur.EffectChance : "---"
-    }, DamageClass: ${cur.DamageClass}, Effect: ${cur.EffectEntry}, Power: ${
-      typeof cur.Power === "number" ? cur.Power : "---"
-    }, PP: ${cur.PP}, Target: ${cur.Target}, Type: ${
-      typeAPIToDisplay[cur.Type]
-    }`;
+        <div className="damage-class">
+          <h1>Damage Class</h1>
+          <img
+            src={
+              allDamageClassLogos[allMoveData[APImove]["Damage Class"]]
+                .TypeLogoBDSP
+            }
+          />
+        </div>
+
+        <div className="effects">
+          <h1>Effects</h1>
+          <h3>{allMoveData[APImove].Effects}</h3>
+        </div>
+
+        <div className="power">
+          <h1>Power</h1>
+          <h3>{allMoveData[APImove].Power}</h3>
+        </div>
+
+        <div className="pp">
+          <h1>PP</h1>
+          <h3>{allMoveData[APImove].PP}</h3>
+        </div>
+
+        <div className="target">
+          <h1>Target</h1>
+          <h3>{moveTargetAPIToDisplay[allMoveData[APImove].Target]}</h3>
+        </div>
+
+        <div className="typing">
+          <h1>Type</h1>
+          <img src={allTypeLogos[allMoveData[APImove].Type].TypeTextLogo} />
+        </div>
+      </div>
+    );
   }
 
   function fetchFormData(pokemon) {
@@ -148,23 +160,27 @@ function Entry({ curPokemon, shinyMode }) {
 
       overall.push([...cur]);
       cur = [];
+      let hiddenAbilities = [];
 
       // abilities
       for (let i = 0; i < response.data.abilities.length; i++) {
         if (response.data.abilities[i].is_hidden) {
-          cur.push(`${response.data.abilities[i].ability.name} - hidden`);
+          hiddenAbilities.push(`${response.data.abilities[i].ability.name}`);
         } else {
           cur.push(`${response.data.abilities[i].ability.name}`);
         }
       }
 
       overall.push([...cur]);
+      overall.push([...hiddenAbilities]);
       cur = [];
 
       // stats
       for (let i = 0; i < response.data.stats.length; i++) {
         cur.push(
-          `${response.data.stats[i].stat.name} ${response.data.stats[i].base_stat}`
+          `${statsAPIToDisplay[response.data.stats[i].stat.name]} : ${
+            response.data.stats[i].base_stat
+          }`
         );
       }
 
@@ -175,6 +191,8 @@ function Entry({ curPokemon, shinyMode }) {
       for (let i = 0; i < response.data.moves.length; i++) {
         cur.push(fetchMoveData(response.data.moves[i].move.name));
       }
+
+      console.log("move data 2");
 
       overall.push([...cur]);
 
@@ -251,7 +269,10 @@ function Entry({ curPokemon, shinyMode }) {
             <h2>Types</h2>
             <ul>
               {value[1].map((name) => (
-                <li>{typeAPIToDisplay[name]}</li>
+                <li>
+                  {typeAPIToDisplay[name]}
+                  <img src={allTypeLogos[name].TypeTextLogo} />
+                </li>
               ))}
             </ul>
           </div>
@@ -259,14 +280,22 @@ function Entry({ curPokemon, shinyMode }) {
             <h2>Abilities</h2>
             <ul>
               {value[2].map((name) => (
-                <li>{name}</li>
+                <li>{abilitiesAPIToDisplay[name]}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="hidden-abilities">
+            <h2>Hidden Abilities</h2>
+            <ul>
+              {value[3].map((name) => (
+                <li>{abilitiesAPIToDisplay[name]}</li>
               ))}
             </ul>
           </div>
           <div className="stats">
             <h2>Stats</h2>
             <ul>
-              {value[3].map((name) => (
+              {value[4].map((name) => (
                 <li>{name}</li>
               ))}
             </ul>
@@ -274,8 +303,8 @@ function Entry({ curPokemon, shinyMode }) {
           <div className="moves">
             <h2>Moves</h2>
             <ul>
-              {value[4].map((name) => (
-                <li>{[name]}</li>
+              {value[5].map((name) => (
+                <li>{name}</li>
               ))}
             </ul>
           </div>

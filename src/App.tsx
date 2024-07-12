@@ -63,6 +63,7 @@ const App: React.FC = () => {
       <Navbar
         curPokemon={curPokemon}
         setPokemon={setPokemon}
+        pageState={pageState}
         setPageState={setPageState}
         setSearch={setSearch}
         setMove={setMove}

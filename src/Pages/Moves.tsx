@@ -6,6 +6,9 @@ import allPokemonSprites from "../data/pokemonData/allPokemonSprites.json";
 import typeAPIToDisplay from "../data/typeData/typeAPIToDisplay.json";
 import moveAPIToDisplay from "../data/moveData/moveAPIToDisplay.json";
 import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
+import allDamageClassLogos from "../data/moveData/allDamageClassLogos.json";
+import allTypeLogos from "../data/typeData/allTypeLogos.json";
+import moveTargetAPIToDisplay from "../data/moveTargetData/moveTargetAPIToDisplay.json";
 
 function Moves({ curMove, setMove, moveSearch, setMoveSearch, shinyMode }) {
   console.log(curMove);
@@ -53,7 +56,12 @@ function Moves({ curMove, setMove, moveSearch, setMoveSearch, shinyMode }) {
 
           <div className="damage-class">
             <h1>Damage Class</h1>
-            <h3>{allMoveData[curMove]["Damage Class"]}</h3>
+            <img
+              src={
+                allDamageClassLogos[allMoveData[curMove]["Damage Class"]]
+                  .TypeLogoBDSP
+              }
+            />
           </div>
 
           <div className="effects">
@@ -73,12 +81,12 @@ function Moves({ curMove, setMove, moveSearch, setMoveSearch, shinyMode }) {
 
           <div className="target">
             <h1>Target</h1>
-            <h3>{allMoveData[curMove].Target}</h3>
+            <h3>{moveTargetAPIToDisplay[allMoveData[curMove].Target]}</h3>
           </div>
 
           <div className="typing">
             <h1>Type</h1>
-            <h3>{typeAPIToDisplay[allMoveData[curMove].Type]}</h3>
+            <img src={allTypeLogos[allMoveData[curMove].Type].TypeTextLogo} />
           </div>
         </div>
       );

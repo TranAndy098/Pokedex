@@ -1,0 +1,164 @@
+{
+  "normal": {
+    "Name": "normal",
+    "DisplayName": "Normal",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/8/89/Normal_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/9/95/Normal_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/2/28/NormalIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/c/c2/NormalIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/8/89/NormalIC_BDSP.png"
+  },
+  "fighting": {
+    "Name": "fighting",
+    "DisplayName": "Fighting",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/e/e5/Fighting_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/3/3b/Fighting_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/c/c8/FightingIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/b/bb/FightingIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/3/35/FightingIC_BDSP.png"
+  },
+  "flying": {
+    "Name": "flying",
+    "DisplayName": "Flying",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/a/ab/Flying_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/b/b5/Flying_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/8/8e/FlyingIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/8/87/FlyingIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/0/03/FlyingIC_BDSP.png"
+  },
+  "poison": {
+    "Name": "poison",
+    "DisplayName": "Poison",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/a/a7/Poison_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/8/8d/Poison_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/b/ba/PoisonIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/9/9d/PoisonIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/8/8b/PoisonIC_BDSP.png"
+  },
+  "ground": {
+    "Name": "ground",
+    "DisplayName": "Ground",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/4/45/Ground_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/2/27/Ground_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/f/f4/GroundIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/f/fb/GroundIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/b/bd/GroundIC_BDSP.png"
+  },
+  "rock": {
+    "Name": "rock",
+    "DisplayName": "Rock",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/b/b2/Rock_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/1/11/Rock_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/8/85/RockIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/f/fd/RockIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/9/98/RockIC_BDSP.png"
+  },
+  "bug": {
+    "Name": "bug",
+    "DisplayName": "Bug",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/9/9a/Bug_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/9/9c/Bug_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/2/2e/BugIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/6/67/BugIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/9/9c/BugIC_BDSP.png"
+  },
+  "ghost": {
+    "Name": "ghost",
+    "DisplayName": "Ghost",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/c/c4/Ghost_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/0/01/Ghost_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/9/99/GhostIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/b/bf/GhostIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/4/45/GhostIC_BDSP.png"
+  },
+  "steel": {
+    "Name": "steel",
+    "DisplayName": "Steel",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/e/e9/Steel_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/0/09/Steel_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/0/04/SteelIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/0/0c/SteelIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/5/5f/SteelIC_BDSP.png"
+  },
+  "fire": {
+    "Name": "fire",
+    "DisplayName": "Fire",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/8/8f/Fire_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/a/ab/Fire_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/1/15/FireIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/0/03/FireIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/b/b1/FireIC_BDSP.png"
+  },
+  "water": {
+    "Name": "water",
+    "DisplayName": "Water",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/3/34/Water_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/8/80/Water_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/2/2b/WaterIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/c/c3/WaterIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/2/2b/WaterIC_BDSP.png"
+  },
+  "grass": {
+    "Name": "grass",
+    "DisplayName": "Grass",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/e/ee/Grass_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/a/a8/Grass_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/2/23/GrassIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/d/dc/GrassIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/a/ad/GrassIC_BDSP.png"
+  },
+  "electric": {
+    "Name": "electric",
+    "DisplayName": "Electric",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/8/8e/Electric_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/7/7b/Electric_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/6/67/ElectricIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/5/57/ElectricIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/c/c1/ElectricIC_BDSP.png"
+  },
+  "psychic": {
+    "Name": "psychic",
+    "DisplayName": "Psychic",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/e/ee/Psychic_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/7/73/Psychic_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/6/60/PsychicIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/9/94/PsychicIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/6/68/PsychicIC_BDSP.png"
+  },
+  "ice": {
+    "Name": "ice",
+    "DisplayName": "Ice",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/3/39/Ice_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/1/15/Ice_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/a/ad/IceIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/1/1b/IceIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/1/11/IceIC_BDSP.png"
+  },
+  "dragon": {
+    "Name": "dragon",
+    "DisplayName": "Dragon",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/4/41/Dragon_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/7/70/Dragon_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/a/ad/DragonIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/b/b8/DragonIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/c/c7/DragonIC_BDSP.png"
+  },
+  "dark": {
+    "Name": "dark",
+    "DisplayName": "Dark",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/wiki/File:Dark_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/d/d5/Dark_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/3/35/DarkIC_BW.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/3/3a/DarkIC_FRLG.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/b/b9/DarkIC_BDSP.png"
+  },
+  "fairy": {
+    "Name": "fairy",
+    "DisplayName": "Fairy",
+    "TypeLogoSquare": "https://archives.bulbagarden.net/media/upload/a/a9/Fairy_icon_SV.png",
+    "TypeLogoCircle": "https://archives.bulbagarden.net/media/upload/c/c6/Fairy_icon_SwSh.png",
+    "TypeTextSquare": "https://archives.bulbagarden.net/media/upload/7/73/FairyIC_Big.png",
+    "TypeTextRound": "https://archives.bulbagarden.net/media/upload/7/73/FairyIC_Big.png",
+    "TypeTextLogo": "https://archives.bulbagarden.net/media/upload/d/d6/FairyIC_BDSP.png"
+  }
+}

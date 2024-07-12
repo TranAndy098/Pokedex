@@ -1,0 +1,23 @@
+{
+  "status": {
+    "Name": "status",
+    "DisplayName": "Status",
+    "TypeLogoBW": "https://archives.bulbagarden.net/media/upload/7/71/StatusIC_BW.png",
+    "TypeLogoXY": "https://archives.bulbagarden.net/media/upload/a/a7/StatusIC.png",
+    "TypeLogoBDSP": "https://archives.bulbagarden.net/media/upload/6/62/StatusIC_BDSP.png"
+  },
+  "physical": {
+    "Name": "physical",
+    "DisplayName": "Physical",
+    "TypeLogoBW": "https://archives.bulbagarden.net/media/upload/e/ed/PhysicalIC_BW.png",
+    "TypeLogoXY": "https://archives.bulbagarden.net/media/upload/5/54/PhysicalIC.png",
+    "TypeLogoBDSP": "https://archives.bulbagarden.net/media/upload/c/ce/PhysicalIC_BDSP.png"
+  },
+  "special": {
+    "Name": "special",
+    "DisplayName": "Special",
+    "TypeLogoBW": "https://archives.bulbagarden.net/media/upload/8/8c/SpecialIC_BW.png",
+    "TypeLogoXY": "https://archives.bulbagarden.net/media/upload/6/6b/SpecialIC.png",
+    "TypeLogoBDSP": "https://archives.bulbagarden.net/media/upload/3/37/SpecialIC_BDSP.png"
+  }
+}

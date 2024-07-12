@@ -5,6 +5,7 @@ import DropDownItem from "../DropDown/DropDownItem/DropDownItem";
 import allPokemonSprites from "../data/pokemonData/allPokemonSprites.json";
 import allTypes from "../data/typeData/allTypes.json";
 import allTypeData from "../data/typeData/allTypeData.json";
+import allTypeLogos from "../data/typeData/allTypeLogos.json";
 import typeAPIToDisplay from "../data/typeData/typeAPIToDisplay.json";
 import moveAPIToDisplay from "../data/moveData/moveAPIToDisplay.json";
 import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
@@ -205,8 +206,10 @@ function Types({
           }
         />
       </div>
+      <div>{curType !== "" ? allTypeLogos[curType].DisplayName : ""}</div>
+
       <div>
-        {curType !== "" ? allTypeData[curType.toLowerCase()].RealName : ""}
+        {curType !== "" ? <img src={allTypeLogos[curType].TypeTextLogo} /> : ""}
       </div>
       {curType !== "" ? (
         <div className="thisTypeToOthers">
@@ -214,6 +217,7 @@ function Types({
           <ul>
             {typingListIndex.map((index) => (
               <li>
+                <img src={allTypeLogos[typingList[index]].TypeTextLogo} />
                 {typeAPIToDisplay[typingList[index]]}:{typeTo[index]}
               </li>
             ))}
@@ -229,6 +233,7 @@ function Types({
           <ul>
             {typingListIndex.map((index) => (
               <li>
+                <img src={allTypeLogos[typingList[index]].TypeTextLogo} />
                 {typeAPIToDisplay[typingList[index]]}:{typeFrom[index]}
               </li>
             ))}

@@ -1,51 +1,50 @@
 import { useState } from "react";
 import "./SearchBar.css";
-import data from "../data/data.json";
-import allMons from "../data/all.json";
-import { all } from "axios";
+import allPokemons from "../data/pokemonData/allPokemons.json";
+import pokemonDisplayToAPI from "../data/pokemonData/pokemonDisplayToAPI.json";
 
 export default function SearchBar({
   setPokemon,
   setGen,
   setDropPokemon,
-  value,
-  setValue,
-  pageState,
+  search,
+  setSearch,
+  setMove,
+  setMoveSearch,
+  setType,
+  setDropType,
   setPageState,
+  pageState,
 }) {
   function onChange(event: any) {
-    setValue(event?.target?.value);
+    setSearch(event?.target?.value);
   }
 
   function onSearch(searchTerm: string) {
     // call api to get poke data
-    setValue(searchTerm);
+    setSearch(searchTerm);
     console.log("Search", searchTerm);
   }
 
   function validMon(pokemon) {
-    for (let i = 0; i < allMons.length; i++) {
-      if (allMons[i].toLowerCase() === pokemon.toLowerCase()) {
+    for (let i = 0; i < allPokemons.length; i++) {
+      if (allPokemons[i].toLowerCase() === pokemon.toLowerCase()) {
         return true;
       }
     }
     return false;
   }
 
-  function properMon(pokemon) {
-    for (let i = 0; i < allMons.length; i++) {
-      if (allMons[i].toLowerCase() === pokemon.toLowerCase()) {
-        return allMons[i];
-      }
-    }
-  }
-
   function searchClick(searchTerm: string) {
     if (searchTerm !== "" && validMon(searchTerm)) {
-      setPokemon(properMon(searchTerm));
-      setValue("");
+      setPokemon(pokemonDisplayToAPI[searchTerm]);
+      setSearch("");
       setGen(0);
       setDropPokemon("");
+      setMove("");
+      setMoveSearch("");
+      setType("");
+      setDropType("");
       if (pageState !== "Entry" && pageState !== "Locations") {
         setPageState("Entry");
       }
@@ -61,30 +60,30 @@ export default function SearchBar({
           <input
             className="search-bar"
             type="text"
-            value={value}
+            value={search}
             onChange={onChange}
           ></input>
-          <button className="search-btn" onClick={() => searchClick(value)}>
+          <button className="search-btn" onClick={() => searchClick(search)}>
             Search
           </button>
         </div>
         <div className="dropdown">
-          {data
-            .filter((item) => {
-              const searchTerm = value.toLowerCase();
-              const name = item.name.toLowerCase();
+          {allPokemons
+            .filter((pokemon) => {
+              const searchTerm = search.toLowerCase();
+              const name = pokemon.toLowerCase();
               return (
                 searchTerm && name.startsWith(searchTerm) && name !== searchTerm
               );
             })
             .slice(0, 10)
-            .map((item) => (
+            .map((pokemon) => (
               <div
-                onClick={() => onSearch(item.name)}
+                onClick={() => onSearch(pokemon)}
                 className="dropdown-row"
-                key={item.name}
+                key={pokemon}
               >
-                {item.name}
+                {pokemon}
               </div>
             ))}
         </div>

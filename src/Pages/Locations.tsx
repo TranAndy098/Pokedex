@@ -1,6 +1,6 @@
 import { React, useState } from "react";
-import data from "../data/data.json";
 import axios from "axios";
+import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
 
 function Locations({ curPokemon }) {
   const [value, setValue] = useState([]);
@@ -14,7 +14,7 @@ function Locations({ curPokemon }) {
   async function fetchData(pokemon) {
     try {
       const response = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}/encounters`,
+        `https://pokeapi.co/api/v2/pokemon/${pokemon}/encounters`,
         {
           responseType: "json",
         }
@@ -47,7 +47,7 @@ function Locations({ curPokemon }) {
 
   return (
     <div>
-      <h1>{curPokemon}'s Locations Page</h1>
+      <h1>{pokemonAPIToDisplay[curPokemon]}'s Locations Page</h1>
       <ul>
         {value.map((mon) => (
           <li>

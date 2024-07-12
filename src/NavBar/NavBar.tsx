@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import "./NavBar.css"; // Assuming you have a CSS file for styling
 
-const Navbar: React.FC = ({ setPageState, curPokemon, setPokemon }) => {
+const Navbar: React.FC = ({
+  curPokemon,
+  setPokemon,
+  setPageState,
+  setSearch,
+  setMove,
+  setMoveSearch,
+  setType,
+  setDropType,
+}) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleMenuClick = () => {
@@ -9,15 +18,41 @@ const Navbar: React.FC = ({ setPageState, curPokemon, setPokemon }) => {
   };
 
   function handleClick(value) {
-    if (curPokemon !== "") {
+    if (value === "Moves") {
+      setPokemon("");
+      setSearch("");
+      setType("");
+      setDropType("");
+      setPageState(value);
+      setIsActive(!isActive);
+    } else if (value === "Types") {
+      setPokemon("");
+      setSearch("");
+      setMove("");
+      setMoveSearch("");
+      setPageState(value);
+      setIsActive(!isActive);
+    } else if (curPokemon === "") {
+      handleHomeClick();
+    } else if (curPokemon !== "") {
+      setSearch("");
+      setMove("");
+      setMoveSearch("");
+      setType("");
+      setDropType("");
       setPageState(value);
       setIsActive(!isActive);
     }
   }
 
   function handleHomeClick() {
-    setPageState("");
     setPokemon("");
+    setSearch("");
+    setMove("");
+    setMoveSearch("");
+    setType("");
+    setDropType("");
+    setPageState("");
     setIsActive(!isActive);
   }
 
@@ -57,16 +92,12 @@ const Navbar: React.FC = ({ setPageState, curPokemon, setPokemon }) => {
             </p>
           </li>
           <li className="navbar_item">
-            <p
-              className="navbar_links"
-              onClick={() => handleClick("Locations")}
-            >
+            <p className="navbar_links" onClick={() => handleClick("Moves")}>
               Moves
             </p>
-            <p
-              className="navbar_links"
-              onClick={() => handleClick("Locations")}
-            >
+          </li>
+          <li className="navbar_item">
+            <p className="navbar_links" onClick={() => handleClick("Types")}>
               Types
             </p>
           </li>

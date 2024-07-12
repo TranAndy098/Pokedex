@@ -5,12 +5,16 @@ import DropDown from "./DropDown/DropDown/DropDown";
 import DropDownItem from "./DropDown/DropDownItem/DropDownItem";
 import Display from "./Display/Display";
 import "./App.css";
-import gens from "./data/gen.json";
+import pokemonGenerations from "./data/pokemonData/pokemonGenerations.json";
 import Entry from "./Pages/Entry";
 import Locations from "./Pages/Locations";
 import Scan from "./Pages/Scan";
 import Home from "./Pages/Home";
-import all_mon from "./data/all.json";
+import Types from "./Pages/Types";
+import Moves from "./Pages/Moves";
+import allPokemons from "./data/pokemonData/allPokemons.json";
+import pokemonDisplayToAPI from "./data/pokemonData/pokemonDisplayToAPI.json";
+import pokemonAPIToDisplay from "./data/pokemonData/pokemonAPIToDisplay.json";
 
 const App: React.FC = () => {
   const genNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -30,9 +34,16 @@ const App: React.FC = () => {
 
   const [shinyMode, setShinyMode] = useState(false);
 
+  const [curMove, setMove] = useState("");
+  const [moveSearch, setMoveSearch] = useState("");
+
+  const [curType, setType] = useState("");
+  const [openType, setOpenType] = useState(false);
+  const [curDropType, setDropType] = useState("");
+
   function goClick(curDropPokemon) {
     if (curDropPokemon !== "") {
-      setPokemon(curDropPokemon);
+      setPokemon(pokemonDisplayToAPI[curDropPokemon]);
       setDropPokemon("");
       setGen(0);
       setSearch("");
@@ -50,9 +61,14 @@ const App: React.FC = () => {
   return (
     <>
       <Navbar
-        setPageState={setPageState}
         curPokemon={curPokemon}
         setPokemon={setPokemon}
+        setPageState={setPageState}
+        setSearch={setSearch}
+        setMove={setMove}
+        setMoveSearch={setMoveSearch}
+        setType={setType}
+        setDropType={setDropType}
       />
       <div className="container">
         <div className="box left-box">
@@ -60,8 +76,12 @@ const App: React.FC = () => {
             setPokemon={setPokemon}
             setGen={setGen}
             setDropPokemon={setDropPokemon}
-            value={search}
-            setValue={setSearch}
+            search={search}
+            setSearch={setSearch}
+            setMove={setMove}
+            setMoveSearch={setMoveSearch}
+            setType={setType}
+            setDropType={setDropType}
             setPageState={setPageState}
             pageState={pageState}
           />
@@ -93,9 +113,9 @@ const App: React.FC = () => {
               content={
                 curGen > 0 ? (
                   <>
-                    {gens[curGen].map((name) => (
+                    {pokemonGenerations[curGen].map((pokemons) => (
                       <DropDownItem
-                        content={name}
+                        content={pokemons}
                         check={curDropPokemon}
                         setMode1={setDropPokemon}
                         setMode2={setScratch}
@@ -105,9 +125,9 @@ const App: React.FC = () => {
                   </>
                 ) : (
                   <>
-                    {all_mon.map((name) => (
+                    {allPokemons.map((pokemon) => (
                       <DropDownItem
-                        content={name}
+                        content={pokemon}
                         check={curDropPokemon}
                         setMode1={setDropPokemon}
                         setMode2={setScratch}
@@ -150,15 +170,41 @@ const App: React.FC = () => {
             ) : (
               <p />
             )}
+            {pageState === "Moves" ? (
+              <Moves
+                curMove={curMove}
+                setMove={setMove}
+                moveSearch={moveSearch}
+                setMoveSearch={setMoveSearch}
+                shinyMode={shinyMode}
+              />
+            ) : (
+              <p />
+            )}
+            {pageState === "Types" ? (
+              <Types
+                curType={curType}
+                setType={setType}
+                openType={openType}
+                setOpenType={setOpenType}
+                curDropType={curDropType}
+                setDropType={setDropType}
+                shinyMode={shinyMode}
+                setScratch={setScratch}
+              />
+            ) : (
+              <p />
+            )}
             {pageState === "Scan" ? <Scan /> : <p />}
           </div>
           <div>
             <p>Curent Page: {pageState}</p>
-            <p>Curent Pokemon: {curPokemon}</p>
+            <p>Curent Pokemon: {pokemonAPIToDisplay[curPokemon]}</p>
             <p>Curent Gen: {curGen}</p>
+            <p>Curent Move: {curMove}</p>
             <p>Shiny: {shinyMode ? "true" : "false"}</p>
             <p>Need to do: when dropdown is clicked, close it</p>
-            <Display curPokemon={curPokemon} />
+            <Display curPokemon={pokemonAPIToDisplay[curPokemon]} />
           </div>
         </div>
       </div>

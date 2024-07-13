@@ -10,6 +10,7 @@ import Entry from "./Pages/Entry";
 import Locations from "./Pages/Locations";
 import Scan from "./Pages/Scan";
 import Home from "./Pages/Home";
+import Games from "./Pages/Games";
 import Types from "./Pages/Types";
 import Moves from "./Pages/Moves";
 import allPokemons from "./data/pokemonData/allPokemons.json";
@@ -40,6 +41,9 @@ const App: React.FC = () => {
   const [curType, setType] = useState("");
   const [openType, setOpenType] = useState(false);
   const [curDropType, setDropType] = useState("");
+
+  const [curLocation, setLocation] = useState("");
+  const [locationSearch, setLocationSearch] = useState("");
 
   function goClick(curDropPokemon) {
     if (curDropPokemon !== "") {
@@ -166,11 +170,8 @@ const App: React.FC = () => {
             ) : (
               <p />
             )}
-            {pageState === "Locations" ? (
-              <Locations curPokemon={curPokemon} />
-            ) : (
-              <p />
-            )}
+            {pageState === "Locations" ? <Locations /> : <p />}
+            {pageState === "Games" ? <Games /> : <p />}
             {pageState === "Moves" ? (
               <Moves
                 curMove={curMove}

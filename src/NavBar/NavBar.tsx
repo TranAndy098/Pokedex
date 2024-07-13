@@ -114,6 +114,16 @@ const Navbar: React.FC = ({
           <li className="navbar_item">
             <p
               className={`navbar_links ${
+                pageState === "Games" ? "active" : ""
+              }`}
+              onClick={() => handleClick("Games")}
+            >
+              Games
+            </p>
+          </li>
+          <li className="navbar_item">
+            <p
+              className={`navbar_links ${
                 pageState === "Moves" ? "active" : ""
               }`}
               onClick={() => handleClick("Moves")}

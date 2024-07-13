@@ -12,12 +12,18 @@ import allDamageClassLogos from "../data/moveData/allDamageClassLogos.json";
 import abilitiesAPIToDisplay from "../data/abilitiesData/abilitiesAPIToDisplay.json";
 import statsAPIToDisplay from "../data/statsData/statsAPIToDisplay.json";
 import moveTargetAPIToDisplay from "../data/moveTargetData/moveTargetAPIToDisplay.json";
+import pokemonGameLocations from "../data/locationData/pokemonGameLocations.json";
+import encounterConditionsAPIToDisplay from "../data/encounterConditionData/encounterConditionsAPIToDisplay.json";
+import encounterMethodsAPIToDisplay from "../data/encounterMethodData/encounterMethodsAPIToDisplay.json";
+import gamesAPIToDisplay from "../data/gameNameData/gamesAPIToDisplay.json";
+import locationNamesAPIToDisplay from "../data/locationData/locationNamesAPIToDisplay.json";
 
 function Entry({ curPokemon, shinyMode }) {
   const [value, setValue] = useState([]);
   const [evolutionLine, setEvolutionLine] = useState([]);
   const [differentForms, setDifferentForms] = useState([]);
   const [forms, setForms] = useState(false);
+  const [gameLocations, setGameLocations] = useState([]);
   console.log(curPokemon);
 
   function fetchMoveData(APImove) {
@@ -102,6 +108,70 @@ function Entry({ curPokemon, shinyMode }) {
     }
 
     setDifferentForms(mid);
+  }
+
+  function fetchSpecificLocationData(pokemon, game, area, method) {
+    console.log("specific locaiton line");
+    let curData = pokemonGameLocations[pokemon][game][area][method];
+
+    curData.Conditions.map((condition) => {
+      console.log(encounterConditionsAPIToDisplay[condition]);
+    });
+
+    return (
+      <div>
+        <p>Method: {encounterMethodsAPIToDisplay[method]}</p>
+        <p>MinLevel: {curData.MinLevel}</p>
+        <p>MaxLevel: {curData.MaxLevel}</p>
+        <p>Chance: {curData.Chance}</p>
+        {curData.Conditions.length > 0 ? (
+          <div>
+            <p>Conditions:</p>
+            <ul>
+              {curData.Conditions.map((condition) => (
+                <li>{encounterConditionsAPIToDisplay[condition]}</li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
+    );
+  }
+
+  function fetchLocationData(pokemon) {
+    console.log("location line");
+    // evolve
+
+    let mid = [];
+
+    console.log("before access");
+
+    let allLocations = pokemonGameLocations[pokemon];
+    console.log("after acccess");
+
+    let games = Object.keys(allLocations);
+    let areas = [];
+    let methods = [];
+
+    console.log("getting ketys");
+
+    for (let i = 0; i < games.length; i++) {
+      mid.push(<h2>{gamesAPIToDisplay[games[i]]}</h2>);
+      areas = Object.keys(allLocations[games[i]]);
+      for (let j = 0; j < areas.length; j++) {
+        mid.push(<h3>{locationNamesAPIToDisplay[areas[j]]}</h3>);
+        methods = Object.keys(allLocations[games[i]][areas[j]]);
+        for (let k = 0; k < methods.length; k++) {
+          mid.push(
+            fetchSpecificLocationData(pokemon, games[i], areas[j], methods[k])
+          );
+        }
+      }
+    }
+    console.log("return ketys");
+    setGameLocations(mid);
   }
 
   function fetchEvolutionLine(curPokemon) {
@@ -209,6 +279,8 @@ function Entry({ curPokemon, shinyMode }) {
       // evolve
       fetchEvolutionLine(curPokemon);
       console.log(7);
+      fetchLocationData(curPokemon);
+      console.log(6);
 
       return overall;
     } catch (error) {
@@ -307,6 +379,11 @@ function Entry({ curPokemon, shinyMode }) {
                 <li>{name}</li>
               ))}
             </ul>
+          </div>
+          <div className="locations">
+            <h2>Locations</h2>
+
+            {gameLocations.map((data) => data)}
           </div>
         </div>
       ) : (

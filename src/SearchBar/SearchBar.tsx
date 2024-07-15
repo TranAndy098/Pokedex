@@ -45,7 +45,7 @@ export default function SearchBar({
       setMoveSearch("");
       setType("");
       setDropType("");
-      if (pageState !== "Entry" && pageState !== "Locations") {
+      if (pageState !== "Entry") {
         setPageState("Entry");
       }
     }

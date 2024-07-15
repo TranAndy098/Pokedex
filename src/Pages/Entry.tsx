@@ -149,6 +149,9 @@ function Entry({ curPokemon, shinyMode }) {
     console.log("before access");
 
     let allLocations = pokemonGameLocations[pokemon];
+    if (!Object.keys(pokemonGameLocations).includes(pokemon)) {
+      return;
+    }
     console.log("after acccess");
 
     let games = Object.keys(allLocations);
@@ -161,12 +164,22 @@ function Entry({ curPokemon, shinyMode }) {
       mid.push(<h2>{gamesAPIToDisplay[games[i]]}</h2>);
       areas = Object.keys(allLocations[games[i]]);
       for (let j = 0; j < areas.length; j++) {
-        mid.push(<h3>{locationNamesAPIToDisplay[areas[j]]}</h3>);
-        methods = Object.keys(allLocations[games[i]][areas[j]]);
-        for (let k = 0; k < methods.length; k++) {
+        if (areas[j] === "evolutions") {
+          // for evolutions locations
           mid.push(
-            fetchSpecificLocationData(pokemon, games[i], areas[j], methods[k])
+            <h3>
+              Evolve from{" "}
+              {pokemonAPIToDisplay[allLocations[games[i]][areas[j]]]}
+            </h3>
           );
+        } else {
+          mid.push(<h3>{locationNamesAPIToDisplay[areas[j]]}</h3>);
+          methods = Object.keys(allLocations[games[i]][areas[j]]);
+          for (let k = 0; k < methods.length; k++) {
+            mid.push(
+              fetchSpecificLocationData(pokemon, games[i], areas[j], methods[k])
+            );
+          }
         }
       }
     }

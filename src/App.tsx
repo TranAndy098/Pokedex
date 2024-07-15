@@ -43,6 +43,14 @@ const App: React.FC = () => {
   const [curDropType, setDropType] = useState("");
 
   const [curLocation, setLocation] = useState("");
+
+  const [curLocationGame, setLocationGame] = useState("");
+  const [openGameLocations, setOpenGameLocations] = useState(false);
+
+  const [curLocationForGame, setLocationForGame] = useState("");
+  const [openLocationForGame, setOpenLocationForGame] = useState(false);
+  const [curDropLocationForGame, setDropLocationForGame] = useState("");
+
   const [locationSearch, setLocationSearch] = useState("");
 
   function goClick(curDropPokemon) {
@@ -74,6 +82,7 @@ const App: React.FC = () => {
         setMoveSearch={setMoveSearch}
         setType={setType}
         setDropType={setDropType}
+        setLocation={setLocation}
       />
       <div className="container">
         <div className="box left-box">
@@ -170,7 +179,28 @@ const App: React.FC = () => {
             ) : (
               <p />
             )}
-            {pageState === "Locations" ? <Locations /> : <p />}
+            {pageState === "Locations" ? (
+              <Locations
+                curLocation={curLocation}
+                setLocation={setLocation}
+                curLocationGame={curLocationGame}
+                setLocationGame={setLocationGame}
+                openGameLocations={openGameLocations}
+                setOpenGameLocations={setOpenGameLocations}
+                curLocationForGame={curLocationForGame}
+                setLocationForGame={setLocationForGame}
+                openLocationForGame={openLocationForGame}
+                setOpenLocationForGame={setOpenLocationForGame}
+                locationSearch={locationSearch}
+                setLocationSearch={setLocationSearch}
+                curDropLocationForGame={curDropLocationForGame}
+                setDropLocationForGame={setDropLocationForGame}
+                setScratch={setSearch}
+                shinyMode={shinyMode}
+              />
+            ) : (
+              <p />
+            )}
             {pageState === "Games" ? <Games /> : <p />}
             {pageState === "Moves" ? (
               <Moves
@@ -204,6 +234,8 @@ const App: React.FC = () => {
             <p>Curent Pokemon: {pokemonAPIToDisplay[curPokemon]}</p>
             <p>Curent Gen: {curGen}</p>
             <p>Curent Move: {curMove}</p>
+            <p>Curent Location: {curLocation}</p>
+            <p>Curent Drop Game: {curLocationGame}</p>
             <p>Shiny: {shinyMode ? "true" : "false"}</p>
             <p>Need to do: when dropdown is clicked, close it</p>
             <Display curPokemon={pokemonAPIToDisplay[curPokemon]} />

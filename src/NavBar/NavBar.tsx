@@ -11,6 +11,7 @@ const Navbar: React.FC = ({
   setMoveSearch,
   setType,
   setDropType,
+  setLocation,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -24,6 +25,7 @@ const Navbar: React.FC = ({
       setSearch("");
       setType("");
       setDropType("");
+      setLocation("");
       setPageState(value);
       setIsActive(!isActive);
     } else if (value === "Types") {
@@ -31,6 +33,27 @@ const Navbar: React.FC = ({
       setSearch("");
       setMove("");
       setMoveSearch("");
+      setLocation("");
+      setPageState(value);
+      setIsActive(!isActive);
+    } else if (value === "Locations") {
+      setPokemon("");
+      setSearch("");
+      setMove("");
+      setMoveSearch("");
+      setType("");
+      setDropType("");
+      setLocation("");
+      setPageState(value);
+      setIsActive(!isActive);
+    } else if (value === "Games") {
+      setPokemon("");
+      setSearch("");
+      setMove("");
+      setMoveSearch("");
+      setType("");
+      setDropType("");
+      setLocation("");
       setPageState(value);
       setIsActive(!isActive);
     } else if (value === "Scan") {
@@ -40,6 +63,7 @@ const Navbar: React.FC = ({
       setMoveSearch("");
       setType("");
       setDropType("");
+      setLocation("");
       setPageState(value);
       setIsActive(!isActive);
     } else if (curPokemon === "") {
@@ -50,6 +74,7 @@ const Navbar: React.FC = ({
       setMoveSearch("");
       setType("");
       setDropType("");
+      setLocation("");
       setPageState(value);
       setIsActive(!isActive);
     }
@@ -62,6 +87,7 @@ const Navbar: React.FC = ({
     setMoveSearch("");
     setType("");
     setDropType("");
+    setLocation("");
     setPageState("");
     setIsActive(!isActive);
   }

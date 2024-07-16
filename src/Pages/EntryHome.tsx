@@ -4,7 +4,7 @@ import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
 import allTypeLogos from "../data/typeData/allTypeLogos.json";
 import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
 
-function Entry({ shinyMode }) {
+function EntryHome({ shinyMode }) {
   const [value, setValue] = useState([]);
 
   async function fetchData() {
@@ -53,4 +53,4 @@ function Entry({ shinyMode }) {
   );
 }
 
-export default Entry;
+export default EntryHome;

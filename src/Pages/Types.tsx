@@ -184,7 +184,7 @@ function Types({
 
   return (
     <div>
-      <h1>Moves Page</h1>
+      <h1>Types Page</h1>
       <div className="type-dropdown">
         <div className="dropdown-label">Type:</div>
         <DropDown
@@ -242,31 +242,37 @@ function Types({
       ) : (
         ""
       )}
-      <div className="types-pokemon">
-        <h1>Pokemon</h1>
-        <ul>
-          {typePokemon.map((mon) => (
-            <li>
-              {pokemonAPIToDisplay[mon]}
-              <img
-                src={
-                  shinyMode
-                    ? allPokemonSprites[mon].FrontShiny
-                    : allPokemonSprites[mon].FrontDefault
-                }
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="types-moves">
-        <h1>Moves</h1>
-        <ul>
-          {typeMoves.map((moves) => (
-            <li>{moveAPIToDisplay[moves]}</li>
-          ))}
-        </ul>
-      </div>
+      {curType !== "" ? (
+        <div>
+          <div className="types-pokemon">
+            <h1>Pokemon</h1>
+            <ul>
+              {typePokemon.map((mon) => (
+                <li>
+                  {pokemonAPIToDisplay[mon]}
+                  <img
+                    src={
+                      shinyMode
+                        ? allPokemonSprites[mon].FrontShiny
+                        : allPokemonSprites[mon].FrontDefault
+                    }
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="types-moves">
+            <h1>Moves</h1>
+            <ul>
+              {typeMoves.map((moves) => (
+                <li>{moveAPIToDisplay[moves]}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

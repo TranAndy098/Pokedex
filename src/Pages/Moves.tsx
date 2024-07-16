@@ -113,22 +113,28 @@ function Moves({ curMove, setMove, moveSearch, setMoveSearch, shinyMode }) {
         setMoveSearch={setMoveSearch}
       ></MoveSearchBar>
 
-      <div>{moveData}</div>
+      {curMove !== "" ? (
+        <div>
+          <div>{moveData}</div>
 
-      <ul>
-        {movePokemon.map((mon) => (
-          <li>
-            {pokemonAPIToDisplay[mon]}
-            <img
-              src={
-                shinyMode
-                  ? allPokemonSprites[mon].FrontShiny
-                  : allPokemonSprites[mon].FrontDefault
-              }
-            />
-          </li>
-        ))}
-      </ul>
+          <ul>
+            {movePokemon.map((mon) => (
+              <li>
+                {pokemonAPIToDisplay[mon]}
+                <img
+                  src={
+                    shinyMode
+                      ? allPokemonSprites[mon].FrontShiny
+                      : allPokemonSprites[mon].FrontDefault
+                  }
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

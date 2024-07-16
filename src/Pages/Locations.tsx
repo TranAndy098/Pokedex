@@ -15,19 +15,25 @@ import encounterConditionsAPIToDisplay from "../data/encounterConditionData/enco
 function Locations({
   curLocation,
   setLocation,
+
   curLocationGame,
   setLocationGame,
+
   openGameLocations,
   setOpenGameLocations,
+
   curLocationForGame,
   setLocationForGame,
+
   openLocationForGame,
   setOpenLocationForGame,
+
   locationSearch,
   setLocationSearch,
 
   curDropLocationForGame,
   setDropLocationForGame,
+
   setScratch,
   shinyMode,
 }) {
@@ -182,7 +188,11 @@ function Locations({
       >
         Go
       </button>
-      <ul>{locationData.map((pokemon) => pokemon)}</ul>
+      {curLocation !== "" ? (
+        <ul>{locationData.map((pokemon) => pokemon)}</ul>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

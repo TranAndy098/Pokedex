@@ -12,6 +12,7 @@ const Navbar: React.FC = ({
   setType,
   setDropType,
   setLocation,
+  setGame,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -23,9 +24,11 @@ const Navbar: React.FC = ({
     if (value === "Moves") {
       setPokemon("");
       setSearch("");
+      setMove("");
       setType("");
       setDropType("");
       setLocation("");
+      setGame("");
       setPageState(value);
       setIsActive(!isActive);
     } else if (value === "Types") {
@@ -33,7 +36,10 @@ const Navbar: React.FC = ({
       setSearch("");
       setMove("");
       setMoveSearch("");
+      setType("");
+      setDropType("");
       setLocation("");
+      setGame("");
       setPageState(value);
       setIsActive(!isActive);
     } else if (value === "Locations") {
@@ -44,6 +50,7 @@ const Navbar: React.FC = ({
       setType("");
       setDropType("");
       setLocation("");
+      setGame("");
       setPageState(value);
       setIsActive(!isActive);
     } else if (value === "Games") {
@@ -54,6 +61,7 @@ const Navbar: React.FC = ({
       setType("");
       setDropType("");
       setLocation("");
+      setGame("");
       setPageState(value);
       setIsActive(!isActive);
     } else if (value === "Scan") {
@@ -64,6 +72,7 @@ const Navbar: React.FC = ({
       setType("");
       setDropType("");
       setLocation("");
+      setGame("");
       setPageState(value);
       setIsActive(!isActive);
     } else {
@@ -74,6 +83,7 @@ const Navbar: React.FC = ({
       setType("");
       setDropType("");
       setLocation("");
+      setGame("");
       setPageState(value);
       setIsActive(!isActive);
     }
@@ -87,6 +97,7 @@ const Navbar: React.FC = ({
     setType("");
     setDropType("");
     setLocation("");
+    setGame("");
     setPageState("");
     setIsActive(!isActive);
   }

@@ -11,6 +11,9 @@ import pokemonPerLocation from "../data/locationData/pokemonPerLocation.json";
 import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
 import allPokemonSprites from "../data/pokemonData/allPokemonSprites.json";
 import encounterConditionsAPIToDisplay from "../data/encounterConditionData/encounterConditionsAPIToDisplay.json";
+import encounterMethodsAPIToDisplay from "../data/encounterMethodData/encounterMethodsAPIToDisplay.json";
+import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
+import allTypeLogos from "../data/typeData/allTypeLogos.json";
 
 function Locations({
   curLocation,
@@ -22,9 +25,6 @@ function Locations({
   openGameLocations,
   setOpenGameLocations,
 
-  curLocationForGame,
-  setLocationForGame,
-
   openLocationForGame,
   setOpenLocationForGame,
 
@@ -34,6 +34,8 @@ function Locations({
   curDropLocationForGame,
   setDropLocationForGame,
 
+  clickPokemon,
+  clickType,
   setScratch,
   shinyMode,
 }) {
@@ -45,10 +47,7 @@ function Locations({
       setLocation(locationNamesDisplayToAPI[curDropLocationForGame]);
 
       setLocationGame("");
-      setOpenLocationForGame("");
 
-      setLocationForGame("");
-      setOpenLocationForGame("");
       setLocationSearch("");
       setDropLocationForGame("");
     }
@@ -67,17 +66,32 @@ function Locations({
       if (Object.keys(allPokemonSprites).includes(pokemons[i])) {
         mid.push(
           <li>
-            <h3>{pokemonAPIToDisplay[pokemons[i]]}</h3>
+            <h3 onClick={() => clickPokemon(pokemons[i])}>
+              {pokemonAPIToDisplay[pokemons[i]]}
+            </h3>
             <img
               src={
                 shinyMode
                   ? allPokemonSprites[pokemons[i]].FrontShiny
                   : allPokemonSprites[pokemons[i]].FrontDefault
               }
+              onClick={() => clickPokemon(pokemons[i])}
             />
+            <div>
+              {Object.keys(pokemonTypingChart).includes(pokemons[i]) ? (
+                pokemonTypingChart[pokemons[i]].map((typing) => (
+                  <img
+                    src={allTypeLogos[typing].TypeTextLogo}
+                    onClick={() => clickType(typing)}
+                  ></img>
+                ))
+              ) : (
+                <></>
+              )}
+            </div>
             {methods.map((method) => (
               <div>
-                <h4>Method: {method}</h4>
+                <h4>Method: {encounterMethodsAPIToDisplay[method]}</h4>
                 <h4>
                   MinLevel:
                   {

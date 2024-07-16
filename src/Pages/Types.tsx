@@ -9,6 +9,7 @@ import allTypeLogos from "../data/typeData/allTypeLogos.json";
 import typeAPIToDisplay from "../data/typeData/typeAPIToDisplay.json";
 import moveAPIToDisplay from "../data/moveData/moveAPIToDisplay.json";
 import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
+import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
 
 function Types({
   curType,
@@ -16,7 +17,9 @@ function Types({
   openType,
   setOpenType,
   curDropType,
-  setDropType,
+  clickPokemon,
+  clickMove,
+  clickType,
   shinyMode,
   setScratch,
 }) {
@@ -193,9 +196,9 @@ function Types({
           setOpen={setOpenType}
           content={
             <>
-              {allTypes.map((typing) => (
+              {Object.keys(typeAPIToDisplay).map((typing) => (
                 <DropDownItem
-                  content={typing}
+                  content={typeAPIToDisplay[typing]}
                   check={curDropType}
                   setMode1={setType}
                   setMode2={setScratch}
@@ -217,7 +220,10 @@ function Types({
           <ul>
             {typingListIndex.map((index) => (
               <li>
-                <img src={allTypeLogos[typingList[index]].TypeTextLogo} />
+                <img
+                  src={allTypeLogos[typingList[index]].TypeTextLogo}
+                  onClick={() => clickType(typingList[index])}
+                />
                 {typeAPIToDisplay[typingList[index]]}:{typeTo[index]}
               </li>
             ))}
@@ -233,7 +239,10 @@ function Types({
           <ul>
             {typingListIndex.map((index) => (
               <li>
-                <img src={allTypeLogos[typingList[index]].TypeTextLogo} />
+                <img
+                  src={allTypeLogos[typingList[index]].TypeTextLogo}
+                  onClick={() => clickType(typingList[index])}
+                />
                 {typeAPIToDisplay[typingList[index]]}:{typeFrom[index]}
               </li>
             ))}
@@ -249,14 +258,27 @@ function Types({
             <ul>
               {typePokemon.map((mon) => (
                 <li>
-                  {pokemonAPIToDisplay[mon]}
+                  <div onClick={() => clickPokemon(mon)}>
+                    {pokemonAPIToDisplay[mon]}
+                  </div>
                   <img
                     src={
                       shinyMode
                         ? allPokemonSprites[mon].FrontShiny
                         : allPokemonSprites[mon].FrontDefault
                     }
+                    onClick={() => clickPokemon(mon)}
                   />
+                  {Object.keys(pokemonTypingChart).includes(mon) ? (
+                    pokemonTypingChart[mon].map((mon_type) => (
+                      <img
+                        src={allTypeLogos[mon_type].TypeTextLogo}
+                        onClick={() => clickType(mon_type)}
+                      />
+                    ))
+                  ) : (
+                    <p></p>
+                  )}
                 </li>
               ))}
             </ul>
@@ -265,7 +287,9 @@ function Types({
             <h1>Moves</h1>
             <ul>
               {typeMoves.map((moves) => (
-                <li>{moveAPIToDisplay[moves]}</li>
+                <li onClick={() => clickMove(moves)}>
+                  {moveAPIToDisplay[moves]}
+                </li>
               ))}
             </ul>
           </div>

@@ -46,7 +46,6 @@ const App: React.FC = () => {
   const [curLocationGame, setLocationGame] = useState("");
   const [openGameLocations, setOpenGameLocations] = useState(false);
 
-  const [curLocationForGame, setLocationForGame] = useState("");
   const [openLocationForGame, setOpenLocationForGame] = useState(false);
   const [curDropLocationForGame, setDropLocationForGame] = useState("");
 
@@ -57,7 +56,6 @@ const App: React.FC = () => {
   const [curGenGame, setGenGame] = useState("");
   const [openGenGame, setOpenGenGame] = useState(false);
 
-  const [curGameForGen, setGameForGen] = useState("");
   const [openGameForGen, setOpenGameForGen] = useState(false);
   const [curDropGameForGen, setDropGameForGen] = useState("");
 
@@ -78,10 +76,45 @@ const App: React.FC = () => {
     setShinyMode(!shinyMode);
   }
 
+  function blankSlate() {
+    setPokemon("");
+    setSearch("");
+    setMove("");
+    setMoveSearch("");
+    setType("");
+    setDropType("");
+    setLocation("");
+    setGame("");
+    setPageState("");
+  }
+
+  function clickPokemon(pokemon) {
+    blankSlate();
+    setPokemon(pokemon);
+    setPageState("Entry");
+  }
+
+  function clickLocation(location) {
+    blankSlate();
+    setLocation(location);
+    setPageState("Locations");
+  }
+
+  function clickMove(move) {
+    blankSlate();
+    setMove(move);
+    setPageState("Moves");
+  }
+
+  function clickType(typing) {
+    blankSlate();
+    setType(typing);
+    setPageState("Types");
+  }
+
   return (
     <>
       <Navbar
-        curPokemon={curPokemon}
         setPokemon={setPokemon}
         pageState={pageState}
         setPageState={setPageState}
@@ -91,7 +124,12 @@ const App: React.FC = () => {
         setType={setType}
         setDropType={setDropType}
         setLocation={setLocation}
+        setLocationSearch={setLocationSearch}
+        setLocationGame={setLocationGame}
+        setDropLocationForGame={setDropLocationForGame}
         setGame={setGame}
+        setGenGame={setGenGame}
+        setDropGameForGen={setDropGameForGen}
       />
       <div className="container">
         <div className="box left-box">
@@ -184,7 +222,14 @@ const App: React.FC = () => {
           <div className="pokemon-data-box">
             {pageState === "" ? <Home /> : <p />}
             {pageState === "Entry" ? (
-              <Entry curPokemon={curPokemon} shinyMode={shinyMode} />
+              <Entry
+                curPokemon={curPokemon}
+                clickPokemon={clickPokemon}
+                clickLocation={clickLocation}
+                clickMove={clickMove}
+                clickType={clickType}
+                shinyMode={shinyMode}
+              />
             ) : (
               <p />
             )}
@@ -196,14 +241,14 @@ const App: React.FC = () => {
                 setLocationGame={setLocationGame}
                 openGameLocations={openGameLocations}
                 setOpenGameLocations={setOpenGameLocations}
-                curLocationForGame={curLocationForGame}
-                setLocationForGame={setLocationForGame}
                 openLocationForGame={openLocationForGame}
                 setOpenLocationForGame={setOpenLocationForGame}
                 locationSearch={locationSearch}
                 setLocationSearch={setLocationSearch}
                 curDropLocationForGame={curDropLocationForGame}
                 setDropLocationForGame={setDropLocationForGame}
+                clickPokemon={clickPokemon}
+                clickType={clickType}
                 setScratch={setSearch}
                 shinyMode={shinyMode}
               />
@@ -218,12 +263,12 @@ const App: React.FC = () => {
                 setGenGame={setGenGame}
                 openGenGame={openGenGame}
                 setOpenGenGame={setOpenGenGame}
-                curGameForGen={curGameForGen}
-                setGameForGen={setGameForGen}
                 openGameForGen={openGameForGen}
                 setOpenGameForGen={setOpenGameForGen}
                 curDropGameForGen={curDropGameForGen}
                 setDropGameForGen={setDropGameForGen}
+                clickPokemon={clickPokemon}
+                clickLocation={clickLocation}
                 setScratch={setSearch}
                 shinyMode={shinyMode}
               />
@@ -236,6 +281,8 @@ const App: React.FC = () => {
                 setMove={setMove}
                 moveSearch={moveSearch}
                 setMoveSearch={setMoveSearch}
+                clickPokemon={clickPokemon}
+                clickType={clickType}
                 shinyMode={shinyMode}
               />
             ) : (
@@ -248,7 +295,9 @@ const App: React.FC = () => {
                 openType={openType}
                 setOpenType={setOpenType}
                 curDropType={curDropType}
-                setDropType={setDropType}
+                clickPokemon={clickPokemon}
+                clickMove={clickMove}
+                clickType={clickType}
                 shinyMode={shinyMode}
                 setScratch={setScratch}
               />

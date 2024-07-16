@@ -1,6 +1,7 @@
 import { React, useState, useMemo } from "react";
 import DropDown from "../DropDown/DropDown/DropDown";
 import DropDownItem from "../DropDown/DropDownItem/DropDownItem";
+import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
 import allPokemonSprites from "../data/pokemonData/allPokemonSprites.json";
 import gamesDisplayToAPI from "../data/gameNameData/gamesDisplayToAPI.json";
 import gamesAPIToDisplay from "../data/gameNameData/gamesAPIToDisplay.json";
@@ -10,6 +11,8 @@ import pokedexAPIToDisplay from "../data/gameNameData/pokedexAPIToDisplay.json";
 import GameHome from "./GameHome";
 import allTypeLogos from "../data/typeData/allTypeLogos.json";
 import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
+import locationPerGame from "../data/locationData/locationsPerGame.json";
+import locationNamesAPIToDisplay from "../data/locationData/locationNamesAPIToDisplay.json";
 
 function Games({
   curGame,
@@ -21,14 +24,14 @@ function Games({
   openGenGame,
   setOpenGenGame,
 
-  curGameForGen,
-  setGameForGen,
-
   openGameForGen,
   setOpenGameForGen,
 
   curDropGameForGen,
   setDropGameForGen,
+
+  clickPokemon,
+  clickLocation,
 
   setScratch,
   shinyMode,
@@ -42,12 +45,15 @@ function Games({
       setGame(gamesDisplayToAPI[curDropGameForGen]);
 
       setGenGame("");
-      setOpenGameForGen("");
-
-      setGameForGen("");
-      setOpenGameForGen("");
       setDropGameForGen("");
     }
+  }
+
+  function clickGame(game) {
+    setGame(game);
+
+    setGenGame("");
+    setDropGameForGen("");
   }
 
   function fetchData(curGame) {
@@ -66,8 +72,20 @@ function Games({
           <ul>
             {Object.keys(pokedexPerGame[curGame][pokedex]).map((id) => (
               <li>
-                <h3>{id}</h3>
-                <h3>{id}</h3>
+                <h3
+                  onClick={() =>
+                    clickPokemon(pokedexPerGame[curGame][pokedex][id])
+                  }
+                >
+                  {id}
+                </h3>
+                <h3
+                  onClick={() =>
+                    clickPokemon(pokedexPerGame[curGame][pokedex][id])
+                  }
+                >
+                  {pokemonAPIToDisplay[pokedexPerGame[curGame][pokedex][id]]}
+                </h3>
 
                 <img
                   src={
@@ -76,6 +94,9 @@ function Games({
                           .FrontShiny
                       : allPokemonSprites[pokedexPerGame[curGame][pokedex][id]]
                           .FrontDefault
+                  }
+                  onClick={() =>
+                    clickPokemon(pokedexPerGame[curGame][pokedex][id])
                   }
                 />
                 {pokemonTypingChart[pokedexPerGame[curGame][pokedex][id]].map(
@@ -153,9 +174,18 @@ function Games({
         Go
       </button>
       {curGame === "" ? (
-        <GameHome></GameHome>
+        <GameHome clickGame={clickGame}></GameHome>
       ) : (
-        <div>{gameData.map((pokemon) => pokemon)}</div>
+        <div>
+          <div>{gameData.map((pokemon) => pokemon)}</div>
+          <div>
+            {locationPerGame[curGame].map((location) => (
+              <p onClick={() => clickLocation(location)}>
+                {locationNamesAPIToDisplay[location]}
+              </p>
+            ))}
+          </div>
+        </div>
       )}
     </div>
   );

@@ -19,7 +19,14 @@ import gamesAPIToDisplay from "../data/gameNameData/gamesAPIToDisplay.json";
 import locationNamesAPIToDisplay from "../data/locationData/locationNamesAPIToDisplay.json";
 import EntryHome from "./EntryHome.tsx";
 
-function Entry({ curPokemon, shinyMode }) {
+function Entry({
+  curPokemon,
+  clickPokemon,
+  clickLocation,
+  clickMove,
+  clickType,
+  shinyMode,
+}) {
   const [value, setValue] = useState([]);
   const [evolutionLine, setEvolutionLine] = useState([]);
   const [differentForms, setDifferentForms] = useState([]);
@@ -31,7 +38,7 @@ function Entry({ curPokemon, shinyMode }) {
     console.log("move data");
     return (
       <div>
-        <div className="name">
+        <div className="name" onClick={() => clickMove(APImove)}>
           <h1>{moveAPIToDisplay[APImove]}</h1>
         </div>
 
@@ -77,7 +84,10 @@ function Entry({ curPokemon, shinyMode }) {
 
         <div className="typing">
           <h1>Type</h1>
-          <img src={allTypeLogos[allMoveData[APImove].Type].TypeTextLogo} />
+          <img
+            src={allTypeLogos[allMoveData[APImove].Type].TypeTextLogo}
+            onClick={() => clickType(allMoveData[APImove].Type)}
+          />
         </div>
       </div>
     );
@@ -174,7 +184,11 @@ function Entry({ curPokemon, shinyMode }) {
             </h3>
           );
         } else {
-          mid.push(<h3>{locationNamesAPIToDisplay[areas[j]]}</h3>);
+          mid.push(
+            <h3 onClick={() => clickLocation(areas[j])}>
+              {locationNamesAPIToDisplay[areas[j]]}
+            </h3>
+          );
           methods = Object.keys(allLocations[games[i]][areas[j]]);
           for (let k = 0; k < methods.length; k++) {
             mid.push(
@@ -196,7 +210,8 @@ function Entry({ curPokemon, shinyMode }) {
 
     for (let i = 0; i < allPokemonEvolutions[curPokemon].Size; i++) {
       let interm = [];
-      for (let j = 0; j < chains[0].length; j++) {
+      for (let j = 0; j < chains[i].length; j++) {
+        console.log("he", chains[i][j]);
         interm.push(
           <img
             src={
@@ -204,6 +219,7 @@ function Entry({ curPokemon, shinyMode }) {
                 ? allPokemonSprites[chains[i][j]].FrontShiny
                 : allPokemonSprites[chains[i][j]].FrontDefault
             }
+            onClick={() => clickPokemon(chains[i][j])}
           />
         );
       }
@@ -311,7 +327,11 @@ function Entry({ curPokemon, shinyMode }) {
   return (
     <div>
       {curPokemon === "" ? (
-        <EntryHome shinyMode={shinyMode} />
+        <EntryHome
+          clickPokemon={clickPokemon}
+          clickType={clickType}
+          shinyMode={shinyMode}
+        />
       ) : (
         <>
           <div>
@@ -359,7 +379,7 @@ function Entry({ curPokemon, shinyMode }) {
                 <h2>Types</h2>
                 <ul>
                   {value[1].map((name) => (
-                    <li>
+                    <li onClick={() => clickType(name)}>
                       {typeAPIToDisplay[name]}
                       <img src={allTypeLogos[name].TypeTextLogo} />
                     </li>

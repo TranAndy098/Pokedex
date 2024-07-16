@@ -2,32 +2,38 @@ import { React, useState, useMemo } from "react";
 import allPokemonSprites from "../data/pokemonData/allPokemonSprites.json";
 import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
 import allTypeLogos from "../data/typeData/allTypeLogos.json";
-import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
+import nationalPokedexTyping from "../data/pokemonData/nationalPokedexTyping.json";
 
-function EntryHome({ shinyMode }) {
+function EntryHome({ clickPokemon, clickType, shinyMode }) {
   const [value, setValue] = useState([]);
 
   async function fetchData() {
     try {
       let overall = [];
 
-      let pokemons = Object.keys(pokemonTypingChart);
+      let pokemons = Object.keys(nationalPokedexTyping);
 
       // pokemons
       for (let i = 0; i < pokemons.length; i++) {
         overall.push(
           <div>
-            <h2>ID: {i + 1}</h2>
-            <h2>Name: {pokemonAPIToDisplay[pokemons[i]]}</h2>
+            <h2 onClick={() => clickPokemon(pokemons[i])}>ID: {i + 1}</h2>
+            <h2 onClick={() => clickPokemon(pokemons[i])}>
+              Name: {pokemonAPIToDisplay[pokemons[i]]}
+            </h2>
             <img
               src={
                 shinyMode
                   ? allPokemonSprites[pokemons[i]].FrontShiny
                   : allPokemonSprites[pokemons[i]].FrontDefault
               }
+              onClick={() => clickPokemon(pokemons[i])}
             />
-            {pokemonTypingChart[pokemons[i]].map((type) => (
-              <img src={allTypeLogos[type].TypeTextLogo} />
+            {nationalPokedexTyping[pokemons[i]].map((type) => (
+              <img
+                src={allTypeLogos[type].TypeTextLogo}
+                onClick={() => clickType(type)}
+              />
             ))}
           </div>
         );

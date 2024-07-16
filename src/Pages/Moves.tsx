@@ -3,14 +3,22 @@ import axios from "axios";
 import MoveSearchBar from "../MoveSearchBar/MoveSearchBar";
 import allMoveData from "../data/moveData/allMoveData.json";
 import allPokemonSprites from "../data/pokemonData/allPokemonSprites.json";
-import typeAPIToDisplay from "../data/typeData/typeAPIToDisplay.json";
 import moveAPIToDisplay from "../data/moveData/moveAPIToDisplay.json";
 import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
 import allDamageClassLogos from "../data/moveData/allDamageClassLogos.json";
 import allTypeLogos from "../data/typeData/allTypeLogos.json";
 import moveTargetAPIToDisplay from "../data/moveTargetData/moveTargetAPIToDisplay.json";
+import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
 
-function Moves({ curMove, setMove, moveSearch, setMoveSearch, shinyMode }) {
+function Moves({
+  curMove,
+  setMove,
+  moveSearch,
+  setMoveSearch,
+  clickPokemon,
+  clickType,
+  shinyMode,
+}) {
   console.log(curMove);
   const [movePokemon, setMovePokemon] = useState([]);
   const [moveData, setMoveData] = useState("");
@@ -86,7 +94,10 @@ function Moves({ curMove, setMove, moveSearch, setMoveSearch, shinyMode }) {
 
           <div className="typing">
             <h1>Type</h1>
-            <img src={allTypeLogos[allMoveData[curMove].Type].TypeTextLogo} />
+            <img
+              src={allTypeLogos[allMoveData[curMove].Type].TypeTextLogo}
+              onClick={() => clickType(allMoveData[curMove].Type)}
+            />
           </div>
         </div>
       );
@@ -120,14 +131,30 @@ function Moves({ curMove, setMove, moveSearch, setMoveSearch, shinyMode }) {
           <ul>
             {movePokemon.map((mon) => (
               <li>
-                {pokemonAPIToDisplay[mon]}
+                <div onClick={() => clickPokemon(mon)}>
+                  {pokemonAPIToDisplay[mon]}
+                </div>
+
                 <img
                   src={
                     shinyMode
                       ? allPokemonSprites[mon].FrontShiny
                       : allPokemonSprites[mon].FrontDefault
                   }
+                  onClick={() => clickPokemon(mon)}
                 />
+                <div>
+                  {Object.keys(pokemonTypingChart).includes(mon) ? (
+                    pokemonTypingChart[mon].map((typing) => (
+                      <img
+                        src={allTypeLogos[typing].TypeTextLogo}
+                        onClick={() => clickType(typing)}
+                      ></img>
+                    ))
+                  ) : (
+                    <></>
+                  )}
+                </div>
               </li>
             ))}
           </ul>

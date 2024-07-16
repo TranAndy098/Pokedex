@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./NavBar.css"; // Assuming you have a CSS file for styling
 
 const Navbar: React.FC = ({
-  curPokemon,
   setPokemon,
   pageState,
   setPageState,
@@ -12,7 +11,13 @@ const Navbar: React.FC = ({
   setType,
   setDropType,
   setLocation,
+
+  setLocationSearch,
+  setLocationGame,
+  setDropLocationForGame,
   setGame,
+  setGenGame,
+  setDropGameForGen,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -21,75 +26,6 @@ const Navbar: React.FC = ({
   };
 
   function handleClick(value) {
-    if (value === "Moves") {
-      setPokemon("");
-      setSearch("");
-      setMove("");
-      setType("");
-      setDropType("");
-      setLocation("");
-      setGame("");
-      setPageState(value);
-      setIsActive(!isActive);
-    } else if (value === "Types") {
-      setPokemon("");
-      setSearch("");
-      setMove("");
-      setMoveSearch("");
-      setType("");
-      setDropType("");
-      setLocation("");
-      setGame("");
-      setPageState(value);
-      setIsActive(!isActive);
-    } else if (value === "Locations") {
-      setPokemon("");
-      setSearch("");
-      setMove("");
-      setMoveSearch("");
-      setType("");
-      setDropType("");
-      setLocation("");
-      setGame("");
-      setPageState(value);
-      setIsActive(!isActive);
-    } else if (value === "Games") {
-      setPokemon("");
-      setSearch("");
-      setMove("");
-      setMoveSearch("");
-      setType("");
-      setDropType("");
-      setLocation("");
-      setGame("");
-      setPageState(value);
-      setIsActive(!isActive);
-    } else if (value === "Scan") {
-      setPokemon("");
-      setSearch("");
-      setMove("");
-      setMoveSearch("");
-      setType("");
-      setDropType("");
-      setLocation("");
-      setGame("");
-      setPageState(value);
-      setIsActive(!isActive);
-    } else {
-      setPokemon("");
-      setSearch("");
-      setMove("");
-      setMoveSearch("");
-      setType("");
-      setDropType("");
-      setLocation("");
-      setGame("");
-      setPageState(value);
-      setIsActive(!isActive);
-    }
-  }
-
-  function handleHomeClick() {
     setPokemon("");
     setSearch("");
     setMove("");
@@ -97,8 +33,14 @@ const Navbar: React.FC = ({
     setType("");
     setDropType("");
     setLocation("");
+
+    setLocationSearch("");
+    setLocationGame("");
+    setDropLocationForGame("");
     setGame("");
-    setPageState("");
+    setGenGame("");
+    setDropGameForGen("");
+    setPageState(value);
     setIsActive(!isActive);
   }
 
@@ -122,7 +64,7 @@ const Navbar: React.FC = ({
           <li className="navbar_item">
             <p
               className={`navbar_links ${pageState === "" ? "active" : ""}`}
-              onClick={() => handleHomeClick()}
+              onClick={() => handleClick("")}
             >
               Home
             </p>

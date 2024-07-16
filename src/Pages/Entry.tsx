@@ -17,6 +17,7 @@ import encounterConditionsAPIToDisplay from "../data/encounterConditionData/enco
 import encounterMethodsAPIToDisplay from "../data/encounterMethodData/encounterMethodsAPIToDisplay.json";
 import gamesAPIToDisplay from "../data/gameNameData/gamesAPIToDisplay.json";
 import locationNamesAPIToDisplay from "../data/locationData/locationNamesAPIToDisplay.json";
+import EntryHome from "./EntryHome.tsx";
 
 function Entry({ curPokemon, shinyMode }) {
   const [value, setValue] = useState([]);
@@ -308,101 +309,107 @@ function Entry({ curPokemon, shinyMode }) {
   );
 
   return (
-    <>
-      <div>
-        <h1>{pokemonAPIToDisplay[curPokemon]}'s Entry Page</h1>
-      </div>
-
-      {value.length > 0 ? (
-        <div className="entry-data">
-          <div className="sprites">
-            <h2>Sprites</h2>
-            <ul>
-              {value[0].map((name) => (
-                <img src={name} key={name}></img>
-              ))}
-            </ul>
+    <div>
+      {curPokemon === "" ? (
+        <EntryHome shinyMode={shinyMode} />
+      ) : (
+        <>
+          <div>
+            <h1>{pokemonAPIToDisplay[curPokemon]}'s Entry Page</h1>
           </div>
-          {forms ? (
-            <div className="forms">
-              <h2>Forms</h2>
-              <div>
-                {differentForms.map((differentForm) => {
-                  return <div>{differentForm}</div>;
-                })}
+
+          {value.length > 0 ? (
+            <div className="entry-data">
+              <div className="sprites">
+                <h2>Sprites</h2>
+                <ul>
+                  {value[0].map((name) => (
+                    <img src={name} key={name}></img>
+                  ))}
+                </ul>
+              </div>
+              {forms ? (
+                <div className="forms">
+                  <h2>Forms</h2>
+                  <div>
+                    {differentForms.map((differentForm) => {
+                      return <div>{differentForm}</div>;
+                    })}
+                  </div>
+                </div>
+              ) : (
+                <></>
+              )}
+
+              <div className="evolutions">
+                <div>
+                  {evolutionLine.map((evolveLine) => {
+                    return (
+                      <div>
+                        <h2>Evolution</h2>
+                        {evolveLine.map((member) => {
+                          return <p>{member}</p>;
+                        })}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="types">
+                <h2>Types</h2>
+                <ul>
+                  {value[1].map((name) => (
+                    <li>
+                      {typeAPIToDisplay[name]}
+                      <img src={allTypeLogos[name].TypeTextLogo} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="abilities">
+                <h2>Abilities</h2>
+                <ul>
+                  {value[2].map((name) => (
+                    <li>{abilitiesAPIToDisplay[name]}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="hidden-abilities">
+                <h2>Hidden Abilities</h2>
+                <ul>
+                  {value[3].map((name) => (
+                    <li>{abilitiesAPIToDisplay[name]}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="stats">
+                <h2>Stats</h2>
+                <ul>
+                  {value[4].map((name) => (
+                    <li>{name}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="moves">
+                <h2>Moves</h2>
+                <ul>
+                  {value[5].map((name) => (
+                    <li>{name}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="locations">
+                <h2>Locations</h2>
+
+                {gameLocations.map((data) => data)}
               </div>
             </div>
           ) : (
-            <></>
+            <h2>Error Entry</h2>
           )}
-
-          <div className="evolutions">
-            <div>
-              {evolutionLine.map((evolveLine) => {
-                return (
-                  <div>
-                    <h2>Evolution</h2>
-                    {evolveLine.map((member) => {
-                      return <p>{member}</p>;
-                    })}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="types">
-            <h2>Types</h2>
-            <ul>
-              {value[1].map((name) => (
-                <li>
-                  {typeAPIToDisplay[name]}
-                  <img src={allTypeLogos[name].TypeTextLogo} />
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="abilities">
-            <h2>Abilities</h2>
-            <ul>
-              {value[2].map((name) => (
-                <li>{abilitiesAPIToDisplay[name]}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="hidden-abilities">
-            <h2>Hidden Abilities</h2>
-            <ul>
-              {value[3].map((name) => (
-                <li>{abilitiesAPIToDisplay[name]}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="stats">
-            <h2>Stats</h2>
-            <ul>
-              {value[4].map((name) => (
-                <li>{name}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="moves">
-            <h2>Moves</h2>
-            <ul>
-              {value[5].map((name) => (
-                <li>{name}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="locations">
-            <h2>Locations</h2>
-
-            {gameLocations.map((data) => data)}
-          </div>
-        </div>
-      ) : (
-        <h2>Error Entry</h2>
+        </>
       )}
-    </>
+    </div>
   );
 }
 

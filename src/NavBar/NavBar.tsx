@@ -66,9 +66,8 @@ const Navbar: React.FC = ({
       setLocation("");
       setPageState(value);
       setIsActive(!isActive);
-    } else if (curPokemon === "") {
-      handleHomeClick();
-    } else if (curPokemon !== "") {
+    } else {
+      setPokemon("");
       setSearch("");
       setMove("");
       setMoveSearch("");

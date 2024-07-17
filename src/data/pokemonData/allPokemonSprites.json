@@ -8409,7 +8409,7 @@
   },
   "zygarde-50": {
     "Name": "zygarde-50",
-    "EntryMainName": "zygarde",
+    "EntryMainName": "zygarde-50",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/718.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/718.png",
@@ -8417,7 +8417,7 @@
   },
   "zygarde-10-power-construct": {
     "Name": "zygarde-10-power-construct",
-    "EntryMainName": "zygarde",
+    "EntryMainName": "zygarde-50",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10118.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10118.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10118.png",
@@ -8425,7 +8425,7 @@
   },
   "zygarde-50-power-construct": {
     "Name": "zygarde-50-power-construct",
-    "EntryMainName": "zygarde",
+    "EntryMainName": "zygarde-50",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10119.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10119.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10119.png",
@@ -8433,19 +8433,11 @@
   },
   "zygarde-complete": {
     "Name": "zygarde-complete",
-    "EntryMainName": "zygarde",
+    "EntryMainName": "zygarde-50",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10120.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10120.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10120.png",
     "BackShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/10120.png"
-  },
-  "zygarde-10": {
-    "Name": "zygarde-10",
-    "EntryMainName": "zygarde",
-    "FrontDefault": null,
-    "BackDefault": null,
-    "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/718-10.png",
-    "BackShiny": null
   },
   "diancie": {
     "Name": "diancie",

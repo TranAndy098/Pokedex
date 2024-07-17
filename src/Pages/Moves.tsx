@@ -127,37 +127,48 @@ function Moves({
       {curMove !== "" ? (
         <div>
           <div>{moveData}</div>
+          <div>
+            <h1>Pokemon</h1>
+            <div className="pokedex-container">
+              {movePokemon.map((mon) => (
+                <div className="pokedex-entry">
+                  <div className="pokedex-header">
+                    <h2
+                      className="pokedex-name pokedex-header-item"
+                      onClick={() => clickPokemon(mon)}
+                    >
+                      {pokemonAPIToDisplay[mon]}
+                    </h2>
+                  </div>
+                  <div className="pokedex-body">
+                    <img
+                      className="pokedex-sprite"
+                      src={
+                        shinyMode
+                          ? allPokemonSprites[mon].FrontShiny
+                          : allPokemonSprites[mon].FrontDefault
+                      }
+                      onClick={() => clickPokemon(mon)}
+                    />
+                  </div>
 
-          <ul>
-            {movePokemon.map((mon) => (
-              <li>
-                <div onClick={() => clickPokemon(mon)}>
-                  {pokemonAPIToDisplay[mon]}
+                  <div className="pokedex-footer">
+                    {Object.keys(pokemonTypingChart).includes(mon) ? (
+                      pokemonTypingChart[mon].map((typing) => (
+                        <img
+                          className="pokedex-type"
+                          src={allTypeLogos[typing].TypeTextLogo}
+                          onClick={() => clickType(typing)}
+                        ></img>
+                      ))
+                    ) : (
+                      <></>
+                    )}
+                  </div>
                 </div>
-
-                <img
-                  src={
-                    shinyMode
-                      ? allPokemonSprites[mon].FrontShiny
-                      : allPokemonSprites[mon].FrontDefault
-                  }
-                  onClick={() => clickPokemon(mon)}
-                />
-                <div>
-                  {Object.keys(pokemonTypingChart).includes(mon) ? (
-                    pokemonTypingChart[mon].map((typing) => (
-                      <img
-                        src={allTypeLogos[typing].TypeTextLogo}
-                        onClick={() => clickType(typing)}
-                      ></img>
-                    ))
-                  ) : (
-                    <></>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </div>
+          </div>
         </div>
       ) : (
         <></>

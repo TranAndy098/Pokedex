@@ -15,6 +15,7 @@ import Moves from "./Pages/Moves";
 import allPokemons from "./data/pokemonData/allPokemons.json";
 import pokemonDisplayToAPI from "./data/pokemonData/pokemonDisplayToAPI.json";
 import pokemonAPIToDisplay from "./data/pokemonData/pokemonAPIToDisplay.json";
+import allPokemonSprites from "./data/pokemonData/allPokemonSprites.json";
 
 const App: React.FC = () => {
   const genNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -86,11 +87,12 @@ const App: React.FC = () => {
     setLocation("");
     setGame("");
     setPageState("");
+    window.scrollTo(0, 0);
   }
 
   function clickPokemon(pokemon) {
     blankSlate();
-    setPokemon(pokemon);
+    setPokemon(allPokemonSprites[pokemon].EntryMainName);
     setPageState("Entry");
   }
 
@@ -269,6 +271,7 @@ const App: React.FC = () => {
                 setDropGameForGen={setDropGameForGen}
                 clickPokemon={clickPokemon}
                 clickLocation={clickLocation}
+                clickType={clickType}
                 setScratch={setSearch}
                 shinyMode={shinyMode}
               />

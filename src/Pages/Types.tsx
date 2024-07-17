@@ -255,33 +255,44 @@ function Types({
         <div>
           <div className="types-pokemon">
             <h1>Pokemon</h1>
-            <ul>
+            <div className="pokedex-container">
               {typePokemon.map((mon) => (
-                <li>
-                  <div onClick={() => clickPokemon(mon)}>
-                    {pokemonAPIToDisplay[mon]}
+                <div className="pokedex-entry">
+                  <div className="pokedex-header">
+                    <h2
+                      className="pokedex-name pokedex-header-item"
+                      onClick={() => clickPokemon(mon)}
+                    >
+                      {pokemonAPIToDisplay[mon]}
+                    </h2>
                   </div>
-                  <img
-                    src={
-                      shinyMode
-                        ? allPokemonSprites[mon].FrontShiny
-                        : allPokemonSprites[mon].FrontDefault
-                    }
-                    onClick={() => clickPokemon(mon)}
-                  />
-                  {Object.keys(pokemonTypingChart).includes(mon) ? (
-                    pokemonTypingChart[mon].map((mon_type) => (
-                      <img
-                        src={allTypeLogos[mon_type].TypeTextLogo}
-                        onClick={() => clickType(mon_type)}
-                      />
-                    ))
-                  ) : (
-                    <p></p>
-                  )}
-                </li>
+                  <div className="pokedex-body">
+                    <img
+                      className="pokedex-sprite"
+                      src={
+                        shinyMode
+                          ? allPokemonSprites[mon].FrontShiny
+                          : allPokemonSprites[mon].FrontDefault
+                      }
+                      onClick={() => clickPokemon(mon)}
+                    />
+                  </div>
+                  <div className="pokedex-footer">
+                    {Object.keys(pokemonTypingChart).includes(mon) ? (
+                      pokemonTypingChart[mon].map((mon_type) => (
+                        <img
+                          className="pokedex-type"
+                          src={allTypeLogos[mon_type].TypeTextLogo}
+                          onClick={() => clickType(mon_type)}
+                        />
+                      ))
+                    ) : (
+                      <p></p>
+                    )}
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
           <div className="types-moves">
             <h1>Moves</h1>

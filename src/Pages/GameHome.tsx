@@ -1,7 +1,8 @@
 import { React, useState, useMemo } from "react";
 import gamesLogos from "../data/gameNameData/gamesLogos.json";
-import gamesPerGen from "../data/gameNameData/gamesPerGen.json";
+import gameVersionsPerGen from "../data/gameNameData/gameVersionsPerGen.json";
 import gamesAPIToDisplay from "../data/gameNameData/gamesAPIToDisplay.json";
+import "../PageStyle/Games.css";
 
 function GameHome({ clickGame }) {
   const genNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -13,14 +14,30 @@ function GameHome({ clickGame }) {
         {genNumbers.map((num) => (
           <div>
             <h2>Generation: {num}</h2>
-            <ul>
-              {gamesPerGen[num].map((game) => (
-                <li>
-                  <h4>{gamesAPIToDisplay[game]}</h4>
-                  <img src={gamesLogos[game]} onClick={() => clickGame(game)} />
-                </li>
+            <div>
+              {gameVersionsPerGen[num].map((versions) => (
+                <div>
+                  <div className="version-groups">
+                    {versions.map((game) => (
+                      <div className="version-items">
+                        <div className="version-header">
+                          <h4 className="game-name version-header-item">
+                            {gamesAPIToDisplay[game]}
+                          </h4>
+                        </div>
+                        <div className="version-body">
+                          <img
+                            className="game-art version-body-item"
+                            src={gamesLogos[game]}
+                            onClick={() => clickGame(game)}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
       </div>

@@ -18,6 +18,8 @@ import encounterMethodsAPIToDisplay from "../data/encounterMethodData/encounterM
 import gamesAPIToDisplay from "../data/gameNameData/gamesAPIToDisplay.json";
 import locationNamesAPIToDisplay from "../data/locationData/locationNamesAPIToDisplay.json";
 import EntryHome from "./EntryHome.tsx";
+import nationalPokedexNames from "../data/pokemonData/nationalPokedexNames.json";
+import "../PageStyle/Moves.css";
 
 function Entry({
   curPokemon,
@@ -37,57 +39,119 @@ function Entry({
   function fetchMoveData(APImove) {
     console.log("move data");
     return (
-      <div>
-        <div className="name" onClick={() => clickMove(APImove)}>
-          <h1>{moveAPIToDisplay[APImove]}</h1>
-        </div>
+      <div className="move-entry-box">
+        <div className="move-display">
+          <div className="move-display-header">
+            <div
+              className="move-display-name move-display-header-item"
+              onClick={() => clickMove(APImove)}
+            >
+              <div>{moveAPIToDisplay[APImove]}</div>
+            </div>
+            <div className="move-display-damage-class move-display-header-item">
+              <img
+                className="move-display-damage-class-logo"
+                src={
+                  allDamageClassLogos[allMoveData[APImove]["Damage Class"]]
+                    .TypeLogoBDSP
+                }
+              />
+            </div>
+          </div>
+          <div className="move-display-footer">
+            <div className="move-display-typing move-display-footer-item">
+              <img
+                className="move-display-types"
+                src={allTypeLogos[allMoveData[APImove].Type].TypeTextLogo}
+                onClick={() => clickType(allMoveData[APImove].Type)}
+              />
+            </div>
 
-        <div className="accuracy">
-          <h1>Accuracy</h1>
-          <h3>{allMoveData[APImove].Accuracy}</h3>
+            <div className="move-display-pp move-display-footer-item">
+              <div className="move-display-footer-subitem move-display-font">
+                PP
+              </div>
+              <div className="move-display-footer-subitem move-display-font">
+                {allMoveData[APImove].PP}/{allMoveData[APImove].PP}
+              </div>
+            </div>
+          </div>
         </div>
+        <div className="move-entry">
+          <div className="move-header">
+            <div
+              className="move-name move-header-item"
+              onClick={() => clickMove(APImove)}
+            >
+              <div>{moveAPIToDisplay[APImove]}</div>
+            </div>
 
-        <div className="effect-chance">
-          <h1>Effect Chance</h1>
-          <h3>{allMoveData[APImove]["Effect Chance"]}</h3>
-        </div>
+            <div className="move-typing move-header-item">
+              <img
+                className="move-types"
+                src={allTypeLogos[allMoveData[APImove].Type].TypeTextLogo}
+                onClick={() => clickType(allMoveData[APImove].Type)}
+              />
+            </div>
 
-        <div className="damage-class">
-          <h1>Damage Class</h1>
-          <img
-            src={
-              allDamageClassLogos[allMoveData[APImove]["Damage Class"]]
-                .TypeLogoBDSP
-            }
-          />
-        </div>
+            <div className="move-pp move-header-item">
+              <div className="move-header-subitem move-font-title">PP</div>
+              <div className="move-header-subitem move-font-text">
+                {allMoveData[APImove].PP}
+              </div>
+            </div>
 
-        <div className="effects">
-          <h1>Effects</h1>
-          <h3>{allMoveData[APImove].Effects}</h3>
-        </div>
+            <div className="move-power move-header-item">
+              <div className="move-header-subitem move-font-title">Power</div>
+              <div className="move-header-subitem move-font-text">
+                {allMoveData[APImove].Power}
+              </div>
+            </div>
 
-        <div className="power">
-          <h1>Power</h1>
-          <h3>{allMoveData[APImove].Power}</h3>
-        </div>
+            <div className="move-accuracy move-header-item">
+              <div className="move-header-subitem move-font-title">
+                Accuracy
+              </div>
+              <div className="move-header-subitem move-font-text">
+                {allMoveData[APImove].Accuracy}
+              </div>
+            </div>
 
-        <div className="pp">
-          <h1>PP</h1>
-          <h3>{allMoveData[APImove].PP}</h3>
-        </div>
+            <div className="move-damage-class move-header-item">
+              <img
+                className="move-damage-class-logo"
+                src={
+                  allDamageClassLogos[allMoveData[APImove]["Damage Class"]]
+                    .TypeLogoBDSP
+                }
+              />
+            </div>
+          </div>
 
-        <div className="target">
-          <h1>Target</h1>
-          <h3>{moveTargetAPIToDisplay[allMoveData[APImove].Target]}</h3>
-        </div>
+          <div className="move-footer">
+            <div className="move-effects move-footer-item">
+              <div className="move-footer-subitem move-font-title">Effects</div>
+              <div className="move-footer-subitem move-font-text">
+                {allMoveData[APImove].Effects}
+              </div>
+            </div>
 
-        <div className="typing">
-          <h1>Type</h1>
-          <img
-            src={allTypeLogos[allMoveData[APImove].Type].TypeTextLogo}
-            onClick={() => clickType(allMoveData[APImove].Type)}
-          />
+            <div className="move-effect-chance move-footer-item">
+              <div className="move-footer-subitem  move-font-title">
+                Effect Chance
+              </div>
+              <div className="move-footer-subitem move-font-text">
+                {allMoveData[APImove]["Effect Chance"]}
+              </div>
+            </div>
+
+            <div className="move-target move-footer-item">
+              <div className="move-footer-subitem move-font-title">Target</div>
+              <div className="move-footer-subitem move-font-text">
+                {moveTargetAPIToDisplay[allMoveData[APImove].Target]}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -335,7 +399,12 @@ function Entry({
       ) : (
         <>
           <div>
-            <h1>{pokemonAPIToDisplay[curPokemon]}'s Entry Page</h1>
+            <h1>
+              {Object.keys(nationalPokedexNames).includes(curPokemon)
+                ? nationalPokedexNames[curPokemon]
+                : pokemonAPIToDisplay[curPokemon]}
+              's Entry Page
+            </h1>
           </div>
 
           {value.length > 0 ? (
@@ -412,11 +481,11 @@ function Entry({
               </div>
               <div className="moves">
                 <h2>Moves</h2>
-                <ul>
+                <div className="move-container">
                   {value[5].map((name) => (
-                    <li>{name}</li>
+                    <div>{name}</div>
                   ))}
-                </ul>
+                </div>
               </div>
               <div className="locations">
                 <h2>Locations</h2>

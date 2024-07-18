@@ -115,7 +115,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <>
+    <div className="page">
       <Navbar
         setPokemon={setPokemon}
         pageState={pageState}
@@ -321,7 +321,7 @@ const App: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

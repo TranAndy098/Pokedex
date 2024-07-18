@@ -4273,7 +4273,7 @@
   },
   "deoxys-normal": {
     "Name": "deoxys-normal",
-    "EntryMainName": "deoxys",
+    "EntryMainName": "deoxys-normal",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/386.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/386.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/386.png",
@@ -4281,7 +4281,7 @@
   },
   "deoxys-attack": {
     "Name": "deoxys-attack",
-    "EntryMainName": "deoxys",
+    "EntryMainName": "deoxys-normal",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10001.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/386-attack.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/386-attack.png",
@@ -4289,7 +4289,7 @@
   },
   "deoxys-defense": {
     "Name": "deoxys-defense",
-    "EntryMainName": "deoxys",
+    "EntryMainName": "deoxys-normal",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10002.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/386-defense.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/386-defense.png",
@@ -4297,7 +4297,7 @@
   },
   "deoxys-speed": {
     "Name": "deoxys-speed",
-    "EntryMainName": "deoxys",
+    "EntryMainName": "deoxys-normal",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10003.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/386-speed.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/386-speed.png",
@@ -4537,7 +4537,7 @@
   },
   "wormadam-plant": {
     "Name": "wormadam-plant",
-    "EntryMainName": "wormadam",
+    "EntryMainName": "wormadam-plant",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/413.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/413.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/413.png",
@@ -4545,7 +4545,7 @@
   },
   "wormadam-sandy": {
     "Name": "wormadam-sandy",
-    "EntryMainName": "wormadam",
+    "EntryMainName": "wormadam-plant",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10004.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/413-sandy.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/413-sandy.png",
@@ -4553,7 +4553,7 @@
   },
   "wormadam-trash": {
     "Name": "wormadam-trash",
-    "EntryMainName": "wormadam",
+    "EntryMainName": "wormadam-plant",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10005.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/413-trash.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/413-trash.png",
@@ -5313,7 +5313,7 @@
   },
   "giratina-altered": {
     "Name": "giratina-altered",
-    "EntryMainName": "giratina",
+    "EntryMainName": "giratina-altered",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/487.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/487.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/487.png",
@@ -5321,7 +5321,7 @@
   },
   "giratina-origin": {
     "Name": "giratina-origin",
-    "EntryMainName": "giratina",
+    "EntryMainName": "giratina-altered",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10007.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/487-origin.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/487-origin.png",
@@ -5361,7 +5361,7 @@
   },
   "shaymin-land": {
     "Name": "shaymin-land",
-    "EntryMainName": "shaymin",
+    "EntryMainName": "shaymin-land",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/492.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/492.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/492.png",
@@ -5369,7 +5369,7 @@
   },
   "shaymin-sky": {
     "Name": "shaymin-sky",
-    "EntryMainName": "shaymin",
+    "EntryMainName": "shaymin-land",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10006.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/492-sky.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/492-sky.png",
@@ -6009,7 +6009,7 @@
   },
   "basculin-red-striped": {
     "Name": "basculin-red-striped",
-    "EntryMainName": "basculin",
+    "EntryMainName": "basculin-red-striped",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/550.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/550.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/550.png",
@@ -6017,7 +6017,7 @@
   },
   "basculin-blue-striped": {
     "Name": "basculin-blue-striped",
-    "EntryMainName": "basculin",
+    "EntryMainName": "basculin-red-striped",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10016.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/550-blue-striped.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/550-blue-striped.png",
@@ -6025,7 +6025,7 @@
   },
   "basculin-white-striped": {
     "Name": "basculin-white-striped",
-    "EntryMainName": "basculin",
+    "EntryMainName": "basculin-red-striped",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10247.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10247.png",
@@ -6073,7 +6073,7 @@
   },
   "darmanitan-standard": {
     "Name": "darmanitan-standard",
-    "EntryMainName": "darmanitan",
+    "EntryMainName": "darmanitan-standard",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/555.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/555.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/555.png",
@@ -6081,7 +6081,7 @@
   },
   "darmanitan-zen": {
     "Name": "darmanitan-zen",
-    "EntryMainName": "darmanitan",
+    "EntryMainName": "darmanitan-standard",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10017.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/555-zen.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/555-zen.png",
@@ -6089,7 +6089,7 @@
   },
   "darmanitan-galar-standard": {
     "Name": "darmanitan-galar-standard",
-    "EntryMainName": "darmanitan",
+    "EntryMainName": "darmanitan-standard",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10177.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10177.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10177.png",
@@ -6097,7 +6097,7 @@
   },
   "darmanitan-galar-zen": {
     "Name": "darmanitan-galar-zen",
-    "EntryMainName": "darmanitan",
+    "EntryMainName": "darmanitan-standard",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10178.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10178.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10178.png",
@@ -6897,7 +6897,7 @@
   },
   "tornadus-incarnate": {
     "Name": "tornadus-incarnate",
-    "EntryMainName": "tornadus",
+    "EntryMainName": "tornadus-incarnate",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/641.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/641.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/641.png",
@@ -6905,7 +6905,7 @@
   },
   "tornadus-therian": {
     "Name": "tornadus-therian",
-    "EntryMainName": "tornadus",
+    "EntryMainName": "tornadus-incarnate",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10019.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/641-therian.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/641-therian.png",
@@ -6913,7 +6913,7 @@
   },
   "thundurus-incarnate": {
     "Name": "thundurus-incarnate",
-    "EntryMainName": "thundurus",
+    "EntryMainName": "thundurus-incarnate",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/642.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/642.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/642.png",
@@ -6921,7 +6921,7 @@
   },
   "thundurus-therian": {
     "Name": "thundurus-therian",
-    "EntryMainName": "thundurus",
+    "EntryMainName": "thundurus-incarnate",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10020.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/642-therian.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/642-therian.png",
@@ -6945,7 +6945,7 @@
   },
   "landorus-incarnate": {
     "Name": "landorus-incarnate",
-    "EntryMainName": "landorus",
+    "EntryMainName": "landorus-incarnate",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/645.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/645.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/645.png",
@@ -6953,7 +6953,7 @@
   },
   "landorus-therian": {
     "Name": "landorus-therian",
-    "EntryMainName": "landorus",
+    "EntryMainName": "landorus-incarnate",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10021.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/645-therian.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/645-therian.png",
@@ -6985,7 +6985,7 @@
   },
   "keldeo-ordinary": {
     "Name": "keldeo-ordinary",
-    "EntryMainName": "keldeo",
+    "EntryMainName": "keldeo-ordinary",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/647.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/647.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/647.png",
@@ -6993,7 +6993,7 @@
   },
   "keldeo-resolute": {
     "Name": "keldeo-resolute",
-    "EntryMainName": "keldeo",
+    "EntryMainName": "keldeo-ordinary",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10024.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/647-resolute.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/647-resolute.png",
@@ -7001,7 +7001,7 @@
   },
   "meloetta-aria": {
     "Name": "meloetta-aria",
-    "EntryMainName": "meloetta",
+    "EntryMainName": "meloetta-aria",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/648.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/648.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/648.png",
@@ -7009,7 +7009,7 @@
   },
   "meloetta-pirouette": {
     "Name": "meloetta-pirouette",
-    "EntryMainName": "meloetta",
+    "EntryMainName": "meloetta-aria",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10018.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/648-pirouette.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/648-pirouette.png",
@@ -7985,7 +7985,7 @@
   },
   "meowstic-male": {
     "Name": "meowstic-male",
-    "EntryMainName": "meowstic",
+    "EntryMainName": "meowstic-male",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/678.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/678.png",
@@ -7993,7 +7993,7 @@
   },
   "meowstic-female": {
     "Name": "meowstic-female",
-    "EntryMainName": "meowstic",
+    "EntryMainName": "meowstic-male",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10025.png",
     "BackDefault": null,
     "FrontShiny": null,
@@ -8017,7 +8017,7 @@
   },
   "aegislash-shield": {
     "Name": "aegislash-shield",
-    "EntryMainName": "aegislash",
+    "EntryMainName": "aegislash-shield",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/681.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/681.png",
@@ -8025,7 +8025,7 @@
   },
   "aegislash-blade": {
     "Name": "aegislash-blade",
-    "EntryMainName": "aegislash",
+    "EntryMainName": "aegislash-shield",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10026.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10026.png",
@@ -8273,7 +8273,7 @@
   },
   "pumpkaboo-average": {
     "Name": "pumpkaboo-average",
-    "EntryMainName": "pumpkaboo",
+    "EntryMainName": "pumpkaboo-average",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/710.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/710.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/710.png",
@@ -8281,7 +8281,7 @@
   },
   "pumpkaboo-small": {
     "Name": "pumpkaboo-small",
-    "EntryMainName": "pumpkaboo",
+    "EntryMainName": "pumpkaboo-average",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10027.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/710-small.png",
@@ -8289,7 +8289,7 @@
   },
   "pumpkaboo-large": {
     "Name": "pumpkaboo-large",
-    "EntryMainName": "pumpkaboo",
+    "EntryMainName": "pumpkaboo-average",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10028.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/710-large.png",
@@ -8297,7 +8297,7 @@
   },
   "pumpkaboo-super": {
     "Name": "pumpkaboo-super",
-    "EntryMainName": "pumpkaboo",
+    "EntryMainName": "pumpkaboo-average",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10029.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/710-super.png",
@@ -8305,7 +8305,7 @@
   },
   "gourgeist-average": {
     "Name": "gourgeist-average",
-    "EntryMainName": "gourgeist",
+    "EntryMainName": "gourgeist-average",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/711.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/711.png",
@@ -8313,7 +8313,7 @@
   },
   "gourgeist-small": {
     "Name": "gourgeist-small",
-    "EntryMainName": "gourgeist",
+    "EntryMainName": "gourgeist-average",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10030.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/711-small.png",
@@ -8321,7 +8321,7 @@
   },
   "gourgeist-large": {
     "Name": "gourgeist-large",
-    "EntryMainName": "gourgeist",
+    "EntryMainName": "gourgeist-average",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10031.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/711-large.png",
@@ -8329,7 +8329,7 @@
   },
   "gourgeist-super": {
     "Name": "gourgeist-super",
-    "EntryMainName": "gourgeist",
+    "EntryMainName": "gourgeist-average",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10032.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/711-super.png",
@@ -8657,7 +8657,7 @@
   },
   "oricorio-baile": {
     "Name": "oricorio-baile",
-    "EntryMainName": "oricorio",
+    "EntryMainName": "oricorio-baile",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/741.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/741.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/741.png",
@@ -8665,7 +8665,7 @@
   },
   "oricorio-pom-pom": {
     "Name": "oricorio-pom-pom",
-    "EntryMainName": "oricorio",
+    "EntryMainName": "oricorio-baile",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10123.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10123.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10123.png",
@@ -8673,7 +8673,7 @@
   },
   "oricorio-pau": {
     "Name": "oricorio-pau",
-    "EntryMainName": "oricorio",
+    "EntryMainName": "oricorio-baile",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10124.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10124.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10124.png",
@@ -8681,7 +8681,7 @@
   },
   "oricorio-sensu": {
     "Name": "oricorio-sensu",
-    "EntryMainName": "oricorio",
+    "EntryMainName": "oricorio-baile",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10125.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10125.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10125.png",
@@ -8729,7 +8729,7 @@
   },
   "lycanroc-midday": {
     "Name": "lycanroc-midday",
-    "EntryMainName": "lycanroc",
+    "EntryMainName": "lycanroc-midday",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/745.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/745.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/745.png",
@@ -8737,7 +8737,7 @@
   },
   "lycanroc-midnight": {
     "Name": "lycanroc-midnight",
-    "EntryMainName": "lycanroc",
+    "EntryMainName": "lycanroc-midday",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10126.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10126.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10126.png",
@@ -8745,7 +8745,7 @@
   },
   "lycanroc-dusk": {
     "Name": "lycanroc-dusk",
-    "EntryMainName": "lycanroc",
+    "EntryMainName": "lycanroc-midday",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10152.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10152.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10152.png",
@@ -8753,7 +8753,7 @@
   },
   "wishiwashi-solo": {
     "Name": "wishiwashi-solo",
-    "EntryMainName": "wishiwashi",
+    "EntryMainName": "wishiwashi-solo",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/746.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/746.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/746.png",
@@ -8761,7 +8761,7 @@
   },
   "wishiwashi-school": {
     "Name": "wishiwashi-school",
-    "EntryMainName": "wishiwashi",
+    "EntryMainName": "wishiwashi-solo",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10127.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10127.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10127.png",
@@ -9153,7 +9153,7 @@
   },
   "minior-red-meteor": {
     "Name": "minior-red-meteor",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/774.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/774.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/774.png",
@@ -9161,7 +9161,7 @@
   },
   "minior-orange-meteor": {
     "Name": "minior-orange-meteor",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10130.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/774-orange-meteor.png",
@@ -9169,7 +9169,7 @@
   },
   "minior-yellow-meteor": {
     "Name": "minior-yellow-meteor",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10131.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/774-yellow-meteor.png",
@@ -9177,7 +9177,7 @@
   },
   "minior-green-meteor": {
     "Name": "minior-green-meteor",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10132.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/774-green-meteor.png",
@@ -9185,7 +9185,7 @@
   },
   "minior-blue-meteor": {
     "Name": "minior-blue-meteor",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10133.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/774-blue-meteor.png",
@@ -9193,7 +9193,7 @@
   },
   "minior-indigo-meteor": {
     "Name": "minior-indigo-meteor",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10134.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/774-indigo-meteor.png",
@@ -9201,7 +9201,7 @@
   },
   "minior-violet-meteor": {
     "Name": "minior-violet-meteor",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10135.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/774-violet-meteor.png",
@@ -9209,7 +9209,7 @@
   },
   "minior-red": {
     "Name": "minior-red",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10136.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10136.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10136.png",
@@ -9217,7 +9217,7 @@
   },
   "minior-orange": {
     "Name": "minior-orange",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10137.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10137.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10137.png",
@@ -9225,7 +9225,7 @@
   },
   "minior-yellow": {
     "Name": "minior-yellow",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10138.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10138.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10138.png",
@@ -9233,7 +9233,7 @@
   },
   "minior-green": {
     "Name": "minior-green",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10139.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10139.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10139.png",
@@ -9241,7 +9241,7 @@
   },
   "minior-blue": {
     "Name": "minior-blue",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10140.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10140.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10140.png",
@@ -9249,7 +9249,7 @@
   },
   "minior-indigo": {
     "Name": "minior-indigo",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10141.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10141.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10141.png",
@@ -9257,7 +9257,7 @@
   },
   "minior-violet": {
     "Name": "minior-violet",
-    "EntryMainName": "minior",
+    "EntryMainName": "minior-red-meteor",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10142.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10142.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10142.png",
@@ -9297,7 +9297,7 @@
   },
   "mimikyu-disguised": {
     "Name": "mimikyu-disguised",
-    "EntryMainName": "mimikyu",
+    "EntryMainName": "mimikyu-disguised",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/778.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/778.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/778.png",
@@ -9305,7 +9305,7 @@
   },
   "mimikyu-busted": {
     "Name": "mimikyu-busted",
-    "EntryMainName": "mimikyu",
+    "EntryMainName": "mimikyu-disguised",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10143.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10143.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10143.png",
@@ -9313,7 +9313,7 @@
   },
   "mimikyu-totem-disguised": {
     "Name": "mimikyu-totem-disguised",
-    "EntryMainName": "mimikyu",
+    "EntryMainName": "mimikyu-disguised",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10144.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/778-totem-disguised.png",
@@ -9321,7 +9321,7 @@
   },
   "mimikyu-totem-busted": {
     "Name": "mimikyu-totem-busted",
-    "EntryMainName": "mimikyu",
+    "EntryMainName": "mimikyu-disguised",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10145.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/778-totem-busted.png",
@@ -9369,7 +9369,7 @@
   },
   "kommo-o": {
     "Name": "kommo-o",
-    "EntryMainName": "kommo",
+    "EntryMainName": "kommo-o",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/784.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/784.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/784.png",
@@ -9377,7 +9377,7 @@
   },
   "kommo-o-totem": {
     "Name": "kommo-o-totem",
-    "EntryMainName": "kommo",
+    "EntryMainName": "kommo-o",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/784-totem.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/784-totem.png",
@@ -10033,7 +10033,7 @@
   },
   "toxtricity-amped": {
     "Name": "toxtricity-amped",
-    "EntryMainName": "toxtricity",
+    "EntryMainName": "toxtricity-amped",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/849.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/849.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/849.png",
@@ -10041,7 +10041,7 @@
   },
   "toxtricity-low-key": {
     "Name": "toxtricity-low-key",
-    "EntryMainName": "toxtricity",
+    "EntryMainName": "toxtricity-amped",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10184.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10184.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10184.png",
@@ -10049,7 +10049,7 @@
   },
   "toxtricity-amped-gmax": {
     "Name": "toxtricity-amped-gmax",
-    "EntryMainName": "toxtricity",
+    "EntryMainName": "toxtricity-amped",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10219.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10219.png",
@@ -10057,7 +10057,7 @@
   },
   "toxtricity-low-key-gmax": {
     "Name": "toxtricity-low-key-gmax",
-    "EntryMainName": "toxtricity",
+    "EntryMainName": "toxtricity-amped",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10228.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10228.png",
@@ -10401,7 +10401,7 @@
   },
   "eiscue-ice": {
     "Name": "eiscue-ice",
-    "EntryMainName": "eiscue",
+    "EntryMainName": "eiscue-ice",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/875.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/875.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/875.png",
@@ -10409,7 +10409,7 @@
   },
   "eiscue-noice": {
     "Name": "eiscue-noice",
-    "EntryMainName": "eiscue",
+    "EntryMainName": "eiscue-ice",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10185.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10185.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10185.png",
@@ -10417,7 +10417,7 @@
   },
   "indeedee-male": {
     "Name": "indeedee-male",
-    "EntryMainName": "indeedee",
+    "EntryMainName": "indeedee-male",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/876.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/876.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/876.png",
@@ -10425,7 +10425,7 @@
   },
   "indeedee-female": {
     "Name": "indeedee-female",
-    "EntryMainName": "indeedee",
+    "EntryMainName": "indeedee-male",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10186.png",
     "BackDefault": null,
     "FrontShiny": null,
@@ -10433,7 +10433,7 @@
   },
   "morpeko-full-belly": {
     "Name": "morpeko-full-belly",
-    "EntryMainName": "morpeko",
+    "EntryMainName": "morpeko-full-belly",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/877.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/877.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/877.png",
@@ -10441,7 +10441,7 @@
   },
   "morpeko-hangry": {
     "Name": "morpeko-hangry",
-    "EntryMainName": "morpeko",
+    "EntryMainName": "morpeko-full-belly",
     "FrontDefault": null,
     "BackDefault": null,
     "FrontShiny": null,
@@ -10601,7 +10601,7 @@
   },
   "urshifu-single-strike": {
     "Name": "urshifu-single-strike",
-    "EntryMainName": "urshifu",
+    "EntryMainName": "urshifu-single-strike",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/892.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/892.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/892.png",
@@ -10609,7 +10609,7 @@
   },
   "urshifu-rapid-strike": {
     "Name": "urshifu-rapid-strike",
-    "EntryMainName": "urshifu",
+    "EntryMainName": "urshifu-single-strike",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10191.png",
     "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10191.png",
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10191.png",
@@ -10617,7 +10617,7 @@
   },
   "urshifu-single-strike-gmax": {
     "Name": "urshifu-single-strike-gmax",
-    "EntryMainName": "urshifu",
+    "EntryMainName": "urshifu-single-strike",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10226.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10226.png",
@@ -10625,7 +10625,7 @@
   },
   "urshifu-rapid-strike-gmax": {
     "Name": "urshifu-rapid-strike-gmax",
-    "EntryMainName": "urshifu",
+    "EntryMainName": "urshifu-single-strike",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10227.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10227.png",
@@ -10737,7 +10737,7 @@
   },
   "basculegion-male": {
     "Name": "basculegion-male",
-    "EntryMainName": "basculegion",
+    "EntryMainName": "basculegion-male",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/902.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/902.png",
@@ -10745,7 +10745,7 @@
   },
   "basculegion-female": {
     "Name": "basculegion-female",
-    "EntryMainName": "basculegion",
+    "EntryMainName": "basculegion-male",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10248.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10248.png",
@@ -10769,7 +10769,7 @@
   },
   "enamorus-incarnate": {
     "Name": "enamorus-incarnate",
-    "EntryMainName": "enamorus",
+    "EntryMainName": "enamorus-incarnate",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/905.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/905.png",
@@ -10777,7 +10777,7 @@
   },
   "enamorus-therian": {
     "Name": "enamorus-therian",
-    "EntryMainName": "enamorus",
+    "EntryMainName": "enamorus-incarnate",
     "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10249.png",
     "BackDefault": null,
     "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10249.png",

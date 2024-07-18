@@ -7,6 +7,10 @@
   background-color: #add8e6;
   position: relative;
 }
+.page {
+  margin: 1px;
+  overflow-x: hidden;
+}
 
 .content {
   position: absolute;

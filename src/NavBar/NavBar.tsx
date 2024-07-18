@@ -42,6 +42,8 @@ const Navbar: React.FC = ({
     setDropGameForGen("");
     setPageState(value);
     setIsActive(!isActive);
+
+    window.scrollTo(0, 0);
   }
 
   return (

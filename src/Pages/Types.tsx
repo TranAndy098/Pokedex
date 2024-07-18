@@ -10,6 +10,9 @@ import typeAPIToDisplay from "../data/typeData/typeAPIToDisplay.json";
 import moveAPIToDisplay from "../data/moveData/moveAPIToDisplay.json";
 import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
 import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
+import "../PageStyle/MovesForTypes.css";
+import allMoveData from "../data/moveData/allMoveData.json";
+import allDamageClassLogos from "../data/moveData/allDamageClassLogos.json";
 
 function Types({
   curType,
@@ -26,8 +29,9 @@ function Types({
   console.log(curType);
 
   setType(curType.toLowerCase());
-
+  const [typePokemonNames, setTypePokemonNames] = useState([]);
   const [typePokemon, setTypePokemon] = useState([]);
+  const [typePokemonLength, setTypePokemonLength] = useState([]);
   const [typeMoves, setTypeMoves] = useState([]);
 
   const [typeTo, setTypeTo] = useState("");
@@ -69,19 +73,44 @@ function Types({
       });
 
       let cur = [];
+      let names = [];
+      let indexes = [];
 
       // pokemon
       for (let i = 0; i < response.data.pokemon.length; i++) {
         let currentPokemonForType = response.data.pokemon[i].pokemon.name;
 
         if (Object.keys(allPokemonSprites).includes(currentPokemonForType)) {
-          cur.push(currentPokemonForType);
+          if (allPokemonSprites[currentPokemonForType].FrontDefault !== null) {
+            // could add "allPokemonSprites[currentPokemonForType].FrontShiny !== null;" to make sure shiny has sprite too
+            cur.push(currentPokemonForType);
+          } else {
+            cur.push(allPokemonSprites[currentPokemonForType].EntryMainName);
+          }
+          names.push(currentPokemonForType);
         } else {
           console.log("Type: Cannot Find Pokemon for", currentPokemonForType);
         }
       }
 
+      for (let i = 0; i < cur.length; i++) {
+        console.log(cur[i]);
+        console.log(allPokemonSprites[cur[i]].FrontDefault);
+        console.log(allPokemonSprites[cur[i]].FrontShiny);
+      }
+      console.log(cur);
+      for (let i = 0; i < names.length; i++) {
+        console.log(names[i]);
+        console.log(pokemonTypingChart[names[i]]);
+      }
+      console.log(names);
+
+      for (let i = 0; i < names.length; i++) {
+        indexes.push(i);
+      }
       setTypePokemon(cur);
+      setTypePokemonNames(names);
+      setTypePokemonLength(indexes);
 
       cur = [];
 
@@ -256,39 +285,57 @@ function Types({
           <div className="types-pokemon">
             <h1>Pokemon</h1>
             <div className="pokedex-container">
-              {typePokemon.map((mon) => (
-                <div className="pokedex-entry">
-                  <div className="pokedex-header">
-                    <h2
-                      className="pokedex-name pokedex-header-item"
-                      onClick={() => clickPokemon(mon)}
-                    >
-                      {pokemonAPIToDisplay[mon]}
-                    </h2>
-                  </div>
-                  <div className="pokedex-body">
+              {typePokemonLength.map((mon_num) => (
+                <div className="pokedex-entry-box">
+                  <div className="pokedex-display">
                     <img
-                      className="pokedex-sprite"
+                      className="pokedex-sprite-display"
                       src={
                         shinyMode
-                          ? allPokemonSprites[mon].FrontShiny
-                          : allPokemonSprites[mon].FrontDefault
+                          ? allPokemonSprites[typePokemon[mon_num]].FrontShiny
+                          : allPokemonSprites[typePokemon[mon_num]].FrontDefault
                       }
-                      onClick={() => clickPokemon(mon)}
+                      onClick={() => clickPokemon(typePokemon[mon_num])}
                     />
                   </div>
-                  <div className="pokedex-footer">
-                    {Object.keys(pokemonTypingChart).includes(mon) ? (
-                      pokemonTypingChart[mon].map((mon_type) => (
-                        <img
-                          className="pokedex-type"
-                          src={allTypeLogos[mon_type].TypeTextLogo}
-                          onClick={() => clickType(mon_type)}
-                        />
-                      ))
-                    ) : (
-                      <p></p>
-                    )}
+                  <div className="pokedex-entry">
+                    <div className="pokedex-header">
+                      <h2
+                        className="pokedex-name pokedex-header-item"
+                        onClick={() => clickPokemon(typePokemon[mon_num])}
+                      >
+                        {pokemonAPIToDisplay[typePokemonNames[mon_num]]}
+                      </h2>
+                    </div>
+                    <div className="pokedex-body">
+                      <img
+                        className="pokedex-sprite"
+                        src={
+                          shinyMode
+                            ? allPokemonSprites[typePokemon[mon_num]].FrontShiny
+                            : allPokemonSprites[typePokemon[mon_num]]
+                                .FrontDefault
+                        }
+                        onClick={() => clickPokemon(typePokemon[mon_num])}
+                      />
+                    </div>
+                    <div className="pokedex-footer">
+                      {Object.keys(pokemonTypingChart).includes(
+                        typePokemon[mon_num]
+                      ) ? (
+                        pokemonTypingChart[typePokemonNames[mon_num]].map(
+                          (mon_type) => (
+                            <img
+                              className="pokedex-type"
+                              src={allTypeLogos[mon_type].TypeTextLogo}
+                              onClick={() => clickType(mon_type)}
+                            />
+                          )
+                        )
+                      ) : (
+                        <p></p>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -296,13 +343,52 @@ function Types({
           </div>
           <div className="types-moves">
             <h1>Moves</h1>
-            <ul>
+            <div className="move-type-container">
               {typeMoves.map((moves) => (
-                <li onClick={() => clickMove(moves)}>
-                  {moveAPIToDisplay[moves]}
-                </li>
+                <div className="move-type-entry-box">
+                  <div className="move-type-display">
+                    <div className="move-type-display-header">
+                      <div
+                        className="move-type-display-name move-type-display-header-item"
+                        onClick={() => clickMove(moves)}
+                      >
+                        <div>{moveAPIToDisplay[moves]}</div>
+                      </div>
+                      <div className="move-type-display-damage-class move-type-display-header-item">
+                        <img
+                          className="move-type-display-damage-class-logo"
+                          src={
+                            allDamageClassLogos[
+                              allMoveData[moves]["Damage Class"]
+                            ].TypeLogoBDSP
+                          }
+                        />
+                      </div>
+                    </div>
+                    <div className="move-type-display-footer">
+                      <div className="move-type-display-typing move-type-display-footer-item">
+                        <img
+                          className="move-type-display-types"
+                          src={
+                            allTypeLogos[allMoveData[moves].Type].TypeTextLogo
+                          }
+                          onClick={() => clickType(allMoveData[moves].Type)}
+                        />
+                      </div>
+
+                      <div className="move-type-display-pp move-type-display-footer-item">
+                        <div className="move-type-display-footer-subitem move-type-display-font">
+                          PP
+                        </div>
+                        <div className="move-type-display-footer-subitem move-type-display-font">
+                          {allMoveData[moves].PP}/{allMoveData[moves].PP}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       ) : (

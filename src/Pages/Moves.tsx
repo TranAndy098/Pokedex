@@ -20,7 +20,10 @@ function Moves({
   shinyMode,
 }) {
   console.log(curMove);
+
+  const [movePokemonNames, setMovePokemonNames] = useState([]);
   const [movePokemon, setMovePokemon] = useState([]);
+  const [movePokemonLength, setMovePokemonLength] = useState([]);
   const [moveData, setMoveData] = useState("");
 
   async function fetchData(move) {
@@ -35,17 +38,35 @@ function Moves({
       });
 
       let cur = [];
+      let names = [];
+      let indexes = [];
 
       // learned by pokemon
       for (let i = 0; i < response.data.learned_by_pokemon.length; i++) {
         let currentPokemonForMove = response.data.learned_by_pokemon[i].name;
 
         if (Object.keys(allPokemonSprites).includes(currentPokemonForMove)) {
-          cur.push(currentPokemonForMove);
+          if (
+            allPokemonSprites[currentPokemonForMove].FrontDefault !== null &&
+            allPokemonSprites[currentPokemonForMove].FrontShiny !== null
+          ) {
+            cur.push(currentPokemonForMove);
+          } else {
+            cur.push(allPokemonSprites[currentPokemonForMove].EntryMainName);
+          }
+          names.push(currentPokemonForMove);
         } else {
           console.log("Move: Cannot Find Sprite for", currentPokemonForMove);
         }
       }
+
+      for (let i = 0; i < names.length; i++) {
+        indexes.push(i);
+      }
+
+      setMovePokemon(cur);
+      setMovePokemonNames(names);
+      setMovePokemonLength(indexes);
       let moveInfo = (
         <div>
           <div className="name">
@@ -102,7 +123,6 @@ function Moves({
         </div>
       );
 
-      setMovePokemon(cur);
       setMoveData(moveInfo);
 
       return cur;
@@ -130,40 +150,58 @@ function Moves({
           <div>
             <h1>Pokemon</h1>
             <div className="pokedex-container">
-              {movePokemon.map((mon) => (
-                <div className="pokedex-entry">
-                  <div className="pokedex-header">
-                    <h2
-                      className="pokedex-name pokedex-header-item"
-                      onClick={() => clickPokemon(mon)}
-                    >
-                      {pokemonAPIToDisplay[mon]}
-                    </h2>
-                  </div>
-                  <div className="pokedex-body">
+              {movePokemonLength.map((mon_num) => (
+                <div className="pokedex-entry-box">
+                  <div className="pokedex-display">
                     <img
-                      className="pokedex-sprite"
+                      className="pokedex-sprite-display"
                       src={
                         shinyMode
-                          ? allPokemonSprites[mon].FrontShiny
-                          : allPokemonSprites[mon].FrontDefault
+                          ? allPokemonSprites[movePokemon[mon_num]].FrontShiny
+                          : allPokemonSprites[movePokemon[mon_num]].FrontDefault
                       }
-                      onClick={() => clickPokemon(mon)}
+                      onClick={() => clickPokemon(movePokemon[mon_num])}
                     />
                   </div>
+                  <div className="pokedex-entry">
+                    <div className="pokedex-header">
+                      <h2
+                        className="pokedex-name pokedex-header-item"
+                        onClick={() => clickPokemon(movePokemon[mon_num])}
+                      >
+                        {pokemonAPIToDisplay[movePokemonNames[mon_num]]}
+                      </h2>
+                    </div>
+                    <div className="pokedex-body">
+                      <img
+                        className="pokedex-sprite"
+                        src={
+                          shinyMode
+                            ? allPokemonSprites[movePokemon[mon_num]].FrontShiny
+                            : allPokemonSprites[movePokemon[mon_num]]
+                                .FrontDefault
+                        }
+                        onClick={() => clickPokemon(movePokemon[mon_num])}
+                      />
+                    </div>
 
-                  <div className="pokedex-footer">
-                    {Object.keys(pokemonTypingChart).includes(mon) ? (
-                      pokemonTypingChart[mon].map((typing) => (
-                        <img
-                          className="pokedex-type"
-                          src={allTypeLogos[typing].TypeTextLogo}
-                          onClick={() => clickType(typing)}
-                        ></img>
-                      ))
-                    ) : (
-                      <></>
-                    )}
+                    <div className="pokedex-footer">
+                      {Object.keys(pokemonTypingChart).includes(
+                        movePokemon[mon_num]
+                      ) ? (
+                        pokemonTypingChart[movePokemon[mon_num]].map(
+                          (typing) => (
+                            <img
+                              className="pokedex-type"
+                              src={allTypeLogos[typing].TypeTextLogo}
+                              onClick={() => clickType(typing)}
+                            ></img>
+                          )
+                        )
+                      ) : (
+                        <></>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}

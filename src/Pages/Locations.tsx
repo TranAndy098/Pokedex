@@ -64,6 +64,9 @@ function Locations({
       let methods = Object.keys(pokemonPerLocation[curLocation][pokemons[i]]);
 
       if (Object.keys(allPokemonSprites).includes(pokemons[i])) {
+        if (allPokemonSprites[pokemons[i]].FrontDefault === null) {
+          pokemons[i] = allPokemonSprites[pokemons[i]].EntryMainName;
+        }
         mid.push(
           <li>
             <h3 onClick={() => clickPokemon(pokemons[i])}>

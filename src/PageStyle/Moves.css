@@ -1,0 +1,241 @@
+.move-container {
+  display: flex; /* Enables Flexbox */
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+  gap: 1em;
+  background-color: white;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  border: 2px solid #73ad21;
+}
+.move-entry-box {
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 120px;
+  max-height: 120px;
+  margin: 20px;
+  display: flex;
+  border-radius: 5px;
+  border: 2px solid #73ad21;
+}
+.move-entry,
+.move-display {
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.move-display {
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 120px;
+  max-height: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid #73ad21;
+  z-index: 1;
+}
+.move-entry {
+  min-width: 500px;
+  max-width: 500px;
+  min-height: 120px;
+  max-height: 120px;
+  background-color: lightcoral;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid #73ad21;
+  display: none;
+  flex-wrap: wrap;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+.move-entry-box:hover .move-entry {
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+  transform: translate(-25%, -10%);
+}
+
+.move-entry-box:hover .move-display {
+  opacity: 1;
+  display: block;
+}
+
+.move-display-header {
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 50px;
+  max-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  border: 2px solid #73ad21;
+}
+.move-display-footer {
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 50px;
+  max-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  border: 2px solid #73ad21;
+}
+.move-display-header-item {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #73ad21;
+  flex-direction: column;
+  justify-content: center;
+}
+.move-display-header-subitem {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.move-display-footer-item {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #73ad21;
+  flex-direction: column;
+  justify-content: center;
+}
+.move-display-footer-subitem {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+.move-display-name {
+  min-width: 250px;
+  max-width: 250px;
+  font-size: 30px;
+}
+.move-display-damage-class {
+  min-width: 80px;
+  max-width: 80px;
+}
+.move-display-damage-class-logo {
+  min-width: 60px;
+  max-width: 60px;
+  min-height: 32px;
+  max-height: 32px;
+}
+.move-display-typing {
+  min-width: 200px;
+  max-width: 200px;
+}
+.move-display-types {
+  min-width: 180px;
+  max-width: 180px;
+}
+.move-display-pp {
+  min-width: 130px;
+  max-width: 130px;
+}
+.move-display-font {
+  font-size: 15px;
+  justify-content: center;
+}
+
+.move-header {
+  min-width: 500px;
+  max-width: 500px;
+  min-height: 50px;
+  max-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.move-footer {
+  min-width: 500px;
+  max-width: 500px;
+  min-height: 50px;
+  max-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.move-header-item {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #73ad21;
+  flex-direction: column;
+  justify-content: center;
+}
+.move-header-subitem {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.move-footer-item {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #73ad21;
+  flex-direction: column;
+  justify-content: center;
+}
+.move-footer-subitem {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.move-font-title {
+  font-size: 15px;
+  justify-content: center;
+}
+.move-font-text {
+  font-size: 10px;
+  justify-content: center;
+}
+
+.move-name {
+  min-width: 120px;
+  max-width: 120px;
+  font-size: 15px;
+}
+.move-typing {
+  min-width: 80px;
+  max-width: 80px;
+}
+.move-types {
+  min-width: 70px;
+  max-width: 70px;
+}
+.move-pp {
+  min-width: 50px;
+  max-width: 50px;
+}
+.move-power {
+  min-width: 70px;
+  max-width: 70px;
+}
+.move-accuracy {
+  min-width: 80px;
+  max-width: 80px;
+}
+.move-damage-class {
+  min-width: 70px;
+  max-width: 70px;
+}
+.move-damage-class-logo {
+  min-width: 60px;
+  max-width: 60px;
+  min-height: 32px;
+  max-height: 32px;
+}
+.move-effects {
+  min-width: 270px;
+  max-width: 270px;
+}
+.move-effect-chance {
+  min-width: 100px;
+  max-width: 100px;
+}
+.move-target {
+  min-width: 100px;
+  max-width: 100px;
+}

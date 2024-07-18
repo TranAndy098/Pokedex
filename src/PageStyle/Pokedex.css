@@ -7,6 +7,26 @@
   row-gap: 20px;
   background-color: white;
   justify-content: space-evenly;
+  border-radius: 25px;
+  border: 2px solid #73ad21;
+}
+
+.pokedex-entry-box {
+  position: relative;
+  max-width: 100px;
+  min-width: 100px;
+  max-height: 100px;
+  min-height: 100px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokedex-entry,
+.pokedex-display {
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .pokedex-entry {
@@ -16,7 +36,33 @@
   background-color: rgb(240, 240, 240);
   max-height: 225px;
   min-height: 225px;
+  z-index: 2;
+  opacity: 0;
+  border-radius: 25px;
+  border: 2px solid #73ad21;
+  pointer-events: none;
+  display: none;
+}
+
+.pokedex-display {
+  max-width: 100px;
+  min-width: 100px;
+  max-height: 100px;
+  min-height: 100px;
   margin: 10px;
+  z-index: 1;
+}
+
+.pokedex-entry-box:hover .pokedex-entry {
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+  transform: translateX(-10%);
+}
+
+.pokedex-entry-box:hover .pokedex-display {
+  opacity: 0;
+  display: block;
 }
 
 .pokedex-header {
@@ -24,12 +70,14 @@
   justify-content: space-between;
   margin: 10px;
   background-color: rgb(255, 80, 80);
-  height: 30px;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid #73ad21;
 }
 .pokedex-header-item {
   position: relative;
   font-family: "Times New Roman", Times, serif;
-  font-size: 15px;
+  font-size: 18px;
   display: center;
   color: white;
 }
@@ -37,7 +85,7 @@
   display: flex;
   justify-content: space-evenly;
   margin: 10px;
-  height: 135px;
+  height: 105px;
 }
 .pokedex-body-item {
   position: relative;
@@ -49,7 +97,9 @@
   display: flex;
   justify-content: space-evenly;
   margin: 10px;
-  height: 22px;
+  height: 25px;
+  border-radius: 5px;
+  border: 2px solid #73ad21;
 }
 
 .pokedex-footer-item {
@@ -65,32 +115,4 @@
 .pokedex-name {
   margin: 5px;
   flex-grow: 1;
-}
-
-/* Medium screens (4 items per row) */
-@media (max-width: 1200px) {
-  .pokedex-entry {
-    flex: 1 1 calc(25% - 10px);
-  }
-}
-
-/* Small screens (3 items per row) */
-@media (max-width: 900px) {
-  .pokedex-entry {
-    flex: 1 1 calc(33.33% - 10px);
-  }
-}
-
-/* Extra small screens (2 items per row) */
-@media (max-width: 600px) {
-  .pokedex-entry {
-    flex: 1 1 calc(50% - 10px);
-  }
-}
-
-/* Extra extra small screens (1 item per row) */
-@media (max-width: 400px) {
-  .pokedex-entry {
-    flex: 1 1 100%;
-  }
 }

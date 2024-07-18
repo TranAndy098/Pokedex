@@ -44,6 +44,7 @@ function Games({
   function goClick(curDropGameForGen) {
     console.log(curDropGameForGen);
     if (curDropGameForGen !== "") {
+      window.scrollTo(0, 0);
       setGame(gamesDisplayToAPI[curDropGameForGen]);
 
       setGenGame("");
@@ -52,6 +53,7 @@ function Games({
   }
 
   function clickGame(game) {
+    window.scrollTo(0, 0);
     setGame(game);
 
     setGenGame("");
@@ -73,28 +75,10 @@ function Games({
           <h3>{pokedexAPIToDisplay[pokedex]}</h3>
           <div className="pokedex-container">
             {Object.keys(pokedexPerGame[curGame][pokedex]).map((id) => (
-              <div className="pokedex-entry">
-                <div className="pokedex-header">
-                  <h2
-                    className="pokedex-id pokedex-header-item"
-                    onClick={() =>
-                      clickPokemon(pokedexPerGame[curGame][pokedex][id])
-                    }
-                  >
-                    {id}
-                  </h2>
-                  <h2
-                    className="pokedex-name pokedex-header-item"
-                    onClick={() =>
-                      clickPokemon(pokedexPerGame[curGame][pokedex][id])
-                    }
-                  >
-                    {pokemonAPIToDisplay[pokedexPerGame[curGame][pokedex][id]]}
-                  </h2>
-                </div>
-                <div className="pokedex-body">
+              <div className="pokedex-entry-box">
+                <div className="pokedex-display">
                   <img
-                    className="pokedex-sprite"
+                    className="pokedex-sprite-display"
                     src={
                       shinyMode
                         ? allPokemonSprites[
@@ -109,16 +93,57 @@ function Games({
                     }
                   />
                 </div>
-                <div className="pokedex-footer">
-                  {pokemonTypingChart[pokedexPerGame[curGame][pokedex][id]].map(
-                    (type) => (
+                <div className="pokedex-entry">
+                  <div className="pokedex-header">
+                    <h2
+                      className="pokedex-id pokedex-header-item"
+                      onClick={() =>
+                        clickPokemon(pokedexPerGame[curGame][pokedex][id])
+                      }
+                    >
+                      {id}
+                    </h2>
+                    <h2
+                      className="pokedex-name pokedex-header-item"
+                      onClick={() =>
+                        clickPokemon(pokedexPerGame[curGame][pokedex][id])
+                      }
+                    >
+                      {
+                        pokemonAPIToDisplay[
+                          pokedexPerGame[curGame][pokedex][id]
+                        ]
+                      }
+                    </h2>
+                  </div>
+                  <div className="pokedex-body">
+                    <img
+                      className="pokedex-sprite"
+                      src={
+                        shinyMode
+                          ? allPokemonSprites[
+                              pokedexPerGame[curGame][pokedex][id]
+                            ].FrontShiny
+                          : allPokemonSprites[
+                              pokedexPerGame[curGame][pokedex][id]
+                            ].FrontDefault
+                      }
+                      onClick={() =>
+                        clickPokemon(pokedexPerGame[curGame][pokedex][id])
+                      }
+                    />
+                  </div>
+                  <div className="pokedex-footer">
+                    {pokemonTypingChart[
+                      pokedexPerGame[curGame][pokedex][id]
+                    ].map((type) => (
                       <img
                         className="pokedex-type"
                         src={allTypeLogos[type].TypeTextLogo}
                         onClick={() => clickType(type)}
                       />
-                    )
-                  )}
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

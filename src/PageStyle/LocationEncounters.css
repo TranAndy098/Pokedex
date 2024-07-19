@@ -1,0 +1,234 @@
+.encounter-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid #000000;
+  width: 700px;
+}
+
+.encounter-box {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.encounter-header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.encounter-header-name-type {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 25%;
+}
+.encounter-header-sprite {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 20%;
+}
+.encounter-header-method {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 25%;
+}
+.encounter-header-level-chance {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 30%;
+}
+
+.encounter-header-subitem {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid pink;
+  height: 50%;
+  width: 100%;
+}
+
+.encounter-header-subitem-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid green;
+  width: 100%;
+}
+.encounter-header-subitem-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid green;
+  width: 100%;
+}
+
+.encounter-footer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.encounter-footer-item-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px solid red;
+  width: 100%;
+}
+.encounter-footer-item {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px solid red;
+  width: 100%;
+}
+.encounter-footer-subitem {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid blue;
+  width: 100%;
+}
+
+.encounter-name {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid pink;
+  height: 30%;
+  width: 100%;
+}
+
+.encounter-typings {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid pink;
+  height: 70%;
+  width: 100%;
+}
+
+.encounter-type {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid pink;
+  height: 40%;
+  width: 70%;
+}
+
+.encounter-sprite {
+  width: 100%;
+}
+.encounter-method {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.encounter-method-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  height: 30%;
+  width: 100%;
+}
+.encounter-method-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  height: 70%;
+  width: 100%;
+}
+
+.encounter-min {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 50%;
+}
+
+.encounter-max {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 50%;
+}
+
+.encounter-chance {
+  width: 100%;
+}
+.encounter-chance-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.encounter-chance-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.encounter-condition-box {
+}
+
+.encounter-conditions {
+}
+
+.title {
+  font-size: 20px;
+}

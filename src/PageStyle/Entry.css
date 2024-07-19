@@ -1,0 +1,364 @@
+.entry-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.entry-header-front {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 40%;
+}
+.entry-front-sprite {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.entry-header-box {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 60%;
+}
+.entry-name-types {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 30%;
+}
+.entry-name {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 50%;
+  font-size: 30px;
+}
+.entry-types {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 50%;
+}
+.entry-type {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 90%;
+  height: 40%;
+}
+.entry-box-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 70%;
+}
+.entry-back-sprite {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 45%;
+  height: 100%;
+}
+
+.entry-abilities {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 30%;
+  height: 100%;
+}
+.entry-ability {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 60%;
+}
+.entry-ability-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 40%;
+}
+.entry-ability-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 60%;
+}
+.entry-ability-entry {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 50%;
+}
+.entry-hidden-ability {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 40%;
+}
+.entry-hidden-ability-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 50%;
+}
+
+.entry-hidden-ability-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 50%;
+}
+
+.entry-stats {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 25%;
+  height: 100%;
+}
+.entry-stat-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 20%;
+}
+.entry-stat-data {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 80%;
+}
+.entry-stat-entry {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  height: 15%;
+}
+.entry-stat-entry-name {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 50%;
+  height: 100%;
+}
+.entry-stat-entry-amount {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 50%;
+  height: 100%;
+}
+
+.entry-footer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-evolutions {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-evolutions-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-evolutions-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.evolutions {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.entry-body {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-forms {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-forms-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-forms-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.forms {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.pokemon-evolution {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 150px;
+}
+.pokemon-evolution-name {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.pokemon-evolution-sprite {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.pokemon-form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 150px;
+}
+.pokemon-form-name {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.pokemon-form-sprite {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}

@@ -1,0 +1,41 @@
+.location-container {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  background-color: gray;
+  border: 2px solid red;
+  margin: 10px;
+  width: 100%;
+}
+
+.location-box {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  background-color: gray;
+  border: 2px solid blue;
+  margin: 10px;
+  width: 100%;
+}
+.location-entry {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  background-color: white;
+  border: 2px solid red;
+  margin: 10px;
+  width: 20%;
+}
+.location-text {
+  font-size: 15px;
+  align-items: center;
+}

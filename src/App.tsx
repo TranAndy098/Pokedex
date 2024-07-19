@@ -28,8 +28,8 @@ const App: React.FC = () => {
 
   const [curGen, setGen] = useState(0);
 
-  const [openGen, setOpenGen] = useState(false);
-  const [openPokemon, setOpenPokemon] = useState(false);
+  const [openGen, setOpenGen] = useState("");
+  const [openPokemon, setOpenPokemon] = useState("");
 
   const [pageState, setPageState] = useState("");
 
@@ -78,6 +78,8 @@ const App: React.FC = () => {
   }
 
   function blankSlate() {
+    setOpenGen("");
+    setDropPokemon("");
     setPokemon("");
     setSearch("");
     setMove("");
@@ -87,6 +89,8 @@ const App: React.FC = () => {
     setLocation("");
     setGame("");
     setPageState("");
+    setGenGame("");
+    setDropGameForGen("");
     window.scrollTo(0, 0);
   }
 
@@ -97,6 +101,7 @@ const App: React.FC = () => {
   }
 
   function clickLocation(location) {
+    console.log("click", location);
     blankSlate();
     setLocation(location);
     setPageState("Locations");
@@ -112,6 +117,12 @@ const App: React.FC = () => {
     blankSlate();
     setType(typing);
     setPageState("Types");
+  }
+
+  function clickGame(game) {
+    blankSlate();
+    setGame(game);
+    setPageState("Games");
   }
 
   return (
@@ -230,6 +241,7 @@ const App: React.FC = () => {
                 clickLocation={clickLocation}
                 clickMove={clickMove}
                 clickType={clickType}
+                clickGame={clickGame}
                 shinyMode={shinyMode}
               />
             ) : (
@@ -272,6 +284,7 @@ const App: React.FC = () => {
                 clickPokemon={clickPokemon}
                 clickLocation={clickLocation}
                 clickType={clickType}
+                clickGame={clickGame}
                 setScratch={setSearch}
                 shinyMode={shinyMode}
               />
@@ -308,16 +321,6 @@ const App: React.FC = () => {
               <p />
             )}
             {pageState === "Scan" ? <Scan /> : <p />}
-          </div>
-          <div>
-            <p>Curent Page: {pageState}</p>
-            <p>Curent Pokemon: {pokemonAPIToDisplay[curPokemon]}</p>
-            <p>Curent Gen: {curGen}</p>
-            <p>Curent Move: {curMove}</p>
-            <p>Curent Location: {curLocation}</p>
-            <p>Curent Game: {curGame}</p>
-            <p>Shiny: {shinyMode ? "true" : "false"}</p>
-            <p>Need to do: when dropdown is clicked, close it</p>
           </div>
         </div>
       </div>

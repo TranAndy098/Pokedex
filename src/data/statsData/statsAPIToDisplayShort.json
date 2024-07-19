@@ -1,0 +1,10 @@
+{
+  "hp": "HP",
+  "attack": "Att",
+  "defense": "Def",
+  "special-attack": "S. Att",
+  "special-defense": "S. Def",
+  "speed": "Spd",
+  "accuracy": "Acc",
+  "evasion": "Eva"
+}

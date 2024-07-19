@@ -1,0 +1,210 @@
+.entry-encounter-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 700px;
+}
+
+.entry-encounter-game {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 15%;
+}
+
+.entry-encounter-box {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 85%;
+}
+
+.entry-encounter-header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.entry-encounter-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-encounter-body-item {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-radius: 5px;
+  border: 2px solid red;
+  width: 33%;
+}
+
+.entry-encounter-footer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-encounter-footer-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px solid red;
+  width: 100%;
+}
+.entry-encounter-footer-items {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px solid red;
+  width: 100%;
+}
+.entry-encounter-footer-item {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px solid red;
+  width: 100%;
+}
+
+.entry-encounter-area {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 30%;
+}
+.entry-encounter-method {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 70%;
+}
+.entry-encounter-method-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.entry-encounter-method-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.entry-encounter-min {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-encounter-min-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-encounter-min-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.entry-encounter-max {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-encounter-max-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-encounter-max-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.entry-encounter-chance {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-encounter-chance-title {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+.entry-encounter-chance-data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+.entry-encounter-condition-box {
+}
+
+.entry-encounter-conditions {
+}

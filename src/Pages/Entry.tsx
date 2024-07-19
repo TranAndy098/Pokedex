@@ -10,7 +10,7 @@ import moveAPIToDisplay from "../data/moveData/moveAPIToDisplay.json";
 import allTypeLogos from "../data/typeData/allTypeLogos.json";
 import allDamageClassLogos from "../data/moveData/allDamageClassLogos.json";
 import abilitiesAPIToDisplay from "../data/abilitiesData/abilitiesAPIToDisplay.json";
-import statsAPIToDisplay from "../data/statsData/statsAPIToDisplay.json";
+import statsAPIToDisplayShort from "../data/statsData/statsAPIToDisplayShort.json";
 import moveTargetAPIToDisplay from "../data/moveTargetData/moveTargetAPIToDisplay.json";
 import pokemonGameLocations from "../data/locationData/pokemonGameLocations.json";
 import encounterConditionsAPIToDisplay from "../data/encounterConditionData/encounterConditionsAPIToDisplay.json";
@@ -19,7 +19,9 @@ import gamesAPIToDisplay from "../data/gameNameData/gamesAPIToDisplay.json";
 import locationNamesAPIToDisplay from "../data/locationData/locationNamesAPIToDisplay.json";
 import EntryHome from "./EntryHome.tsx";
 import nationalPokedexNames from "../data/pokemonData/nationalPokedexNames.json";
-import "../PageStyle/Moves.css";
+import "../PageStyle/MovesPokemon.css";
+import "../PageStyle/EntryEncounters.css";
+import "../PageStyle/Entry.css";
 
 function Entry({
   curPokemon,
@@ -27,6 +29,7 @@ function Entry({
   clickLocation,
   clickMove,
   clickType,
+  clickGame,
   shinyMode,
 }) {
   const [value, setValue] = useState([]);
@@ -37,20 +40,19 @@ function Entry({
   console.log(curPokemon);
 
   function fetchMoveData(APImove) {
-    console.log("move data");
     return (
-      <div className="move-entry-box">
-        <div className="move-display">
-          <div className="move-display-header">
+      <div className="move-pokemon-entry-box">
+        <div className="move-pokemon-display">
+          <div className="move-pokemon-display-header">
             <div
-              className="move-display-name move-display-header-item"
+              className="move-pokemon-display-name move-pokemon-display-header-item"
               onClick={() => clickMove(APImove)}
             >
               <div>{moveAPIToDisplay[APImove]}</div>
             </div>
-            <div className="move-display-damage-class move-display-header-item">
+            <div className="move-pokemon-display-damage-class move-pokemon-display-header-item">
               <img
-                className="move-display-damage-class-logo"
+                className="move-pokemon-display-damage-class-logo"
                 src={
                   allDamageClassLogos[allMoveData[APImove]["Damage Class"]]
                     .TypeLogoBDSP
@@ -58,68 +60,72 @@ function Entry({
               />
             </div>
           </div>
-          <div className="move-display-footer">
+          <div className="move-pokemon-display-footer">
             <div className="move-display-typing move-display-footer-item">
               <img
-                className="move-display-types"
+                className="move-pokemon-display-types"
                 src={allTypeLogos[allMoveData[APImove].Type].TypeTextLogo}
                 onClick={() => clickType(allMoveData[APImove].Type)}
               />
             </div>
 
-            <div className="move-display-pp move-display-footer-item">
-              <div className="move-display-footer-subitem move-display-font">
+            <div className="move-pokemon-display-pp move-pokemon-display-footer-item">
+              <div className="move-pokemon-display-footer-subitem move-pokemon-display-font">
                 PP
               </div>
-              <div className="move-display-footer-subitem move-display-font">
+              <div className="move-pokemon-display-footer-subitem move-pokemon-display-font">
                 {allMoveData[APImove].PP}/{allMoveData[APImove].PP}
               </div>
             </div>
           </div>
         </div>
-        <div className="move-entry">
-          <div className="move-header">
+        <div className="move-pokemon-entry">
+          <div className="move-pokemon-header">
             <div
-              className="move-name move-header-item"
+              className="move-pokemon-name move-pokemon-header-item"
               onClick={() => clickMove(APImove)}
             >
               <div>{moveAPIToDisplay[APImove]}</div>
             </div>
 
-            <div className="move-typing move-header-item">
+            <div className="move-pokemon-typing move-pokemon-header-item">
               <img
-                className="move-types"
+                className="move-pokemon-types"
                 src={allTypeLogos[allMoveData[APImove].Type].TypeTextLogo}
                 onClick={() => clickType(allMoveData[APImove].Type)}
               />
             </div>
 
-            <div className="move-pp move-header-item">
-              <div className="move-header-subitem move-font-title">PP</div>
-              <div className="move-header-subitem move-font-text">
+            <div className="move-pokemon-pp move-pokemon-header-item">
+              <div className="move-pokemon-header-subitem move-pokemon-font-title">
+                PP
+              </div>
+              <div className="move-pokemon-header-subitem move-pokemon-font-text">
                 {allMoveData[APImove].PP}
               </div>
             </div>
 
-            <div className="move-power move-header-item">
-              <div className="move-header-subitem move-font-title">Power</div>
-              <div className="move-header-subitem move-font-text">
+            <div className="move-pokemon-power move-pokemon-header-item">
+              <div className="move-pokemon-header-subitem move-pokemon-font-title">
+                Power
+              </div>
+              <div className="move-pokemon-header-subitem move-pokemon-font-text">
                 {allMoveData[APImove].Power}
               </div>
             </div>
 
-            <div className="move-accuracy move-header-item">
-              <div className="move-header-subitem move-font-title">
+            <div className="move-pokemon-accuracy move-pokemon-header-item">
+              <div className="move-pokemon-header-subitem move-pokemon-font-title">
                 Accuracy
               </div>
-              <div className="move-header-subitem move-font-text">
+              <div className="move-pokemon-header-subitem move-pokemon-font-text">
                 {allMoveData[APImove].Accuracy}
               </div>
             </div>
 
-            <div className="move-damage-class move-header-item">
+            <div className="move-pokemon-damage-class move-pokemon-header-item">
               <img
-                className="move-damage-class-logo"
+                className="move-pokemon-damage-class-logo"
                 src={
                   allDamageClassLogos[allMoveData[APImove]["Damage Class"]]
                     .TypeLogoBDSP
@@ -128,26 +134,30 @@ function Entry({
             </div>
           </div>
 
-          <div className="move-footer">
-            <div className="move-effects move-footer-item">
-              <div className="move-footer-subitem move-font-title">Effects</div>
-              <div className="move-footer-subitem move-font-text">
+          <div className="move-pokemon-footer">
+            <div className="move-pokemon-effects move-pokemon-footer-item">
+              <div className="move-pokemon-footer-subitem move-pokemon-font-title">
+                Effects
+              </div>
+              <div className="move-pokemon-footer-subitem move-pokemon-font-text">
                 {allMoveData[APImove].Effects}
               </div>
             </div>
 
-            <div className="move-effect-chance move-footer-item">
-              <div className="move-footer-subitem  move-font-title">
+            <div className="move-pokemon-effect-chance move-pokemon-footer-item">
+              <div className="move-pokemon-footer-subitem  move-pokemon-font-title">
                 Effect Chance
               </div>
-              <div className="move-footer-subitem move-font-text">
+              <div className="move-pokemon-footer-subitem move-pokemon-font-text">
                 {allMoveData[APImove]["Effect Chance"]}
               </div>
             </div>
 
-            <div className="move-target move-footer-item">
-              <div className="move-footer-subitem move-font-title">Target</div>
-              <div className="move-footer-subitem move-font-text">
+            <div className="move-pokemon-target move-pokemon-footer-item">
+              <div className="move-pokemon-footer-subitem move-pokemon-font-title">
+                Target
+              </div>
+              <div className="move-pokemon-footer-subitem move-pokemon-font-text">
                 {moveTargetAPIToDisplay[allMoveData[APImove].Target]}
               </div>
             </div>
@@ -158,7 +168,6 @@ function Entry({
   }
 
   function fetchFormData(pokemon) {
-    console.log("form line");
     setForms(true);
     // evolve
 
@@ -169,9 +178,12 @@ function Entry({
     for (let i = 0; i < allForms.length; i++) {
       let name = Object.keys(allForms[i]);
       mid.push(
-        <div>
-          <p>{allForms[i][name].DisplayName}</p>
+        <div className="pokemon-form">
+          <div className="pokemon-form-name">
+            {allForms[i][name].DisplayName}
+          </div>
           <img
+            className="pokemon-form-sprite"
             src={
               shinyMode
                 ? allForms[i][name].FrontShiny
@@ -185,89 +197,140 @@ function Entry({
     setDifferentForms(mid);
   }
 
-  function fetchSpecificLocationData(pokemon, game, area, method) {
-    console.log("specific locaiton line");
-    let curData = pokemonGameLocations[pokemon][game][area][method];
-
-    curData.Conditions.map((condition) => {
-      console.log(encounterConditionsAPIToDisplay[condition]);
-    });
-
-    return (
-      <div>
-        <p>Method: {encounterMethodsAPIToDisplay[method]}</p>
-        <p>MinLevel: {curData.MinLevel}</p>
-        <p>MaxLevel: {curData.MaxLevel}</p>
-        <p>Chance: {curData.Chance}</p>
-        {curData.Conditions.length > 0 ? (
-          <div>
-            <p>Conditions:</p>
-            <ul>
-              {curData.Conditions.map((condition) => (
-                <li>{encounterConditionsAPIToDisplay[condition]}</li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <></>
-        )}
-      </div>
-    );
-  }
-
   function fetchLocationData(pokemon) {
-    console.log("location line");
     // evolve
 
     let mid = [];
-
-    console.log("before access");
 
     let allLocations = pokemonGameLocations[pokemon];
     if (!Object.keys(pokemonGameLocations).includes(pokemon)) {
       return;
     }
-    console.log("after acccess");
 
     let games = Object.keys(allLocations);
     let areas = [];
-    let methods = [];
-
-    console.log("getting ketys");
 
     for (let i = 0; i < games.length; i++) {
-      mid.push(<h2>{gamesAPIToDisplay[games[i]]}</h2>);
+      mid.push(
+        <div>
+          {Object.keys(allLocations[games[i]]).map((area) => (
+            <div>
+              {area !== "evolutions" ? (
+                <div>
+                  {Object.keys(allLocations[games[i]][area]).map((method) => (
+                    <div className="entry-encounter-container">
+                      <div
+                        className="entry-encounter-game"
+                        onClick={() => clickGame(games[i])}
+                      >
+                        {gamesAPIToDisplay[games[i]]}
+                      </div>
+                      <div className="entry-encounter-box">
+                        <div className="entry-encounter-header">
+                          <div
+                            className="entry-encounter-area"
+                            onClick={() => clickLocation(area)}
+                          >
+                            {locationNamesAPIToDisplay[area]}
+                          </div>
+                          <div className="entry-encounter-method">
+                            <div className="entry-encounter-method-title">
+                              Method
+                            </div>
+                            <div className="entry-encounter-method-data">
+                              {encounterMethodsAPIToDisplay[method]}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="entry-encounter-body">
+                          <div className="entry-encounter-body-item">
+                            <div className="entry-encounter-min">
+                              <div className="entry-encounter-min-title">
+                                {" "}
+                                MinLevel
+                              </div>
+                              <div className="entry-encounter-min-data">
+                                {allLocations[games[i]][area][method].MinLevel}
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="entry-encounter-body-item">
+                            <div className="entry-encounter-max">
+                              <div className="entry-encounter-max-title">
+                                {" "}
+                                MaxLevel
+                              </div>
+                              <div className="entry-encounter-max-data">
+                                {allLocations[games[i]][area][method].MaxLevel}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="entry-encounter-body-item">
+                            <div className="entry-encounter-chance">
+                              <div className="entry-encounter-chance-title">
+                                {" "}
+                                Chance
+                              </div>
+                              <div className="entry-encounter-chance-data">
+                                {allLocations[games[i]][area][method].Chance}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {allLocations[games[i]][area][method].Conditions
+                          .length > 0 ? (
+                          <div className="entry-encounter-footer">
+                            <div className="entry-encounter-footer-title">
+                              Conditions
+                            </div>
+                            <div className="entry-encounter-footer-items">
+                              {allLocations[games[i]][area][
+                                method
+                              ].Conditions.map((condition) => (
+                                <div className="entry-encounter-footer-item">
+                                  {encounterConditionsAPIToDisplay[condition]}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <></>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="entry-encounter-container">
+                  <div
+                    className="entry-encounter-game"
+                    onClick={() => clickGame(games[i])}
+                  >
+                    {gamesAPIToDisplay[games[i]]}
+                  </div>
+                  <div
+                    className="entry-encounter-box"
+                    onClick={() => clickPokemon(allLocations[games[i]][area])}
+                  >
+                    Evolve from{" "}
+                    {pokemonAPIToDisplay[allLocations[games[i]][area]]}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      );
+
       areas = Object.keys(allLocations[games[i]]);
-      for (let j = 0; j < areas.length; j++) {
-        if (areas[j] === "evolutions") {
-          // for evolutions locations
-          mid.push(
-            <h3>
-              Evolve from{" "}
-              {pokemonAPIToDisplay[allLocations[games[i]][areas[j]]]}
-            </h3>
-          );
-        } else {
-          mid.push(
-            <h3 onClick={() => clickLocation(areas[j])}>
-              {locationNamesAPIToDisplay[areas[j]]}
-            </h3>
-          );
-          methods = Object.keys(allLocations[games[i]][areas[j]]);
-          for (let k = 0; k < methods.length; k++) {
-            mid.push(
-              fetchSpecificLocationData(pokemon, games[i], areas[j], methods[k])
-            );
-          }
-        }
-      }
     }
-    console.log("return ketys");
     setGameLocations(mid);
   }
 
   function fetchEvolutionLine(curPokemon) {
-    console.log("Evolve line");
     // evolve
     let mid = [];
     let chains = allPokemonEvolutions[curPokemon].EvolveChain;
@@ -275,16 +338,22 @@ function Entry({
     for (let i = 0; i < allPokemonEvolutions[curPokemon].Size; i++) {
       let interm = [];
       for (let j = 0; j < chains[i].length; j++) {
-        console.log("he", chains[i][j]);
         interm.push(
-          <img
-            src={
-              shinyMode
-                ? allPokemonSprites[chains[i][j]].FrontShiny
-                : allPokemonSprites[chains[i][j]].FrontDefault
-            }
-            onClick={() => clickPokemon(chains[i][j])}
-          />
+          <div className="pokemon-evolution">
+            <div className="pokemon-evolution-name">
+              {pokemonAPIToDisplay[chains[i][j]]}
+            </div>
+
+            <img
+              className="pokemon-evolution-sprite"
+              src={
+                shinyMode
+                  ? allPokemonSprites[chains[i][j]].FrontShiny
+                  : allPokemonSprites[chains[i][j]].FrontDefault
+              }
+              onClick={() => clickPokemon(chains[i][j])}
+            />
+          </div>
         );
       }
       mid.push(interm);
@@ -294,7 +363,6 @@ function Entry({
   }
 
   async function fetchData(pokemon) {
-    console.log("data line");
     try {
       const response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${pokemon}`,
@@ -342,9 +410,14 @@ function Entry({
       // stats
       for (let i = 0; i < response.data.stats.length; i++) {
         cur.push(
-          `${statsAPIToDisplay[response.data.stats[i].stat.name]} : ${
-            response.data.stats[i].base_stat
-          }`
+          <div className="entry-stat-entry">
+            <div className="entry-stat-entry-name">
+              {statsAPIToDisplayShort[response.data.stats[i].stat.name]}
+            </div>
+            <div className="entry-stat-entry-amount">
+              {response.data.stats[i].base_stat}
+            </div>
+          </div>
         );
       }
 
@@ -355,8 +428,6 @@ function Entry({
       for (let i = 0; i < response.data.moves.length; i++) {
         cur.push(fetchMoveData(response.data.moves[i].move.name));
       }
-
-      console.log("move data 2");
 
       overall.push([...cur]);
 
@@ -369,12 +440,10 @@ function Entry({
       if (Object.keys(allSpecialPokemonForms).includes(curPokemon)) {
         fetchFormData(curPokemon.toLowerCase());
       }
-      console.log(8);
+
       // evolve
       fetchEvolutionLine(curPokemon);
-      console.log(7);
       fetchLocationData(curPokemon);
-      console.log(6);
 
       return overall;
     } catch (error) {
@@ -409,88 +478,115 @@ function Entry({
 
           {value.length > 0 ? (
             <div className="entry-data">
-              <div className="sprites">
-                <h2>Sprites</h2>
-                <ul>
-                  {value[0].map((name) => (
-                    <img src={name} key={name}></img>
-                  ))}
-                </ul>
-              </div>
-              {forms ? (
-                <div className="forms">
-                  <h2>Forms</h2>
-                  <div>
-                    {differentForms.map((differentForm) => {
-                      return <div>{differentForm}</div>;
-                    })}
+              <div className="entry-header">
+                <div className="entry-header-front">
+                  <img className="entry-front-sprite" src={value[0][0]} />
+                </div>
+
+                <div className="entry-header-box">
+                  <div className="entry-name-types">
+                    <div className="entry-name">
+                      <div>{pokemonAPIToDisplay[curPokemon]}</div>
+                    </div>
+                    <div className="entry-types">
+                      {value[1].map((name) => (
+                        <img
+                          className="entry-type"
+                          onClick={() => clickType(name)}
+                          src={allTypeLogos[name].TypeTextLogo}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="entry-box-bottom">
+                    <img className="entry-back-sprite" src={value[0][1]} />
+
+                    <div className="entry-abilities">
+                      <div className="entry-ability">
+                        <div className="entry-ability-title">Abilities</div>
+                        <div className="entry-ability-data">
+                          {value[2].map((name) => (
+                            <div className="entry-ability-entry">
+                              {abilitiesAPIToDisplay[name]}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="entry-hidden-ability">
+                        <div className="entry-hidden-ability-title">
+                          Hidden Abilities
+                        </div>{" "}
+                        {value[3].map((name) => (
+                          <div className="entry-hidden-ability-data">
+                            {abilitiesAPIToDisplay[name]}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="entry-stats">
+                      <div className="entry-stat-title">Stats</div>
+
+                      <div className="entry-stat-data">
+                        {value[4].map((name) => name)}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              ) : (
-                <></>
-              )}
+              </div>
 
-              <div className="evolutions">
-                <div>
+              <div className="entry-body">
+                {forms ? (
+                  <div className="forms">
+                    <div className="entry-forms">
+                      <div className="entry-forms-title">Forms</div>
+                      <div className="entry-forms-data">
+                        {differentForms.map((differentForm) => {
+                          return <div>{differentForm}</div>;
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
+
+              <div className="entry-footer">
+                <div className="evolutions">
                   {evolutionLine.map((evolveLine) => {
                     return (
-                      <div>
-                        <h2>Evolution</h2>
-                        {evolveLine.map((member) => {
-                          return <p>{member}</p>;
-                        })}
+                      <div className="entry-evolutions">
+                        <div className="entry-evolutions-title">Evolution</div>
+                        <div className="entry-evolutions-data">
+                          {evolveLine.map((member) => {
+                            return <div>{member}</div>;
+                          })}
+                        </div>
                       </div>
                     );
                   })}
                 </div>
               </div>
-              <div className="types">
-                <h2>Types</h2>
-                <ul>
-                  {value[1].map((name) => (
-                    <li onClick={() => clickType(name)}>
-                      {typeAPIToDisplay[name]}
-                      <img src={allTypeLogos[name].TypeTextLogo} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="abilities">
-                <h2>Abilities</h2>
-                <ul>
-                  {value[2].map((name) => (
-                    <li>{abilitiesAPIToDisplay[name]}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="hidden-abilities">
-                <h2>Hidden Abilities</h2>
-                <ul>
-                  {value[3].map((name) => (
-                    <li>{abilitiesAPIToDisplay[name]}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="stats">
-                <h2>Stats</h2>
-                <ul>
-                  {value[4].map((name) => (
-                    <li>{name}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="moves">
-                <h2>Moves</h2>
-                <div className="move-container">
-                  {value[5].map((name) => (
-                    <div>{name}</div>
-                  ))}
+
+              <div className="entry-moves">
+                <div className="moves">
+                  <h2>Moves</h2>
+                  <div className="move-pokemon-container">
+                    {value[5].map((name) => (
+                      <div>{name}</div>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <div className="locations">
-                <h2>Locations</h2>
 
-                {gameLocations.map((data) => data)}
+              <div className="entry-locations">
+                <div className="locations">
+                  <h2>Locations</h2>
+
+                  {gameLocations.map((data) => data)}
+                </div>
               </div>
             </div>
           ) : (

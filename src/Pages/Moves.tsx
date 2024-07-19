@@ -9,6 +9,7 @@ import allDamageClassLogos from "../data/moveData/allDamageClassLogos.json";
 import allTypeLogos from "../data/typeData/allTypeLogos.json";
 import moveTargetAPIToDisplay from "../data/moveTargetData/moveTargetAPIToDisplay.json";
 import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
+import "../PageStyle/Moves.css";
 
 function Moves({
   curMove,
@@ -68,57 +69,62 @@ function Moves({
       setMovePokemonNames(names);
       setMovePokemonLength(indexes);
       let moveInfo = (
-        <div>
-          <div className="name">
-            <h1>{moveAPIToDisplay[curMove]}</h1>
-          </div>
-
-          <div className="accuracy">
-            <h1>Accuracy</h1>
-            <h3>{allMoveData[curMove].Accuracy}</h3>
-          </div>
-
-          <div className="effect-chance">
-            <h1>Effect Chance</h1>
-            <h3>{allMoveData[curMove]["Effect Chance"]}</h3>
-          </div>
-
-          <div className="damage-class">
-            <h1>Damage Class</h1>
+        <div className="move-container">
+          <div className="move-header">
+            <div className="move-name">{moveAPIToDisplay[curMove]}</div>
             <img
-              src={
-                allDamageClassLogos[allMoveData[curMove]["Damage Class"]]
-                  .TypeLogoBDSP
-              }
-            />
-          </div>
-
-          <div className="effects">
-            <h1>Effects</h1>
-            <h3>{allMoveData[curMove].Effects}</h3>
-          </div>
-
-          <div className="power">
-            <h1>Power</h1>
-            <h3>{allMoveData[curMove].Power}</h3>
-          </div>
-
-          <div className="pp">
-            <h1>PP</h1>
-            <h3>{allMoveData[curMove].PP}</h3>
-          </div>
-
-          <div className="target">
-            <h1>Target</h1>
-            <h3>{moveTargetAPIToDisplay[allMoveData[curMove].Target]}</h3>
-          </div>
-
-          <div className="typing">
-            <h1>Type</h1>
-            <img
+              className="move-typing"
               src={allTypeLogos[allMoveData[curMove].Type].TypeTextLogo}
               onClick={() => clickType(allMoveData[curMove].Type)}
             />
+
+            <div className="move-pp">
+              <div className="move-item-title">PP</div>
+              <div className="move-item-text">{allMoveData[curMove].PP}</div>
+            </div>
+            <div className="move-power">
+              <div className="move-item-title">Power</div>
+              <div className="move-item-text">{allMoveData[curMove].Power}</div>
+            </div>
+            <div className="move-damage-class">
+              <img
+                src={
+                  allDamageClassLogos[allMoveData[curMove]["Damage Class"]]
+                    .TypeLogoBDSP
+                }
+              />
+            </div>
+          </div>
+
+          <div className="move-body">
+            <div className="move-accuracy">
+              <div className="move-item-title">Accuracy</div>
+              <div className="move-item-text">
+                {allMoveData[curMove].Accuracy}
+              </div>
+            </div>
+            <div className="move-target">
+              <div className="move-item-title">Target</div>
+              <div className="move-item-text">
+                {moveTargetAPIToDisplay[allMoveData[curMove].Target]}
+              </div>
+            </div>
+
+            <div className="move-effect-chance">
+              <div className="move-item-title">Effect Chance</div>
+              <div className="move-item-text">
+                {allMoveData[curMove]["Effect Chance"]}
+              </div>
+            </div>
+          </div>
+
+          <div className="move-footer">
+            <div className="move-effects">
+              <div className="move-item-title">Effects</div>
+              <div className="move-item-text">
+                {allMoveData[curMove].Effects}
+              </div>
+            </div>
           </div>
         </div>
       );

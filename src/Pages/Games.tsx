@@ -14,6 +14,7 @@ import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
 import locationPerGame from "../data/locationData/locationsPerGame.json";
 import locationNamesAPIToDisplay from "../data/locationData/locationNamesAPIToDisplay.json";
 import "../PageStyle/Pokedex.css";
+import "../PageStyle/GameLocations.css";
 
 function Games({
   curGame,
@@ -34,6 +35,7 @@ function Games({
   clickPokemon,
   clickLocation,
   clickType,
+  clickGame,
 
   setScratch,
   shinyMode,
@@ -50,14 +52,6 @@ function Games({
       setGenGame("");
       setDropGameForGen("");
     }
-  }
-
-  function clickGame(game) {
-    window.scrollTo(0, 0);
-    setGame(game);
-
-    setGenGame("");
-    setDropGameForGen("");
   }
 
   function fetchData(curGame) {
@@ -219,12 +213,21 @@ function Games({
       ) : (
         <div>
           <div>{gameData.map((pokemon) => pokemon)}</div>
+
           <div>
-            {locationPerGame[curGame].map((location) => (
-              <p onClick={() => clickLocation(location)}>
-                {locationNamesAPIToDisplay[location]}
-              </p>
-            ))}
+            <div className="location-title">Game Locations</div>
+            <div className="location-container">
+              <div className="location-box">
+                {locationPerGame[curGame].map((location) => (
+                  <div
+                    className="location-entry location-text"
+                    onClick={() => clickLocation(location)}
+                  >
+                    {locationNamesAPIToDisplay[location]}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}

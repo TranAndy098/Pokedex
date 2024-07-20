@@ -124,6 +124,9 @@ const App: React.FC = () => {
     setGame(game);
     setPageState("Games");
   }
+  function clickTop() {
+    window.scrollTo(0, 0);
+  }
 
   return (
     <div className="page">
@@ -146,87 +149,108 @@ const App: React.FC = () => {
       />
       <div className="container">
         <div className="box left-box">
-          <SearchBar
-            setPokemon={setPokemon}
-            setGen={setGen}
-            setDropPokemon={setDropPokemon}
-            search={search}
-            setSearch={setSearch}
-            setMove={setMove}
-            setMoveSearch={setMoveSearch}
-            setType={setType}
-            setDropType={setDropType}
-            setPageState={setPageState}
-            pageState={pageState}
-          />
-          <div className="App">
-            <div className="dropdown-label">Generation:</div>
-            <DropDown
-              buttonText={` ${curGen !== 0 ? curGen : ""}`}
-              open={openGen}
-              setOpen={setOpenGen}
-              content={
-                <>
-                  {genNumbers.map((genNumbers) => (
-                    <DropDownItem
-                      content={genNumbers}
-                      check={curGen}
-                      setMode1={setGen}
-                      setMode2={setDropPokemon}
-                      setOpen={setOpenGen}
-                    ></DropDownItem>
-                  ))}
-                </>
-              }
-            />
-            <div className="dropdown-label">Pokemon:</div>
-            <DropDown
-              buttonText={curDropPokemon}
-              open={openPokemon}
-              setOpen={setOpenPokemon}
-              content={
-                curGen > 0 ? (
-                  <>
-                    {pokemonGenerations[curGen].map((pokemons) => (
-                      <DropDownItem
-                        content={pokemons}
-                        check={curDropPokemon}
-                        setMode1={setDropPokemon}
-                        setMode2={setScratch}
-                        setOpen={setOpenPokemon}
-                      ></DropDownItem>
-                    ))}
-                  </>
-                ) : (
-                  <>
-                    {allPokemons.map((pokemon) => (
-                      <DropDownItem
-                        content={pokemon}
-                        check={curDropPokemon}
-                        setMode1={setDropPokemon}
-                        setMode2={setScratch}
-                        setOpen={setOpenPokemon}
-                      ></DropDownItem>
-                    ))}
-                  </>
-                )
-              }
-            />
-            <button className="go-btn" onClick={() => goClick(curDropPokemon)}>
-              Go
-            </button>
-            <button
-              className={`shiny-btn ${shinyMode ? "is-active" : ""}`}
-              onClick={() => shinyClick()}
-            >
-              <div>
-                Shiny
+          <div className="side-bar">
+            <div className="side-bar-item">
+              <div className="pokemon-search">
+                <SearchBar
+                  setPokemon={setPokemon}
+                  setGen={setGen}
+                  setDropPokemon={setDropPokemon}
+                  search={search}
+                  setSearch={setSearch}
+                  setMove={setMove}
+                  setMoveSearch={setMoveSearch}
+                  setType={setType}
+                  setDropType={setDropType}
+                  setPageState={setPageState}
+                  pageState={pageState}
+                />
+              </div>
+              <div className="pokemon-dropdown">
+                <div className="dropdown-label">Generation:</div>
+                <DropDown
+                  buttonText={` ${curGen !== 0 ? curGen : ""}`}
+                  open={openGen}
+                  setOpen={setOpenGen}
+                  content={
+                    <>
+                      {genNumbers.map((genNumbers) => (
+                        <DropDownItem
+                          content={genNumbers}
+                          check={curGen}
+                          setMode1={setGen}
+                          setMode2={setDropPokemon}
+                          setOpen={setOpenGen}
+                        ></DropDownItem>
+                      ))}
+                    </>
+                  }
+                />
+                <div className="dropdown-label">Pokemon:</div>
+                <DropDown
+                  buttonText={curDropPokemon}
+                  open={openPokemon}
+                  setOpen={setOpenPokemon}
+                  content={
+                    curGen > 0 ? (
+                      <>
+                        {pokemonGenerations[curGen].map((pokemons) => (
+                          <DropDownItem
+                            content={pokemons}
+                            check={curDropPokemon}
+                            setMode1={setDropPokemon}
+                            setMode2={setScratch}
+                            setOpen={setOpenPokemon}
+                          ></DropDownItem>
+                        ))}
+                      </>
+                    ) : (
+                      <>
+                        {allPokemons.map((pokemon) => (
+                          <DropDownItem
+                            content={pokemon}
+                            check={curDropPokemon}
+                            setMode1={setDropPokemon}
+                            setMode2={setScratch}
+                            setOpen={setOpenPokemon}
+                          ></DropDownItem>
+                        ))}
+                      </>
+                    )
+                  }
+                />
+                <button
+                  className="go-btn"
+                  onClick={() => goClick(curDropPokemon)}
+                >
+                  Go
+                </button>
+              </div>
+
+              <div className="shiny-box">
+                <button
+                  className={`shiny-btn ${shinyMode ? "is-active" : ""}`}
+                  onClick={() => shinyClick()}
+                >
+                  <div>
+                    Shiny
+                    {shinyMode ? (
+                      <img className="shiny-icon" src="./shiny.png" />
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                </button>
+
                 {shinyMode ? (
-                  <img className="shiny-icon" src="./shiny.png" />
+                  <img className="shiny-charm" src="./shiny-charm.png" />
                 ) : (
                   ""
                 )}
               </div>
+            </div>
+            <button className="top-btn" onClick={() => clickTop()}>
+              top
             </button>
           </div>
         </div>

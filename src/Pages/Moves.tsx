@@ -10,6 +10,7 @@ import allTypeLogos from "../data/typeData/allTypeLogos.json";
 import moveTargetAPIToDisplay from "../data/moveTargetData/moveTargetAPIToDisplay.json";
 import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
 import "../PageStyle/Moves.css";
+import "../PageStyle/MoveColors.css";
 
 function Moves({
   curMove,
@@ -69,7 +70,7 @@ function Moves({
       setMovePokemonNames(names);
       setMovePokemonLength(indexes);
       let moveInfo = (
-        <div className="move-container">
+        <div className={`move-container ${allMoveData[curMove].Type}`}>
           <div className="move-header">
             <div className="move-name">{moveAPIToDisplay[curMove]}</div>
             <img

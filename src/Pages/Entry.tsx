@@ -22,6 +22,8 @@ import nationalPokedexNames from "../data/pokemonData/nationalPokedexNames.json"
 import "../PageStyle/MovesPokemon.css";
 import "../PageStyle/EntryEncounters.css";
 import "../PageStyle/Entry.css";
+import "../PageStyle/MoveColors.css";
+import gamesLogos from "../data/gameNameData/gamesLogos.json";
 
 function Entry({
   curPokemon,
@@ -41,7 +43,7 @@ function Entry({
 
   function fetchMoveData(APImove) {
     return (
-      <div className="move-pokemon-entry-box">
+      <div className={`move-pokemon-entry-box ${allMoveData[APImove].Type}`}>
         <div className="move-pokemon-display">
           <div className="move-pokemon-display-header">
             <div
@@ -71,15 +73,12 @@ function Entry({
 
             <div className="move-pokemon-display-pp move-pokemon-display-footer-item">
               <div className="move-pokemon-display-footer-subitem move-pokemon-display-font">
-                PP
-              </div>
-              <div className="move-pokemon-display-footer-subitem move-pokemon-display-font">
-                {allMoveData[APImove].PP}/{allMoveData[APImove].PP}
+                PP {allMoveData[APImove].PP}/{allMoveData[APImove].PP}
               </div>
             </div>
           </div>
         </div>
-        <div className="move-pokemon-entry">
+        <div className={`move-pokemon-entry ${allMoveData[APImove].Type}`}>
           <div className="move-pokemon-header">
             <div
               className="move-pokemon-name move-pokemon-header-item"

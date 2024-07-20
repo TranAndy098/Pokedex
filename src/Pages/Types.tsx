@@ -14,6 +14,7 @@ import "../PageStyle/MovesForTypes.css";
 import allMoveData from "../data/moveData/allMoveData.json";
 import allDamageClassLogos from "../data/moveData/allDamageClassLogos.json";
 import "../PageStyle/Types.css";
+import "../PageStyle/MoveColors.css";
 
 function Types({
   curType,
@@ -313,7 +314,9 @@ function Types({
                 <h1>Moves</h1>
                 <div className="move-type-container">
                   {typeMoves.map((moves) => (
-                    <div className="move-type-entry-box">
+                    <div
+                      className={`move--type-entry-box ${allMoveData[moves].Type}`}
+                    >
                       <div className="move-type-display">
                         <div className="move-type-display-header">
                           <div

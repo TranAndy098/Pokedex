@@ -17,6 +17,7 @@
   max-height: 120px;
   margin: 20px;
   display: flex;
+  background-color: b;
   border-radius: 5px;
   border: 2px solid #73ad21;
 }
@@ -137,7 +138,7 @@
   max-width: 130px;
 }
 .move-pokemon-display-font {
-  font-size: 15px;
+  font-size: 20px;
   justify-content: center;
 }
 

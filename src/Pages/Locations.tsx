@@ -262,7 +262,7 @@ function Locations({
       </button>
       {curLocation !== "" ? (
         <div>
-          <div className="title">Encounters</div>
+          <div className="encounter-title">Encounters</div>
           <div className="encounter-container">
             {locationData.map((pokemon) => pokemon)}
           </div>

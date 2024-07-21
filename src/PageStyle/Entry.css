@@ -25,6 +25,15 @@
   border: 2px solid black;
   width: 40%;
 }
+.entry-header-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 60%;
+  height: 100%;
+}
 .entry-front-sprite {
   display: flex;
   justify-content: space-evenly;
@@ -34,18 +43,8 @@
   width: 100%;
 }
 
-.entry-header-box {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  flex-direction: column;
-  border-radius: 5px;
-  border: 2px solid black;
-  width: 60%;
-}
 .entry-name-types {
   display: flex;
-  justify-content: space-evenly;
   flex-wrap: wrap;
   flex-direction: row;
   border-radius: 5px;
@@ -90,7 +89,7 @@
   border-radius: 5px;
   border: 2px solid black;
   width: 100%;
-  height: 70%;
+  height: 65%;
 }
 .entry-back-sprite {
   display: flex;
@@ -265,15 +264,6 @@
   border: 2px solid black;
   width: 100%;
 }
-.evolutions {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  border-radius: 5px;
-  border: 2px solid black;
-  width: 100%;
-}
-
 .entry-body {
   display: flex;
   justify-content: space-evenly;
@@ -306,14 +296,7 @@
   border: 2px solid black;
   width: 100%;
 }
-.forms {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  border-radius: 5px;
-  border: 2px solid black;
-  width: 100%;
-}
+
 .pokemon-evolution {
   display: flex;
   justify-content: space-evenly;

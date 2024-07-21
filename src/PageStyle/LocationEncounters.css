@@ -157,14 +157,7 @@
 .encounter-sprite {
   width: 100%;
 }
-.encounter-method {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  border-radius: 5px;
-  border: 2px solid black;
-  width: 100%;
-}
+
 .encounter-method-title {
   display: flex;
   justify-content: space-evenly;
@@ -223,12 +216,6 @@
   width: 100%;
 }
 
-.encounter-condition-box {
-}
-
-.encounter-conditions {
-}
-
-.title {
+.encounter-title {
   font-size: 20px;
 }

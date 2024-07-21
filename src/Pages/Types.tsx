@@ -315,46 +315,43 @@ function Types({
                 <div className="move-type-container">
                   {typeMoves.map((moves) => (
                     <div
-                      className={`move--type-entry-box ${allMoveData[moves].Type}`}
+                      className={`move-type-display ${allMoveData[moves].Type}`}
                     >
-                      <div className="move-type-display">
-                        <div className="move-type-display-header">
-                          <div
-                            className="move-type-display-name move-type-display-header-item"
-                            onClick={() => clickMove(moves)}
-                          >
-                            <div>{moveAPIToDisplay[moves]}</div>
-                          </div>
-                          <div className="move-type-display-damage-class move-type-display-header-item">
-                            <img
-                              className="move-type-display-damage-class-logo"
-                              src={
-                                allDamageClassLogos[
-                                  allMoveData[moves]["Damage Class"]
-                                ].TypeLogoBDSP
-                              }
-                            />
-                          </div>
+                      <div className="move-type-display-header">
+                        <div
+                          className="move-type-display-name move-type-display-header-item"
+                          onClick={() => clickMove(moves)}
+                        >
+                          <div>{moveAPIToDisplay[moves]}</div>
                         </div>
-                        <div className="move-type-display-footer">
-                          <div className="move-type-display-typing move-type-display-footer-item">
-                            <img
-                              className="move-type-display-types"
-                              src={
-                                allTypeLogos[allMoveData[moves].Type]
-                                  .TypeTextLogo
-                              }
-                              onClick={() => clickType(allMoveData[moves].Type)}
-                            />
-                          </div>
+                        <div className="move-type-display-damage-class move-type-display-header-item">
+                          <img
+                            className="move-type-display-damage-class-logo"
+                            src={
+                              allDamageClassLogos[
+                                allMoveData[moves]["Damage Class"]
+                              ].TypeLogoBDSP
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div className="move-type-display-footer">
+                        <div className="move-type-display-typing move-type-display-footer-item">
+                          <img
+                            className="move-type-display-types"
+                            src={
+                              allTypeLogos[allMoveData[moves].Type].TypeTextLogo
+                            }
+                            onClick={() => clickType(allMoveData[moves].Type)}
+                          />
+                        </div>
 
-                          <div className="move-type-display-pp move-type-display-footer-item">
-                            <div className="move-type-display-footer-subitem move-type-display-font">
-                              PP
-                            </div>
-                            <div className="move-type-display-footer-subitem move-type-display-font">
-                              {allMoveData[moves].PP}/{allMoveData[moves].PP}
-                            </div>
+                        <div className="move-type-display-pp move-type-display-footer-item">
+                          <div className="move-type-display-footer-subitem move-type-display-font">
+                            PP
+                          </div>
+                          <div className="move-type-display-footer-subitem move-type-display-font">
+                            {allMoveData[moves].PP}/{allMoveData[moves].PP}
                           </div>
                         </div>
                       </div>

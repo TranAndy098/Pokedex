@@ -53,7 +53,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   border-radius: 5px;
-  border: 2px solid red;
+  border: 2px solid black;
   width: 33%;
 }
 
@@ -72,7 +72,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   border-radius: 5px;
-  border: 2px solid red;
+  border: 2px solid black;
   width: 100%;
 }
 .entry-encounter-footer-items {
@@ -81,7 +81,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   border-radius: 5px;
-  border: 2px solid red;
+  border: 2px solid black;
   width: 100%;
 }
 .entry-encounter-footer-item {
@@ -90,7 +90,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   border-radius: 5px;
-  border: 2px solid red;
+  border: 2px solid black;
   width: 100%;
 }
 
@@ -201,10 +201,4 @@
   border-radius: 5px;
   border: 2px solid black;
   width: 100%;
-}
-
-.entry-encounter-condition-box {
-}
-
-.entry-encounter-conditions {
 }

@@ -23,7 +23,7 @@ import "../PageStyle/MovesPokemon.css";
 import "../PageStyle/EntryEncounters.css";
 import "../PageStyle/Entry.css";
 import "../PageStyle/MoveColors.css";
-import gamesLogos from "../data/gameNameData/gamesLogos.json";
+import gamesMascots from "../data/gameNameData/gamesMascots.json";
 
 function Entry({
   curPokemon,
@@ -222,7 +222,19 @@ function Entry({
                         className="entry-encounter-game"
                         onClick={() => clickGame(games[i])}
                       >
-                        {gamesAPIToDisplay[games[i]]}
+                        <div className="entry-encounter-game-title">
+                          {gamesAPIToDisplay[games[i]]}
+                        </div>
+                        <img
+                          className="entry-encounter-game-mascot"
+                          src={
+                            shinyMode
+                              ? allPokemonSprites[gamesMascots[games[i]]]
+                                  .FrontShiny
+                              : allPokemonSprites[gamesMascots[games[i]]]
+                                  .FrontDefault
+                          }
+                        />
                       </div>
                       <div className="entry-encounter-box">
                         <div className="entry-encounter-header">
@@ -308,14 +320,28 @@ function Entry({
                     className="entry-encounter-game"
                     onClick={() => clickGame(games[i])}
                   >
-                    {gamesAPIToDisplay[games[i]]}
+                    <div className="entry-encounter-game-title">
+                      {gamesAPIToDisplay[games[i]]}
+                    </div>
+                    <img
+                      className="entry-encounter-game-mascot"
+                      src={
+                        shinyMode
+                          ? allPokemonSprites[gamesMascots[games[i]]].FrontShiny
+                          : allPokemonSprites[gamesMascots[games[i]]]
+                              .FrontDefault
+                      }
+                    />
                   </div>
+
                   <div
                     className="entry-encounter-box"
                     onClick={() => clickPokemon(allLocations[games[i]][area])}
                   >
-                    Evolve from{" "}
-                    {pokemonAPIToDisplay[allLocations[games[i]][area]]}
+                    <div className="entry-encounter-header">
+                      Evolve from{" "}
+                      {pokemonAPIToDisplay[allLocations[games[i]][area]]}
+                    </div>
                   </div>
                 </div>
               )}
@@ -537,14 +563,12 @@ function Entry({
 
               <div className="entry-body">
                 {forms ? (
-                  <div className="forms">
-                    <div className="entry-forms">
-                      <div className="entry-forms-title">Forms</div>
-                      <div className="entry-forms-data">
-                        {differentForms.map((differentForm) => {
-                          return <div>{differentForm}</div>;
-                        })}
-                      </div>
+                  <div className="entry-forms">
+                    <div className="entry-forms-title">Forms</div>
+                    <div className="entry-forms-data">
+                      {differentForms.map((differentForm) => {
+                        return <div>{differentForm}</div>;
+                      })}
                     </div>
                   </div>
                 ) : (
@@ -553,20 +577,18 @@ function Entry({
               </div>
 
               <div className="entry-footer">
-                <div className="evolutions">
-                  {evolutionLine.map((evolveLine) => {
-                    return (
-                      <div className="entry-evolutions">
-                        <div className="entry-evolutions-title">Evolution</div>
-                        <div className="entry-evolutions-data">
-                          {evolveLine.map((member) => {
-                            return <div>{member}</div>;
-                          })}
-                        </div>
+                {evolutionLine.map((evolveLine) => {
+                  return (
+                    <div className="entry-evolutions">
+                      <div className="entry-evolutions-title">Evolution</div>
+                      <div className="entry-evolutions-data">
+                        {evolveLine.map((member) => {
+                          return <div>{member}</div>;
+                        })}
                       </div>
-                    );
-                  })}
-                </div>
+                    </div>
+                  );
+                })}
               </div>
 
               <div className="entry-moves">
@@ -581,11 +603,15 @@ function Entry({
               </div>
 
               <div className="entry-locations">
-                <div className="locations">
-                  <h2>Locations</h2>
+                {gameLocations.length > 0 ? (
+                  <div className="locations">
+                    <h2>Locations</h2>
 
-                  {gameLocations.map((data) => data)}
-                </div>
+                    {gameLocations.map((data) => data)}
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
             </div>
           ) : (

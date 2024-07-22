@@ -9,7 +9,6 @@ function GameHome({ clickGame }) {
 
   return (
     <div>
-      <h1>GameHome Page</h1>
       <div>
         {genNumbers.map((num) => (
           <div>

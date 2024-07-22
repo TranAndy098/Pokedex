@@ -113,40 +113,42 @@ function Types({
 
   return (
     <div>
-      <h1>Types Page</h1>
-      <div className="type-dropdown">
-        <div className="dropdown-label">Type:</div>
-        <DropDown
-          buttonText={`${curType === "" ? "Type" : typeAPIToDisplay[curType]}`}
-          open={openType}
-          setOpen={setOpenType}
-          content={
-            <>
-              {Object.keys(typeAPIToDisplay).map((typing) => (
-                <DropDownItem
-                  content={typeAPIToDisplay[typing]}
-                  check={curDropType}
-                  setMode1={setType}
-                  setMode2={setScratch}
-                  setOpen={setOpenType}
-                ></DropDownItem>
-              ))}
-            </>
-          }
-        />
+      <div className="type-menu">
+        <div className="type-dropdown">
+          <DropDown
+            buttonText={`${
+              curType === "" ? "Type" : typeAPIToDisplay[curType]
+            }`}
+            open={openType}
+            setOpen={setOpenType}
+            content={
+              <>
+                {Object.keys(typeAPIToDisplay).map((typing) => (
+                  <DropDownItem
+                    content={typeAPIToDisplay[typing]}
+                    check={curDropType}
+                    setMode1={setType}
+                    setMode2={setScratch}
+                    setOpen={setOpenType}
+                  ></DropDownItem>
+                ))}
+              </>
+            }
+          />
+        </div>
+
+        <h1 className="type-name">
+          {curType === "" ? (
+            ""
+          ) : (
+            <img src={allTypeLogos[curType].TypeTextLogo} />
+          )}
+        </h1>
       </div>
 
       <div>
         {curType !== "" ? (
           <div>
-            <div className="type-name">
-              {curType !== "" ? allTypeLogos[curType].DisplayName : ""}
-            </div>
-
-            <div className="type-logo">
-              <img src={allTypeLogos[curType].TypeTextLogo} />
-            </div>
-
             <div className="effective-container">
               <div className="effective-item">
                 <div className="effective-title">Effectiveness To</div>

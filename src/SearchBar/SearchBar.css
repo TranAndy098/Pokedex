@@ -32,6 +32,6 @@ ul li {
   margin-bottom: 5%;
 }
 
-.dropdown {
-  background-color: #add8e6;
+.search-dropdown {
+  background-color: rgb(255, 100, 100);
 }

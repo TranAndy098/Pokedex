@@ -5,10 +5,10 @@
   column-gap: 20px;
   row-gap: 20px;
   gap: 1em;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   justify-content: space-evenly;
   border-radius: 5px;
-  border: 2px solid #73ad21;
+  border: 2px solid rgb(255, 100, 100);
 }
 
 .move-type-display {
@@ -19,7 +19,7 @@
   display: flex;
   flex-wrap: wrap;
   border-radius: 5px;
-  border: 2px solid red;
+  border: 2px solid black;
   z-index: 1;
 }
 
@@ -31,8 +31,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  border-radius: 5px;
-  border: 2px solid #73ad21;
 }
 .move-type-display-footer {
   min-width: 350px;
@@ -42,14 +40,11 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
-  border: 2px solid red;
 }
 
 .move-type-display-header-item {
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid #73ad21;
   flex-direction: column;
   justify-content: center;
 }
@@ -57,7 +52,6 @@
 .move-type-display-footer-item {
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid #73ad21;
   flex-direction: column;
   justify-content: center;
 }

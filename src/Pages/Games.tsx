@@ -153,61 +153,72 @@ function Games({
 
   return (
     <div>
-      <h1>Games Page</h1>
-      <h1>{curGame === "" ? "" : gamesAPIToDisplay[curGame]}</h1>
-      <DropDown
-        buttonText={` ${curGenGame !== "" ? curGenGame : ""}`}
-        open={openGenGame}
-        setOpen={setOpenGenGame}
-        content={
-          <>
-            {genNumbers.map((gen) => (
-              <DropDownItem
-                content={gen}
-                check={curGenGame}
-                setMode1={setGenGame}
-                setMode2={setOpenGameForGen}
-                setOpen={setOpenGenGame}
-              ></DropDownItem>
-            ))}
-          </>
-        }
-      />
-      <DropDown
-        buttonText={curDropGameForGen}
-        open={openGameForGen}
-        setOpen={setOpenGameForGen}
-        content={
-          curGenGame !== "" ? (
-            <>
-              {gamesPerGen[curGenGame].map((game) => (
-                <DropDownItem
-                  content={gamesAPIToDisplay[game]}
-                  check={curDropGameForGen}
-                  setMode1={setDropGameForGen}
-                  setMode2={setScratch}
-                  setOpen={setOpenGameForGen}
-                ></DropDownItem>
-              ))}
-            </>
-          ) : (
-            <>
-              {Object.keys(gamesDisplayToAPI).map((game) => (
-                <DropDownItem
-                  content={game}
-                  check={curDropGameForGen}
-                  setMode1={setDropGameForGen}
-                  setMode2={setScratch}
-                  setOpen={setOpenGameForGen}
-                ></DropDownItem>
-              ))}
-            </>
-          )
-        }
-      />
-      <button className="go-btn" onClick={() => goClick(curDropGameForGen)}>
-        Go
-      </button>
+      <h1 className="game-title">
+        {curGame === "" ? "Games Page" : gamesAPIToDisplay[curGame]}
+      </h1>
+
+      <div className="game-select-menu">
+        <div className="gen-dropdown">
+          <DropDown
+            buttonText={` ${curGenGame !== "" ? curGenGame : ""}`}
+            open={openGenGame}
+            setOpen={setOpenGenGame}
+            content={
+              <>
+                {genNumbers.map((gen) => (
+                  <DropDownItem
+                    content={gen}
+                    check={curGenGame}
+                    setMode1={setGenGame}
+                    setMode2={setOpenGameForGen}
+                    setOpen={setOpenGenGame}
+                  ></DropDownItem>
+                ))}
+              </>
+            }
+          />
+        </div>
+        <div className="game-dropdown">
+          <DropDown
+            buttonText={curDropGameForGen}
+            open={openGameForGen}
+            setOpen={setOpenGameForGen}
+            content={
+              curGenGame !== "" ? (
+                <>
+                  {gamesPerGen[curGenGame].map((game) => (
+                    <DropDownItem
+                      content={gamesAPIToDisplay[game]}
+                      check={curDropGameForGen}
+                      setMode1={setDropGameForGen}
+                      setMode2={setScratch}
+                      setOpen={setOpenGameForGen}
+                    ></DropDownItem>
+                  ))}
+                </>
+              ) : (
+                <>
+                  {Object.keys(gamesDisplayToAPI).map((game) => (
+                    <DropDownItem
+                      content={game}
+                      check={curDropGameForGen}
+                      setMode1={setDropGameForGen}
+                      setMode2={setScratch}
+                      setOpen={setOpenGameForGen}
+                    ></DropDownItem>
+                  ))}
+                </>
+              )
+            }
+          />
+        </div>
+        <div className="games-go-button">
+          <button className="go-btn" onClick={() => goClick(curDropGameForGen)}>
+            Go
+          </button>
+        </div>
+      </div>
+
       {curGame === "" ? (
         <GameHome clickGame={clickGame}></GameHome>
       ) : (

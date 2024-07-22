@@ -5,14 +5,14 @@
   flex-direction: column;
   justify-content: space-evenly;
   border-radius: 5px;
-  background-color: gray;
-  border: 2px solid red;
+  background-color: rgb(240, 240, 240);
+  border: 2px solid black;
+  height: 40%;
 }
 
 .move-header {
   display: flex;
   flex-direction: row;
-  border: 2px solid blue;
   justify-content: space-evenly;
   width: 100%;
   height: 40%;
@@ -20,22 +20,21 @@
 
 .move-name {
   display: flex;
-  border: 2px solid red;
   justify-content: space-evenly;
-  align-items: center;
+  align-content: center;
   width: 25%;
   height: 100%;
+  margin-top: 10px;
 }
 .move-typing {
   display: flex;
-  border: 2px solid red;
   justify-content: space-evenly;
   align-items: center;
   width: 15%;
   height: 100%;
+  margin-top: 5px;
 }
 .move-pp {
-  border: 2px solid red;
   justify-content: space-evenly;
   align-items: center;
   width: 20%;
@@ -46,18 +45,17 @@
   height: 100%;
 }
 .move-damage-class {
-  border: 2px solid red;
   justify-content: space-evenly;
   align-items: center;
   width: 20%;
   height: 100%;
+  margin-top: 5px;
 }
 
 .move-body {
   display: flex;
   align-items: baseline;
   flex-direction: row;
-  border: 2px solid blue;
   justify-content: space-evenly;
   width: 100%;
   height: 30%;
@@ -76,7 +74,6 @@
   display: flex;
   align-items: baseline;
   flex-direction: row;
-  border: 2px solid blue;
   justify-content: space-evenly;
   width: 100%;
   height: 30%;
@@ -87,8 +84,21 @@
 }
 
 .move-item-title {
-  border: 2px solid brown;
+  border: 2px solid black;
 }
 .move-item-text {
-  border: 2px solid green;
+  border: 2px solid black;
+}
+.move-menu {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  border-radius: 5px;
+  border: 2px solid black;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: rgb(240, 240, 240);
+}
+.move-search {
+  width: 80%;
 }

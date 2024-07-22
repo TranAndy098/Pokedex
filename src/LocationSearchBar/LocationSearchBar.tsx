@@ -40,22 +40,22 @@ export default function LocationSearchBar({
     <div className="LocationSearchBar-Menu">
       <h1>Search</h1>
 
-      <div className="search-container">
-        <div className="search-index">
+      <div className="location-search-container">
+        <div className="location-search-index">
           <input
-            className="search-bar"
+            className="location-search-bar"
             type="text"
             value={locationSearch}
             onChange={onChange}
           ></input>
           <button
-            className="search-btn"
+            className="location-search-btn"
             onClick={() => searchClick(locationSearch)}
           >
             Search
           </button>
         </div>
-        <div className="dropdown">
+        <div className="location-search-dropdown">
           {Object.keys(locationNamesDisplayToAPI)
             .filter((item) => {
               const searchTerm = locationSearch.toLowerCase();

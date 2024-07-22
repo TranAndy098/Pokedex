@@ -33,22 +33,22 @@ export default function MoveSearchBar({ setMove, moveSearch, setMoveSearch }) {
     <div className="MoveSearchBar-Menu">
       <h1>Search</h1>
 
-      <div className="search-container">
-        <div className="search-index">
+      <div className="move-search-container">
+        <div className="move-search-index">
           <input
-            className="search-bar"
+            className="move-search-bar"
             type="text"
             value={moveSearch}
             onChange={onChange}
           ></input>
           <button
-            className="search-btn"
+            className="move-search-btn"
             onClick={() => searchClick(moveSearch)}
           >
             Search
           </button>
         </div>
-        <div className="dropdown">
+        <div className="move-search-dropdown">
           {allMoves
             .filter((item) => {
               const searchTerm = moveSearch.toLowerCase();

@@ -67,7 +67,7 @@ export default function SearchBar({
             Search
           </button>
         </div>
-        <div className="dropdown">
+        <div className="search-dropdown">
           {allPokemons
             .filter((pokemon) => {
               const searchTerm = search.toLowerCase();

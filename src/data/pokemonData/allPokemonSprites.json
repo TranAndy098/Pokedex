@@ -8410,10 +8410,10 @@
   "zygarde-50": {
     "Name": "zygarde-50",
     "EntryMainName": "zygarde-50",
-    "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/718.png",
-    "BackDefault": null,
-    "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/718.png",
-    "BackShiny": null
+    "FrontDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10119.png",
+    "BackDefault": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10119.png",
+    "FrontShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10119.png",
+    "BackShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/10119.png"
   },
   "zygarde-10-power-construct": {
     "Name": "zygarde-10-power-construct",

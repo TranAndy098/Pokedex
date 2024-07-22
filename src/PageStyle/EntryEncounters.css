@@ -4,7 +4,6 @@
   flex-wrap: wrap;
   flex-direction: row;
   margin: 10px;
-  border-radius: 5px;
   border: 2px solid black;
   width: 700px;
 }
@@ -13,7 +12,6 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
   border: 2px solid black;
   width: 15%;
 }
@@ -22,7 +20,6 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
   border: 2px solid black;
   width: 85%;
 }
@@ -32,8 +29,7 @@
   justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
-  border-radius: 5px;
-  border: 2px solid black;
+
   width: 100%;
 }
 
@@ -43,18 +39,8 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   flex-direction: row;
-  border-radius: 5px;
-  border: 2px solid black;
+
   width: 100%;
-}
-.entry-encounter-body-item {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  flex-direction: row;
-  border-radius: 5px;
-  border: 2px solid black;
-  width: 33%;
 }
 
 .entry-encounter-footer {
@@ -62,16 +48,16 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   flex-direction: column;
-  border-radius: 5px;
-  border: 2px solid black;
+
   width: 100%;
 }
 .entry-encounter-footer-title {
+  background-color: rgb(255, 100, 100);
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   flex-direction: column;
-  border-radius: 5px;
+
   border: 2px solid black;
   width: 100%;
 }
@@ -80,8 +66,7 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   flex-direction: column;
-  border-radius: 5px;
-  border: 2px solid black;
+
   width: 100%;
 }
 .entry-encounter-footer-item {
@@ -89,7 +74,7 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   flex-direction: column;
-  border-radius: 5px;
+
   border: 2px solid black;
   width: 100%;
 }
@@ -97,8 +82,9 @@
 .entry-encounter-area {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   flex-wrap: wrap;
-  border-radius: 5px;
+
   border: 2px solid black;
   width: 30%;
 }
@@ -106,15 +92,15 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
-  border: 2px solid black;
+
   width: 70%;
 }
 .entry-encounter-method-title {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
+  background-color: rgb(255, 100, 100);
+
   border: 2px solid black;
   width: 100%;
 }
@@ -123,7 +109,7 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
+
   border: 2px solid black;
   width: 100%;
 }
@@ -132,15 +118,15 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
-  border: 2px solid black;
-  width: 100%;
+
+  width: 35%;
 }
 .entry-encounter-min-title {
+  background-color: rgb(255, 100, 100);
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
+
   border: 2px solid black;
   width: 100%;
 }
@@ -148,7 +134,7 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
+
   border: 2px solid black;
   width: 100%;
 }
@@ -157,15 +143,15 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
-  border: 2px solid black;
-  width: 100%;
+
+  width: 35%;
 }
 .entry-encounter-max-title {
+  background-color: rgb(255, 100, 100);
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
+
   border: 2px solid black;
   width: 100%;
 }
@@ -173,7 +159,7 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
+
   border: 2px solid black;
   width: 100%;
 }
@@ -182,15 +168,15 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
-  border: 2px solid black;
-  width: 100%;
+
+  width: 30%;
 }
 .entry-encounter-chance-title {
+  background-color: rgb(255, 100, 100);
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
+
   border: 2px solid black;
   width: 100%;
 }
@@ -198,7 +184,19 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border-radius: 5px;
+
   border: 2px solid black;
   width: 100%;
+}
+.locations-pokemon-container {
+  display: flex; /* Enables Flexbox */
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+  gap: 1em;
+  background-color: rgb(240, 240, 240);
+  justify-content: space-evenly;
+  border-radius: 5px;
+  border: 2px solid black;
 }

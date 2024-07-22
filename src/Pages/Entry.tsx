@@ -178,9 +178,6 @@ function Entry({
       let name = Object.keys(allForms[i]);
       mid.push(
         <div className="pokemon-form">
-          <div className="pokemon-form-name">
-            {allForms[i][name].DisplayName}
-          </div>
           <img
             className="pokemon-form-sprite"
             src={
@@ -189,6 +186,9 @@ function Entry({
                 : allForms[i][name].FrontDefault
             }
           />
+          <div className="pokemon-form-name">
+            {allForms[i][name].DisplayName}
+          </div>
         </div>
       );
     }
@@ -255,38 +255,32 @@ function Entry({
                         </div>
 
                         <div className="entry-encounter-body">
-                          <div className="entry-encounter-body-item">
-                            <div className="entry-encounter-min">
-                              <div className="entry-encounter-min-title">
-                                {" "}
-                                MinLevel
-                              </div>
-                              <div className="entry-encounter-min-data">
-                                {allLocations[games[i]][area][method].MinLevel}
-                              </div>
+                          <div className="entry-encounter-chance">
+                            <div className="entry-encounter-chance-title">
+                              {" "}
+                              Chance
+                            </div>
+                            <div className="entry-encounter-chance-data">
+                              {allLocations[games[i]][area][method].Chance}
+                            </div>
+                          </div>
+                          <div className="entry-encounter-min">
+                            <div className="entry-encounter-min-title">
+                              {" "}
+                              MinLevel
+                            </div>
+                            <div className="entry-encounter-min-data">
+                              {allLocations[games[i]][area][method].MinLevel}
                             </div>
                           </div>
 
-                          <div className="entry-encounter-body-item">
-                            <div className="entry-encounter-max">
-                              <div className="entry-encounter-max-title">
-                                {" "}
-                                MaxLevel
-                              </div>
-                              <div className="entry-encounter-max-data">
-                                {allLocations[games[i]][area][method].MaxLevel}
-                              </div>
+                          <div className="entry-encounter-max">
+                            <div className="entry-encounter-max-title">
+                              {" "}
+                              MaxLevel
                             </div>
-                          </div>
-                          <div className="entry-encounter-body-item">
-                            <div className="entry-encounter-chance">
-                              <div className="entry-encounter-chance-title">
-                                {" "}
-                                Chance
-                              </div>
-                              <div className="entry-encounter-chance-data">
-                                {allLocations[games[i]][area][method].Chance}
-                              </div>
+                            <div className="entry-encounter-max-data">
+                              {allLocations[games[i]][area][method].MaxLevel}
                             </div>
                           </div>
                         </div>
@@ -365,10 +359,6 @@ function Entry({
       for (let j = 0; j < chains[i].length; j++) {
         interm.push(
           <div className="pokemon-evolution">
-            <div className="pokemon-evolution-name">
-              {pokemonAPIToDisplay[chains[i][j]]}
-            </div>
-
             <img
               className="pokemon-evolution-sprite"
               src={
@@ -378,6 +368,9 @@ function Entry({
               }
               onClick={() => clickPokemon(chains[i][j])}
             />
+            <div className="pokemon-evolution-name">
+              {pokemonAPIToDisplay[chains[i][j]]}
+            </div>
           </div>
         );
       }
@@ -492,107 +485,99 @@ function Entry({
         />
       ) : (
         <>
-          <div>
-            <h1>
-              {Object.keys(nationalPokedexNames).includes(curPokemon)
-                ? nationalPokedexNames[curPokemon]
-                : pokemonAPIToDisplay[curPokemon]}
-              's Entry Page
-            </h1>
-          </div>
-
           {value.length > 0 ? (
-            <div className="entry-data">
-              <div className="entry-header">
-                <div className="entry-header-front">
-                  <img className="entry-front-sprite" src={value[0][0]} />
-                </div>
-
-                <div className="entry-header-box">
-                  <div className="entry-name-types">
-                    <div className="entry-name">
-                      <div>{pokemonAPIToDisplay[curPokemon]}</div>
-                    </div>
-                    <div className="entry-types">
-                      {value[1].map((name) => (
-                        <img
-                          className="entry-type"
-                          onClick={() => clickType(name)}
-                          src={allTypeLogos[name].TypeTextLogo}
-                        />
-                      ))}
-                    </div>
+            <div>
+              <div className="entry-data">
+                <div className="entry-header">
+                  <div className="entry-header-front">
+                    <img className="entry-front-sprite" src={value[0][0]} />
                   </div>
 
-                  <div className="entry-box-bottom">
-                    <img className="entry-back-sprite" src={value[0][1]} />
+                  <div className="entry-header-box">
+                    <div className="entry-name-types">
+                      <div className="entry-name">
+                        <div>{pokemonAPIToDisplay[curPokemon]}</div>
+                      </div>
+                      <div className="entry-types">
+                        {value[1].map((name) => (
+                          <img
+                            className="entry-type"
+                            onClick={() => clickType(name)}
+                            src={allTypeLogos[name].TypeTextLogo}
+                          />
+                        ))}
+                      </div>
+                    </div>
 
-                    <div className="entry-abilities">
-                      <div className="entry-ability">
-                        <div className="entry-ability-title">Abilities</div>
-                        <div className="entry-ability-data">
-                          {value[2].map((name) => (
-                            <div className="entry-ability-entry">
+                    <div className="entry-box-bottom">
+                      <img className="entry-back-sprite" src={value[0][1]} />
+
+                      <div className="entry-abilities">
+                        <div className="entry-ability">
+                          <div className="entry-ability-title">Abilities</div>
+                          <div className="entry-ability-data">
+                            {value[2].map((name) => (
+                              <div className="entry-ability-entry">
+                                {abilitiesAPIToDisplay[name]}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="entry-hidden-ability">
+                          <div className="entry-hidden-ability-title">
+                            Hidden Abilities
+                          </div>{" "}
+                          {value[3].map((name) => (
+                            <div className="entry-hidden-ability-data">
                               {abilitiesAPIToDisplay[name]}
                             </div>
                           ))}
                         </div>
                       </div>
-                      <div className="entry-hidden-ability">
-                        <div className="entry-hidden-ability-title">
-                          Hidden Abilities
-                        </div>{" "}
-                        {value[3].map((name) => (
-                          <div className="entry-hidden-ability-data">
-                            {abilitiesAPIToDisplay[name]}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
 
-                    <div className="entry-stats">
-                      <div className="entry-stat-title">Stats</div>
+                      <div className="entry-stats">
+                        <div className="entry-stat-title">Stats</div>
 
-                      <div className="entry-stat-data">
-                        {value[4].map((name) => name)}
+                        <div className="entry-stat-data">
+                          {value[4].map((name) => name)}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="entry-body">
-                {forms ? (
-                  <div className="entry-forms">
-                    <div className="entry-forms-title">Forms</div>
-                    <div className="entry-forms-data">
-                      {differentForms.map((differentForm) => {
-                        return <div>{differentForm}</div>;
-                      })}
-                    </div>
-                  </div>
-                ) : (
-                  <></>
-                )}
-              </div>
-
-              <div className="entry-footer">
-                {evolutionLine.map((evolveLine) => {
-                  return (
-                    <div className="entry-evolutions">
-                      <div className="entry-evolutions-title">Evolution</div>
-                      <div className="entry-evolutions-data">
-                        {evolveLine.map((member) => {
-                          return <div>{member}</div>;
+                <div className="entry-body">
+                  {forms ? (
+                    <div className="entry-forms">
+                      <div className="entry-forms-title">Forms</div>
+                      <div className="entry-forms-data">
+                        {differentForms.map((differentForm) => {
+                          return <div>{differentForm}</div>;
                         })}
                       </div>
                     </div>
-                  );
-                })}
-              </div>
+                  ) : (
+                    <></>
+                  )}
+                </div>
 
-              <div className="entry-moves">
-                <div className="moves">
+                <div className="entry-footer">
+                  {evolutionLine.map((evolveLine) => {
+                    return (
+                      <div className="entry-evolutions">
+                        <div className="entry-evolutions-title">Evolutions</div>
+                        <div className="entry-evolutions-data">
+                          {evolveLine.map((member) => {
+                            return <div>{member}</div>;
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              <div>
+                <div className="entry-moves">
                   <h2>Moves</h2>
                   <div className="move-pokemon-container">
                     {value[5].map((name) => (
@@ -600,18 +585,19 @@ function Entry({
                     ))}
                   </div>
                 </div>
-              </div>
 
-              <div className="entry-locations">
-                {gameLocations.length > 0 ? (
-                  <div className="locations">
-                    <h2>Locations</h2>
-
-                    {gameLocations.map((data) => data)}
-                  </div>
-                ) : (
-                  <></>
-                )}
+                <div className="entry-locations">
+                  {gameLocations.length > 0 ? (
+                    <div className="locations">
+                      <h2>Locations</h2>
+                      <div className="locations-pokemon-container">
+                        {gameLocations.map((data) => data)}
+                      </div>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+                </div>
               </div>
             </div>
           ) : (

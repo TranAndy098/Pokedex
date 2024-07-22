@@ -15,6 +15,7 @@ import encounterMethodsAPIToDisplay from "../data/encounterMethodData/encounterM
 import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
 import allTypeLogos from "../data/typeData/allTypeLogos.json";
 import "../PageStyle/LocationEncounters.css";
+import "../PageStyle/LocationMenu.css";
 
 function Locations({
   curLocation,
@@ -120,35 +121,42 @@ function Locations({
                 </div>
 
                 <div className="encounter-header-level-chance">
-                  <div className="encounter-min">
-                    <div className="encounter-header-subitem-title">
-                      MinLevel
+                  <div className="encounter-header-level">
+                    <div className="encounter-min">
+                      <div className="encounter-header-subitem-title">
+                        MinLevel
+                      </div>
+                      <div className="encounter-header-subitem-data">
+                        {
+                          pokemonPerLocation[curLocation][pokemons[i]][
+                            methods[j]
+                          ].MinLevel
+                        }
+                      </div>
                     </div>
-                    <div className="encounter-header-subitem-data">
-                      {
-                        pokemonPerLocation[curLocation][pokemons[i]][methods[j]]
-                          .MinLevel
-                      }
+                    <div className="encounter-max">
+                      <div className="encounter-header-subitem-title">
+                        MaxLevel
+                      </div>
+                      <div className="encounter-header-subitem-data">
+                        {
+                          pokemonPerLocation[curLocation][pokemons[i]][
+                            methods[j]
+                          ].MaxLevel
+                        }
+                      </div>
                     </div>
                   </div>
-                  <div className="encounter-max">
-                    <div className="encounter-header-subitem-title">
-                      MaxLevel
-                    </div>
-                    <div className="encounter-header-subitem-data">
-                      {
-                        pokemonPerLocation[curLocation][pokemons[i]][methods[j]]
-                          .MaxLevel
-                      }
-                    </div>
-                  </div>
-                  <div className="encounter-chance">
-                    <div className="encounter-chance-title">Chance</div>
-                    <div className="encounter-chance-data">
-                      {
-                        pokemonPerLocation[curLocation][pokemons[i]][methods[j]]
-                          .Chance
-                      }
+                  <div className="encounter-header-chance">
+                    <div className="encounter-chance">
+                      <div className="encounter-chance-title">Chance</div>
+                      <div className="encounter-chance-data">
+                        {
+                          pokemonPerLocation[curLocation][pokemons[i]][
+                            methods[j]
+                          ].Chance
+                        }
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -190,76 +198,89 @@ function Locations({
   );
 
   return (
-    <div>
-      <h1>Locations Page</h1>
-      <h1>
-        {curLocation === "" ? "" : locationNamesAPIToDisplay[curLocation]}
+    <div className="location-menu">
+      <h1 className="location-title">
+        {curLocation === ""
+          ? "Locations Page"
+          : locationNamesAPIToDisplay[curLocation]}
       </h1>
-      <LocationSearchBar
-        setLocation={setLocation}
-        locationSearch={locationSearch}
-        setLocationSearch={setLocationSearch}
-        setLocationGame={setLocationGame}
-        setDropLocationForGame={setDropLocationForGame}
-      ></LocationSearchBar>
-      <DropDown
-        buttonText={` ${curLocationGame !== "" ? curLocationGame : ""}`}
-        open={openGameLocations}
-        setOpen={setOpenGameLocations}
-        content={
-          <>
-            {Object.keys(gamesAPIToDisplay).map((game) => (
-              <DropDownItem
-                content={gamesAPIToDisplay[game]}
-                check={curLocationGame}
-                setMode1={setLocationGame}
-                setMode2={setOpenLocationForGame}
-                setOpen={setOpenGameLocations}
-              ></DropDownItem>
-            ))}
-          </>
-        }
-      />
-      <DropDown
-        buttonText={curDropLocationForGame}
-        open={openLocationForGame}
-        setOpen={setOpenLocationForGame}
-        content={
-          curLocationGame !== "" ? (
-            <>
-              {locationsPerGame[gamesDisplayToAPI[curLocationGame]].map(
-                (locations) => (
+
+      <div className="location-dropdown">
+        <div className="location-game-dropdown">
+          <DropDown
+            buttonText={` ${curLocationGame !== "" ? curLocationGame : ""}`}
+            open={openGameLocations}
+            setOpen={setOpenGameLocations}
+            content={
+              <>
+                {Object.keys(gamesAPIToDisplay).map((game) => (
                   <DropDownItem
-                    content={locationNamesAPIToDisplay[locations]}
-                    check={curDropLocationForGame}
-                    setMode1={setDropLocationForGame}
-                    setMode2={setScratch}
-                    setOpen={setOpenLocationForGame}
+                    content={gamesAPIToDisplay[game]}
+                    check={curLocationGame}
+                    setMode1={setLocationGame}
+                    setMode2={setOpenLocationForGame}
+                    setOpen={setOpenGameLocations}
                   ></DropDownItem>
-                )
-              )}
-            </>
-          ) : (
-            <>
-              {Object.keys(locationNamesDisplayToAPI).map((locations) => (
-                <DropDownItem
-                  content={locations}
-                  check={curDropLocationForGame}
-                  setMode1={setDropLocationForGame}
-                  setMode2={setScratch}
-                  setOpen={setOpenLocationForGame}
-                ></DropDownItem>
-              ))}
-            </>
-          )
-        }
-      />
-      <button
-        className="go-btn"
-        onClick={() => goClick(curDropLocationForGame)}
-      >
-        Go
-      </button>
+                ))}
+              </>
+            }
+          />
+        </div>
+        <div className="location-area-dropdown">
+          <DropDown
+            buttonText={curDropLocationForGame}
+            open={openLocationForGame}
+            setOpen={setOpenLocationForGame}
+            content={
+              curLocationGame !== "" ? (
+                <>
+                  {locationsPerGame[gamesDisplayToAPI[curLocationGame]].map(
+                    (locations) => (
+                      <DropDownItem
+                        content={locationNamesAPIToDisplay[locations]}
+                        check={curDropLocationForGame}
+                        setMode1={setDropLocationForGame}
+                        setMode2={setScratch}
+                        setOpen={setOpenLocationForGame}
+                      ></DropDownItem>
+                    )
+                  )}
+                </>
+              ) : (
+                <>
+                  {Object.keys(locationNamesDisplayToAPI).map((locations) => (
+                    <DropDownItem
+                      content={locations}
+                      check={curDropLocationForGame}
+                      setMode1={setDropLocationForGame}
+                      setMode2={setScratch}
+                      setOpen={setOpenLocationForGame}
+                    ></DropDownItem>
+                  ))}
+                </>
+              )
+            }
+          />
+        </div>
+        <div className="location-go-button">
+          <button
+            className="go-btn"
+            onClick={() => goClick(curDropLocationForGame)}
+          >
+            Go
+          </button>
+        </div>
+      </div>
+      <div className="location-search">
+        <LocationSearchBar
+          setLocation={setLocation}
+          locationSearch={locationSearch}
+          setLocationSearch={setLocationSearch}
+          setLocationGame={setLocationGame}
+          setDropLocationForGame={setDropLocationForGame}
+        ></LocationSearchBar>
+      </div>
+
       {curLocation !== "" ? (
         <div>
           <div className="encounter-title">Encounters</div>

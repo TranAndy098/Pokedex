@@ -30,7 +30,11 @@
 
 #navbar_logo {
   background-color: #ff8177;
-  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+  background-image: linear-gradient(
+    to top,
+    rgb(255, 100, 100) 0%,
+    #ffb199 100%
+  );
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -103,7 +107,7 @@
   transition: all 0.3s ease;
 }
 .navbar_links.active {
-  color: red;
+  color: rgb(255, 100, 100);
   transition: all 0.3s ease;
 }
 

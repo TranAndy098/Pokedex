@@ -241,12 +241,6 @@ const App: React.FC = () => {
                     )}
                   </div>
                 </button>
-
-                {shinyMode ? (
-                  <img className="shiny-charm" src="./shiny-charm.png" />
-                ) : (
-                  ""
-                )}
               </div>
             </div>
             <button className="top-btn" onClick={() => clickTop()}>

@@ -1,0 +1,33 @@
+.location-dropdown {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 60%;
+}
+.location-game-dropdown {
+  width: 40%;
+}
+.location-area-dropdown {
+  width: 40%;
+}
+.location-go-button {
+  width: 10%;
+  height: 20px;
+}
+.location-search {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 30%;
+  background-color: rgb(240, 240, 240);
+}
+.location-menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+.location-title {
+  width: 100%;
+}

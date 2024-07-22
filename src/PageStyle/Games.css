@@ -5,7 +5,7 @@
   gap: 1em;
   column-gap: 20px;
   row-gap: 20px;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   justify-content: space-evenly;
   border: 0.25rem solid;
 }
@@ -14,7 +14,7 @@
   max-width: 300px;
   min-width: 300px;
   flex-direction: column;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(225, 225, 225);
   max-height: 300px;
   min-height: 300px;
   margin: 10px;
@@ -26,7 +26,7 @@
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(240, 240, 240);
   height: 40px;
   border-radius: 25px;
   border: 2px solid black;
@@ -86,4 +86,22 @@
   .version-items {
     flex: 1 1 100%;
   }
+}
+
+.game-select-menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+  border-radius: 25px;
+  background-color: rgb(240, 240, 240);
+}
+.gen-dropdown {
+  width: 35%;
+}
+.game-dropdown {
+  width: 35%;
+}
+.games-go-button {
+  width: 10%;
 }

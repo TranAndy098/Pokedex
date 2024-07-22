@@ -5,10 +5,10 @@
   gap: 1em;
   column-gap: 20px;
   row-gap: 20px;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   justify-content: space-evenly;
   border-radius: 25px;
-  border: 2px solid #73ad21;
+  border: 2px solid black;
   margin: 50px;
 }
 
@@ -40,7 +40,7 @@
   z-index: 2;
   opacity: 0;
   border-radius: 25px;
-  border: 2px solid #73ad21;
+  border: 2px solid black;
   pointer-events: none;
   display: none;
 }
@@ -73,7 +73,7 @@
   background-color: rgb(255, 80, 80);
   height: 50px;
   border-radius: 5px;
-  border: 2px solid #73ad21;
+  border: 2px solid transparent;
 }
 .pokedex-header-item {
   position: relative;
@@ -99,8 +99,7 @@
   justify-content: space-evenly;
   margin: 10px;
   height: 25px;
-  border-radius: 5px;
-  border: 2px solid #73ad21;
+  border: 2px solid transparent;
 }
 
 .pokedex-id {

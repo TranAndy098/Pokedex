@@ -1,12 +1,13 @@
 import { React, useState, useMemo } from "react";
-import allPokemonSprites from "../data/pokemonData/allPokemonSprites.json";
-import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
-import allTypeLogos from "../data/typeData/allTypeLogos.json";
-import nationalPokedexTyping from "../data/pokemonData/nationalPokedexTyping.json";
-import nationalPokedexNames from "../data/pokemonData/nationalPokedexNames.json";
-import "../PageStyle/Pokedex.css";
+import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
+import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
+import allTypeLogos from "../../data/typeData/allTypeLogos.json";
+import nationalPokedexTyping from "../../data/pokemonData/nationalPokedexTyping.json";
+import nationalPokedexNames from "../../data/pokemonData/nationalPokedexNames.json";
+import "../../PageStyle/Pokedex.css";
 
 function EntryHome({ clickPokemon, clickType, shinyMode }) {
+  console.log("Getting Pokemon Entry Home");
   const [value, setValue] = useState([]);
 
   async function fetchData() {
@@ -70,11 +71,7 @@ function EntryHome({ clickPokemon, clickType, shinyMode }) {
         );
       }
 
-      console.log("move data 2");
-
       setValue(overall);
-
-      console.log(9);
     } catch (error) {
       setValue([]);
       return ["Error"];

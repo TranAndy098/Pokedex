@@ -4,8 +4,6 @@
   flex-wrap: wrap;
   background-color: rgb(240, 240, 240);
   justify-content: space-evenly;
-
-  border: 2px solid rgb(255, 100, 100);
 }
 .effective-title {
   display: flex; /* Enables Flexbox */

@@ -5,8 +5,6 @@ import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import allDamageClassLogos from "../../data/moveData/allDamageClassLogos.json";
 import moveTargetAPIToDisplay from "../../data/moveTargetData/moveTargetAPIToDisplay.json";
 import "../../PageStyle/MovesPokemon.css";
-import "../../PageStyle/EntryEncounters.css";
-import "../../PageStyle/Entry.css";
 import "../../PageStyle/MoveColors.css";
 
 export function getEntryMoveData(APImove, clickMove, clickType) {

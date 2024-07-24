@@ -2,10 +2,7 @@ import { React } from "react";
 import axios from "axios";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import statsAPIToDisplayShort from "../../data/statsData/statsAPIToDisplayShort.json";
-import "../../PageStyle/MovesPokemon.css";
-import "../../PageStyle/EntryEncounters.css";
 import "../../PageStyle/Entry.css";
-import "../../PageStyle/MoveColors.css";
 import { getEntryMoveData } from "./getEntryMoveData.tsx";
 
 export async function getEntryData(pokemon, shinyMode, clickMove, clickType) {

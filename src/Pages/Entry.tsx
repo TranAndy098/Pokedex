@@ -1,9 +1,5 @@
 import { React, useState, useMemo } from "react";
 import EntryHome from "../PageFunctions/EntryData/EntryHome.tsx";
-import "../PageStyle/MovesPokemon.css";
-import "../PageStyle/EntryEncounters.css";
-import "../PageStyle/Entry.css";
-import "../PageStyle/MoveColors.css";
 import { getEntryFormData } from "../PageFunctions/EntryData/getEntryFormData.tsx";
 import { getEntryEvolutionData } from "../PageFunctions/EntryData/getEntryEvolutionData.tsx";
 import { getEntryLocationData } from "../PageFunctions/EntryData/getEntryLocationData.tsx";

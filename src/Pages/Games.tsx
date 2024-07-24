@@ -7,7 +7,6 @@ import gamesPerGen from "../data/gameNameData/gamesPerGen.json";
 import GameHome from "../PageFunctions/GameData/GameHome";
 import locationPerGame from "../data/locationData/locationsPerGame.json";
 import locationNamesAPIToDisplay from "../data/locationData/locationNamesAPIToDisplay.json";
-import "../PageStyle/Pokedex.css";
 import "../PageStyle/GameLocations.css";
 import { getGameData } from "../PageFunctions/GameData/getGameData";
 

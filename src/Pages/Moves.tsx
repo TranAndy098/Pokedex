@@ -1,7 +1,6 @@
 import { React, useState, useMemo } from "react";
 import MoveSearchBar from "../MoveSearchBar/MoveSearchBar";
 import "../PageStyle/Moves.css";
-import "../PageStyle/MoveColors.css";
 import { getMoveInfoData } from "../PageFunctions/MoveData/getMoveInfoData";
 import { getMoveData } from "../PageFunctions/MoveData/getMoveData";
 import { showMoveData } from "../PageFunctions/MoveData/showMoveData";

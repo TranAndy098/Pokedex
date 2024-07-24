@@ -6,7 +6,6 @@ import pokedexAPIToDisplay from "../../data/gameNameData/pokedexAPIToDisplay.jso
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import pokemonTypingChart from "../../data/pokemonData/pokemonTypingChart.json";
 import "../../PageStyle/Pokedex.css";
-import "../../PageStyle/GameLocations.css";
 
 export function getGameData(
   curGame,

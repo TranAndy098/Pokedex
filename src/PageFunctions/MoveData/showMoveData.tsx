@@ -3,8 +3,7 @@ import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import pokemonTypingChart from "../../data/pokemonData/pokemonTypingChart.json";
-import "../../PageStyle/Moves.css";
-import "../../PageStyle/MoveColors.css";
+import "../../PageStyle/Pokedex.css";
 
 export function showMoveData(
   movePokemonLength,

@@ -3,9 +3,6 @@ import axios from "axios";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import allTypeData from "../../data/typeData/allTypeData.json";
 import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
-import "../../PageStyle/MovesForTypes.css";
-import "../../PageStyle/Types.css";
-import "../../PageStyle/MoveColors.css";
 
 export async function getTypeData(
   curType,

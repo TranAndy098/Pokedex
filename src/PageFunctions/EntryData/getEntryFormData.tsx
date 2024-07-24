@@ -1,9 +1,6 @@
 import { React } from "react";
 import allSpecialPokemonForms from "../../data/pokemonData/allSpecialPokemonForms.json";
-import "../../PageStyle/MovesPokemon.css";
-import "../../PageStyle/EntryEncounters.css";
 import "../../PageStyle/Entry.css";
-import "../../PageStyle/MoveColors.css";
 
 export function getEntryFormData(pokemon, setForms, shinyMode) {
   console.log("Getting Pokemon Form Data");

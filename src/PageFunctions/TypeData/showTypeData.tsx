@@ -1,9 +1,7 @@
 import { React } from "react";
 import allTypeData from "../../data/typeData/allTypeData.json";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
-import "../../PageStyle/MovesForTypes.css";
 import "../../PageStyle/Types.css";
-import "../../PageStyle/MoveColors.css";
 
 export function showTypeData(curType, clickType) {
   console.log("Showing Type Data");

@@ -6,10 +6,7 @@ import encounterConditionsAPIToDisplay from "../../data/encounterConditionData/e
 import encounterMethodsAPIToDisplay from "../../data/encounterMethodData/encounterMethodsAPIToDisplay.json";
 import gamesAPIToDisplay from "../../data/gameNameData/gamesAPIToDisplay.json";
 import locationNamesAPIToDisplay from "../../data/locationData/locationNamesAPIToDisplay.json";
-import "../../PageStyle/MovesPokemon.css";
 import "../../PageStyle/EntryEncounters.css";
-import "../../PageStyle/Entry.css";
-import "../../PageStyle/MoveColors.css";
 import gamesMascots from "../../data/gameNameData/gamesMascots.json";
 
 export function getEntryLocationData(

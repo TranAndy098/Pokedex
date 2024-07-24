@@ -7,7 +7,6 @@ import encounterMethodsAPIToDisplay from "../../data/encounterMethodData/encount
 import pokemonTypingChart from "../../data/pokemonData/pokemonTypingChart.json";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import "../../PageStyle/LocationEncounters.css";
-import "../../PageStyle/LocationMenu.css";
 
 export function getLocationData(
   curLocation,

@@ -2,8 +2,6 @@ import { React } from "react";
 import axios from "axios";
 import allMoveData from "../../data/moveData/allMoveData.json";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
-import "../../PageStyle/Moves.css";
-import "../../PageStyle/MoveColors.css";
 
 export async function getMoveData(
   curMove,

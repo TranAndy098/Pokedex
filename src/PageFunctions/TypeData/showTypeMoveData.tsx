@@ -4,7 +4,6 @@ import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
 import "../../PageStyle/MovesForTypes.css";
 import allMoveData from "../../data/moveData/allMoveData.json";
 import allDamageClassLogos from "../../data/moveData/allDamageClassLogos.json";
-import "../../PageStyle/Types.css";
 import "../../PageStyle/MoveColors.css";
 
 export function showTypeMoveData(curType, typeMoves, clickMove, clickType) {

@@ -1,18 +1,9 @@
 import { React, useState, useMemo } from "react";
-import axios from "axios";
 import DropDown from "../DropDown/DropDown/DropDown";
 import DropDownItem from "../DropDown/DropDownItem/DropDownItem";
-import allPokemonSprites from "../data/pokemonData/allPokemonSprites.json";
-import allTypes from "../data/typeData/allTypes.json";
-import allTypeData from "../data/typeData/allTypeData.json";
 import allTypeLogos from "../data/typeData/allTypeLogos.json";
 import typeAPIToDisplay from "../data/typeData/typeAPIToDisplay.json";
-import moveAPIToDisplay from "../data/moveData/moveAPIToDisplay.json";
-import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
-import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
 import "../PageStyle/MovesForTypes.css";
-import allMoveData from "../data/moveData/allMoveData.json";
-import allDamageClassLogos from "../data/moveData/allDamageClassLogos.json";
 import "../PageStyle/Types.css";
 import "../PageStyle/MoveColors.css";
 import { getTypeData } from "../PageFunctions/TypeData/getTypeData";

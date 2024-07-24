@@ -1,6 +1,5 @@
 import { React, useState, useMemo } from "react";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
-import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import nationalPokedexTyping from "../../data/pokemonData/nationalPokedexTyping.json";
 import nationalPokedexNames from "../../data/pokemonData/nationalPokedexNames.json";

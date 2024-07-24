@@ -1,16 +1,10 @@
 import { React, useState, useMemo } from "react";
 import DropDown from "../DropDown/DropDown/DropDown";
 import DropDownItem from "../DropDown/DropDownItem/DropDownItem";
-import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
-import allPokemonSprites from "../data/pokemonData/allPokemonSprites.json";
 import gamesDisplayToAPI from "../data/gameNameData/gamesDisplayToAPI.json";
 import gamesAPIToDisplay from "../data/gameNameData/gamesAPIToDisplay.json";
 import gamesPerGen from "../data/gameNameData/gamesPerGen.json";
-import pokedexPerGame from "../data/gameNameData/pokedexPerGame.json";
-import pokedexAPIToDisplay from "../data/gameNameData/pokedexAPIToDisplay.json";
 import GameHome from "../PageFunctions/GameData/GameHome";
-import allTypeLogos from "../data/typeData/allTypeLogos.json";
-import pokemonTypingChart from "../data/pokemonData/pokemonTypingChart.json";
 import locationPerGame from "../data/locationData/locationsPerGame.json";
 import locationNamesAPIToDisplay from "../data/locationData/locationNamesAPIToDisplay.json";
 import "../PageStyle/Pokedex.css";

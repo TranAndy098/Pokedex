@@ -1,12 +1,4 @@
-import { React, useState, useMemo } from "react";
-import LocationSearchBar from "../../LocationSearchBar/LocationSearchBar";
-import locationNamesDisplayToAPI from "../../data/locationData/locationNamesDisplayToAPI.json";
-import locationNamesAPIToDisplay from "../../data/locationData/locationNamesAPIToDisplay.json";
-import DropDown from "../../DropDown/DropDown/DropDown";
-import DropDownItem from "../../DropDown/DropDownItem/DropDownItem";
-import gamesAPIToDisplay from "../../data/gameNameData/gamesAPIToDisplay.json";
-import gamesDisplayToAPI from "../../data/gameNameData/gamesDisplayToAPI.json";
-import locationsPerGame from "../../data/locationData/locationsPerGame.json";
+import { React } from "react";
 import pokemonPerLocation from "../../data/locationData/pokemonPerLocation.json";
 import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";

@@ -1,14 +1,9 @@
-import { React, useState, useMemo } from "react";
-import axios from "axios";
-import MoveSearchBar from "../../MoveSearchBar/MoveSearchBar";
+import { React } from "react";
 import allMoveData from "../../data/moveData/allMoveData.json";
-import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
-import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
 import allDamageClassLogos from "../../data/moveData/allDamageClassLogos.json";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import moveTargetAPIToDisplay from "../../data/moveTargetData/moveTargetAPIToDisplay.json";
-import pokemonTypingChart from "../../data/pokemonData/pokemonTypingChart.json";
 import "../../PageStyle/Moves.css";
 import "../../PageStyle/MoveColors.css";
 

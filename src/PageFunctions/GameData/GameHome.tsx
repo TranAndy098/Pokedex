@@ -1,4 +1,4 @@
-import { React, useState, useMemo } from "react";
+import { React } from "react";
 import gamesLogos from "../../data/gameNameData/gamesLogos.json";
 import gameVersionsPerGen from "../../data/gameNameData/gameVersionsPerGen.json";
 import gamesAPIToDisplay from "../../data/gameNameData/gamesAPIToDisplay.json";

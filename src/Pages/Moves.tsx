@@ -1,4 +1,4 @@
-import { React, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import MoveSearchBar from "../MoveSearchBar/MoveSearchBar";
 import "../PageStyle/Moves.css";
 import { getMoveInfoData } from "../PageFunctions/MoveData/getMoveInfoData";
@@ -13,6 +13,12 @@ function Moves({
   clickPokemon,
   clickType,
   shinyMode,
+}: {
+  moveSearch: string;
+  setMoveSearch: (move: string) => void;
+  clickPokemon: CallableFunction;
+  clickType: CallableFunction;
+  shinyMode: boolean;
 }) {
   const { curMove } = useParams();
 
@@ -21,7 +27,7 @@ function Moves({
   const [movePokemonLength, setMovePokemonLength] = useState([]);
   const [moveData, setMoveData] = useState("");
 
-  async function fetchMoveData(move) {
+  async function fetchMoveData(move: string) {
     if (move === "home" || !Object.keys(moveAPIToDisplay).includes(move)) {
       return "";
     }

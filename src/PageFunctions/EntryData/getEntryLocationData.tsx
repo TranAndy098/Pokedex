@@ -1,4 +1,3 @@
-import { React } from "react";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
 import pokemonGameLocations from "../../data/locationData/pokemonGameLocations.json";
@@ -10,11 +9,11 @@ import "../../PageStyle/EntryEncounters.css";
 import gamesMascots from "../../data/gameNameData/gamesMascots.json";
 
 export function getEntryLocationData(
-  pokemon,
-  shinyMode,
-  clickGame,
-  clickLocation,
-  clickPokemon
+  pokemon: string,
+  shinyMode: boolean,
+  clickGame: CallableFunction,
+  clickLocation: CallableFunction,
+  clickPokemon: CallableFunction
 ) {
   console.log(`Getting ${pokemonAPIToDisplay[pokemon]} Form Data`);
   // evolve
@@ -27,7 +26,6 @@ export function getEntryLocationData(
   }
 
   let games = Object.keys(allLocations);
-  let areas = [];
 
   for (let i = 0; i < games.length; i++) {
     mid.push(
@@ -165,8 +163,6 @@ export function getEntryLocationData(
         ))}
       </div>
     );
-
-    areas = Object.keys(allLocations[games[i]]);
   }
   return mid;
 }

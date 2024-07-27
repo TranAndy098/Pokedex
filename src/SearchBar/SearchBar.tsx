@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./SearchBar.css";
 import allPokemons from "../data/pokemonData/allPokemons.json";
 import pokemonDisplayToAPI from "../data/pokemonData/pokemonDisplayToAPI.json";
@@ -13,6 +13,15 @@ export default function SearchBar({
   setDropType,
   setPageState,
   pageState,
+}: {
+  setGen: (gen: number) => void;
+  setDropPokemon: (pokemon: string) => void;
+  search: string;
+  setSearch: (pokemon: string) => void;
+  setMoveSearch: (move: string) => void;
+  setDropType: (type: string) => void;
+  setPageState: (page: string) => void;
+  pageState: string;
 }) {
   const navigate = useNavigate();
 
@@ -26,7 +35,7 @@ export default function SearchBar({
     console.log("Search", searchTerm);
   }
 
-  function validMon(pokemon) {
+  function validMon(pokemon: string) {
     for (let i = 0; i < allPokemons.length; i++) {
       if (allPokemons[i].toLowerCase() === pokemon.toLowerCase()) {
         return true;
@@ -48,6 +57,14 @@ export default function SearchBar({
       }
     }
   }
+  function enterPressed(
+    searchTerm: string,
+    event: React.KeyboardEvent<object>
+  ) {
+    if (event.keyCode === 13) {
+      searchClick(searchTerm);
+    }
+  }
 
   return (
     <div className="SearchBar-Menu">
@@ -60,6 +77,7 @@ export default function SearchBar({
             type="text"
             value={search}
             onChange={onChange}
+            onKeyDown={(keyPressed) => enterPressed(search, keyPressed)}
           ></input>
           <button className="search-btn" onClick={() => searchClick(search)}>
             Search

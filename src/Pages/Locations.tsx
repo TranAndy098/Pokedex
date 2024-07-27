@@ -1,4 +1,4 @@
-import { React, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import LocationSearchBar from "../LocationSearchBar/LocationSearchBar";
 import locationNamesDisplayToAPI from "../data/locationData/locationNamesDisplayToAPI.json";
 import locationNamesAPIToDisplay from "../data/locationData/locationNamesAPIToDisplay.json";
@@ -33,13 +33,33 @@ function Locations({
   clickType,
   setScratch,
   shinyMode,
+}: {
+  curLocationGame: string;
+  setLocationGame: (location: string) => void;
+
+  openGameLocations: boolean;
+  setOpenGameLocations: (location: boolean) => void;
+
+  openLocationForGame: boolean;
+  setOpenLocationForGame: (location: boolean) => void;
+
+  locationSearch: string;
+  setLocationSearch: (location: string) => void;
+
+  curDropLocationForGame: string;
+  setDropLocationForGame: (location: string) => void;
+
+  clickPokemon: CallableFunction;
+  clickType: CallableFunction;
+  setScratch: (scratch: string) => void;
+  shinyMode: boolean;
 }) {
   const [locationData, setLocationData] = useState([]);
   const { curLocation } = useParams();
 
   const navigate = useNavigate();
 
-  function goClick(curDropLocationForGame) {
+  function goClick(curDropLocationForGame: string) {
     console.log(curDropLocationForGame);
     if (curDropLocationForGame !== "") {
       setLocationGame("");
@@ -52,7 +72,7 @@ function Locations({
     }
   }
 
-  function fetchData(curLocation) {
+  function fetchData(curLocation: string) {
     if (
       curLocation === "home" ||
       !Object.keys(locationNamesAPIToDisplay).includes(curLocation)

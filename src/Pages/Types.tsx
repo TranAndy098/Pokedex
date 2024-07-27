@@ -1,4 +1,4 @@
-import { React, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import DropDown from "../DropDown/DropDown/DropDown";
 import DropDownItem from "../DropDown/DropDownItem/DropDownItem";
 import allTypeLogos from "../data/typeData/allTypeLogos.json";
@@ -22,6 +22,16 @@ function Types({
   clickType,
   shinyMode,
   setScratch,
+}: {
+  openType: boolean;
+  setOpenType: (type: boolean) => void;
+  curDropType: string;
+  setDropType: (type: string) => void;
+  clickPokemon: CallableFunction;
+  clickMove: CallableFunction;
+  clickType: CallableFunction;
+  shinyMode: boolean;
+  setScratch: (scratch: string) => void;
 }) {
   let { curType } = useParams();
 
@@ -32,7 +42,7 @@ function Types({
 
   const navigate = useNavigate();
 
-  function typeSelect(curDropType) {
+  function typeSelect(curDropType: string) {
     if (curDropType !== "") {
       curType = typeDisplayToAPI[curDropType];
       setDropType(typeAPIToDisplay[curType]);
@@ -41,7 +51,7 @@ function Types({
     }
   }
 
-  async function fetchData(curType) {
+  async function fetchData(curType: string) {
     if (
       curType === "home" ||
       !Object.keys(typeAPIToDisplay).includes(curType)
@@ -112,7 +122,6 @@ function Types({
                 <div>{showTypeData(curType, clickType)}</div>
                 <div>
                   {showTypePokemonData(
-                    curType,
                     shinyMode,
                     clickPokemon,
                     clickType,
@@ -121,9 +130,7 @@ function Types({
                     typePokemonLength
                   )}
                 </div>
-                <div>
-                  {showTypeMoveData(curType, typeMoves, clickMove, clickType)}
-                </div>
+                <div>{showTypeMoveData(typeMoves, clickMove, clickType)}</div>
               </div>
             ) : (
               <h2>Entry Not Valid</h2>

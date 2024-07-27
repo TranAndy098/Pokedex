@@ -1,4 +1,4 @@
-import { React } from "react";
+import { useState } from "react";
 import axios from "axios";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import allTypeData from "../../data/typeData/allTypeData.json";
@@ -6,11 +6,11 @@ import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
 import typeAPIToDisplay from "../../data/typeData/typeAPIToDisplay.json";
 
 export async function getTypeData(
-  curType,
-  setTypePokemon,
-  setTypePokemonLength,
-  setTypePokemonNames,
-  setTypeMoves
+  curType: string,
+  setTypePokemon: typeof useState,
+  setTypePokemonLength: typeof useState,
+  setTypePokemonNames: typeof useState,
+  setTypeMoves: typeof useState
 ) {
   console.log(`Getting ${typeAPIToDisplay[curType]} Data`);
   if (curType === "") {

@@ -1,11 +1,19 @@
-import { React, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import nationalPokedexTyping from "../../data/pokemonData/nationalPokedexTyping.json";
 import nationalPokedexNames from "../../data/pokemonData/nationalPokedexNames.json";
 import "../../PageStyle/Pokedex.css";
 
-function EntryHome({ clickPokemon, clickType, shinyMode }) {
+function EntryHome({
+  clickPokemon,
+  clickType,
+  shinyMode,
+}: {
+  clickPokemon: CallableFunction;
+  clickType: CallableFunction;
+  shinyMode: boolean;
+}) {
   const [value, setValue] = useState([]);
 
   async function fetchData() {

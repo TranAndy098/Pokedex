@@ -1,4 +1,3 @@
-import { React } from "react";
 import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import abilitiesAPIToDisplay from "../../data/abilitiesData/abilitiesAPIToDisplay.json";
@@ -9,8 +8,8 @@ import "../../PageStyle/MoveColors.css";
 
 export function showEntryData(
   entryInfo,
-  curPokemon,
-  clickType,
+  curPokemon: string,
+  clickType: CallableFunction,
   forms,
   differentForms,
   evolutionLine,

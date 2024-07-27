@@ -1,4 +1,3 @@
-import { React } from "react";
 import allMoveData from "../../data/moveData/allMoveData.json";
 import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
@@ -7,7 +6,11 @@ import moveTargetAPIToDisplay from "../../data/moveTargetData/moveTargetAPIToDis
 import "../../PageStyle/MovesPokemon.css";
 import "../../PageStyle/MoveColors.css";
 
-export function getEntryMoveData(APImove, clickMove, clickType) {
+export function getEntryMoveData(
+  APImove: string,
+  clickMove: CallableFunction,
+  clickType: CallableFunction
+) {
   console.log("Getting Pokemon Move Data");
   return (
     <div

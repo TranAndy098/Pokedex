@@ -1,4 +1,3 @@
-import { React } from "react";
 import pokemonPerLocation from "../../data/locationData/pokemonPerLocation.json";
 import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
@@ -10,10 +9,10 @@ import "../../PageStyle/LocationEncounters.css";
 import locationNamesAPIToDisplay from "../../data/locationData/locationNamesAPIToDisplay.json";
 
 export function getLocationData(
-  curLocation,
-  clickPokemon,
-  clickType,
-  shinyMode
+  curLocation: string,
+  clickPokemon: CallableFunction,
+  clickType: CallableFunction,
+  shinyMode: boolean
 ) {
   console.log(`Getting ${locationNamesAPIToDisplay[curLocation]} Data`);
   if (curLocation === "") {
@@ -126,7 +125,7 @@ export function getLocationData(
                     {pokemonPerLocation[curLocation][pokemons[i]][
                       methods[j]
                     ].Conditions.map((condition) => (
-                      <div className="encounter-footer-subitem">
+                      <div key={condition} className="encounter-footer-subitem">
                         {encounterConditionsAPIToDisplay[condition]}
                       </div>
                     ))}

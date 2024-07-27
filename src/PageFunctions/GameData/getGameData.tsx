@@ -1,4 +1,3 @@
-import { React } from "react";
 import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import pokedexPerGame from "../../data/gameNameData/pokedexPerGame.json";
@@ -9,13 +8,13 @@ import "../../PageStyle/Pokedex.css";
 import gamesAPIToDisplay from "../../data/gameNameData/gamesAPIToDisplay.json";
 
 export function getGameData(
-  curGame,
+  curGame: string,
 
-  clickPokemon,
+  clickPokemon: CallableFunction,
 
-  clickType,
+  clickType: CallableFunction,
 
-  shinyMode
+  shinyMode: boolean
 ) {
   console.log(`Getting Pokemon ${gamesAPIToDisplay[curGame]} Data`);
   if (curGame === "") {

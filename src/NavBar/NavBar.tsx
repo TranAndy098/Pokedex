@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./NavBar.css"; // Assuming you have a CSS file for styling
 import { Link } from "react-router-dom";
 
-const Navbar: React.FC = ({
+function Navbar({
   pageState,
   setPageState,
   setSearch,
@@ -14,14 +14,26 @@ const Navbar: React.FC = ({
   setDropLocationForGame,
   setGenGame,
   setDropGameForGen,
-}) => {
+}: {
+  pageState: string;
+  setPageState: (page: string) => void;
+  setSearch: (pokemon: string) => void;
+  setMoveSearch: (move: string) => void;
+  setDropType: (type: string) => void;
+
+  setLocationSearch: (location: string) => void;
+  setLocationGame: (location: string) => void;
+  setDropLocationForGame: (location: string) => void;
+  setGenGame: (game: string) => void;
+  setDropGameForGen: (game: string) => void;
+}) {
   const [isActive, setIsActive] = useState(false);
 
   const handleMenuClick = () => {
     setIsActive(!isActive);
   };
 
-  function handleClick(value) {
+  function handleClick(value: string) {
     setSearch("");
     setMoveSearch("");
     setDropType("");
@@ -131,6 +143,6 @@ const Navbar: React.FC = ({
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;

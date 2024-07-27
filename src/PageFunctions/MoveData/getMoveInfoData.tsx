@@ -1,4 +1,3 @@
-import { React } from "react";
 import allMoveData from "../../data/moveData/allMoveData.json";
 import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
 import allDamageClassLogos from "../../data/moveData/allDamageClassLogos.json";
@@ -7,7 +6,7 @@ import moveTargetAPIToDisplay from "../../data/moveTargetData/moveTargetAPIToDis
 import "../../PageStyle/Moves.css";
 import "../../PageStyle/MoveColors.css";
 
-export function getMoveInfoData(curMove, clickType) {
+export function getMoveInfoData(curMove: string, clickType: CallableFunction) {
   console.log(`Getting ${moveAPIToDisplay[curMove]} Information`);
   if (curMove === "") {
     return "";

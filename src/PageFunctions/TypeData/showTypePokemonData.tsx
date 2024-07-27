@@ -1,4 +1,3 @@
-import { React } from "react";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
@@ -6,13 +5,12 @@ import pokemonTypingChart from "../../data/pokemonData/pokemonTypingChart.json";
 import "../../PageStyle/Pokedex.css";
 
 export function showTypePokemonData(
-  curType,
-  shinyMode,
-  clickPokemon,
-  clickType,
-  typePokemon,
-  typePokemonNames,
-  typePokemonLength
+  shinyMode: boolean,
+  clickPokemon: CallableFunction,
+  clickType: CallableFunction,
+  typePokemon: string[],
+  typePokemonNames: string[],
+  typePokemonLength: string[]
 ) {
   return (
     <div>

@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { useState } from "react";
 import Navbar from "./NavBar/NavBar";
 import SearchBar from "./SearchBar/SearchBar";
 import DropDown from "./DropDown/DropDown/DropDown";
@@ -14,14 +14,11 @@ import Types from "./Pages/Types";
 import Moves from "./Pages/Moves";
 import allPokemons from "./data/pokemonData/allPokemons.json";
 import pokemonDisplayToAPI from "./data/pokemonData/pokemonDisplayToAPI.json";
-import pokemonAPIToDisplay from "./data/pokemonData/pokemonAPIToDisplay.json";
-import allPokemonSprites from "./data/pokemonData/allPokemonSprites.json";
-import nationalPokedexNames from "./data/pokemonData/nationalPokedexNames.json";
 import NoPage from "./Pages/NoPage";
 
 import { useNavigate, Route, Routes } from "react-router-dom";
 
-const App: React.FC = () => {
+function App() {
   const genNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   const [curDropPokemon, setDropPokemon] = useState("");
@@ -31,8 +28,8 @@ const App: React.FC = () => {
 
   const [curGen, setGen] = useState(0);
 
-  const [openGen, setOpenGen] = useState("");
-  const [openPokemon, setOpenPokemon] = useState("");
+  const [openGen, setOpenGen] = useState(false);
+  const [openPokemon, setOpenPokemon] = useState(false);
 
   const [pageState, setPageState] = useState("");
 
@@ -59,7 +56,7 @@ const App: React.FC = () => {
 
   const navigate = useNavigate();
 
-  function goClick(curDropPokemon) {
+  function goClick(curDropPokemon: string) {
     if (curDropPokemon !== "") {
       setDropPokemon("");
       setGen(0);
@@ -78,7 +75,7 @@ const App: React.FC = () => {
   }
 
   function blankSlate() {
-    setOpenGen("");
+    setOpenGen(false);
     setDropPokemon("");
     setSearch("");
     setMoveSearch("");
@@ -89,32 +86,32 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   }
 
-  function clickPokemon(pokemon) {
+  function clickPokemon(pokemon: string) {
     blankSlate();
     navigate(`/entry/${pokemon}`);
     setPageState("Entry");
   }
 
-  function clickLocation(location) {
+  function clickLocation(location: string) {
     console.log("click", location);
     blankSlate();
     navigate(`/location/${location}`);
     setPageState("Locations");
   }
 
-  function clickMove(move) {
+  function clickMove(move: string) {
     blankSlate();
     navigate(`/move/${move}`);
     setPageState("Moves");
   }
 
-  function clickType(typing) {
+  function clickType(typing: string) {
     blankSlate();
     navigate(`/type/${typing}`);
     setPageState("Types");
   }
 
-  function clickGame(game) {
+  function clickGame(game: string) {
     blankSlate();
     navigate(`/game/${game}`);
     setPageState("Games");
@@ -339,7 +336,7 @@ const App: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default App;
 

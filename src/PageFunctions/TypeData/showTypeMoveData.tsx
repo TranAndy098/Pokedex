@@ -1,4 +1,3 @@
-import { React } from "react";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
 import "../../PageStyle/MovesForTypes.css";
@@ -6,7 +5,11 @@ import allMoveData from "../../data/moveData/allMoveData.json";
 import allDamageClassLogos from "../../data/moveData/allDamageClassLogos.json";
 import "../../PageStyle/MoveColors.css";
 
-export function showTypeMoveData(curType, typeMoves, clickMove, clickType) {
+export function showTypeMoveData(
+  typeMoves: string[],
+  clickMove: CallableFunction,
+  clickType: CallableFunction
+) {
   return (
     <div>
       <div className="types-moves">

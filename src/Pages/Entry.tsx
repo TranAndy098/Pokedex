@@ -1,4 +1,4 @@
-import { React, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import EntryHome from "../PageFunctions/EntryData/EntryHome.tsx";
 import { getEntryFormData } from "../PageFunctions/EntryData/getEntryFormData.tsx";
 import { getEntryEvolutionData } from "../PageFunctions/EntryData/getEntryEvolutionData.tsx";
@@ -16,6 +16,13 @@ function Entry({
   clickType,
   clickGame,
   shinyMode,
+}: {
+  clickPokemon: CallableFunction;
+  clickLocation: CallableFunction;
+  clickMove: CallableFunction;
+  clickType: CallableFunction;
+  clickGame: CallableFunction;
+  shinyMode: boolean;
 }) {
   const [entryInfo, setEntryInfo] = useState([]);
   const [evolutionLine, setEvolutionLine] = useState([]);
@@ -25,7 +32,7 @@ function Entry({
 
   const { curPokemon } = useParams();
 
-  async function fetchEntryData(pokemon) {
+  async function fetchEntryData(pokemon: string) {
     if (
       pokemon === "home" ||
       !Object.keys(nationalPokedexNames).includes(pokemon)

@@ -1,4 +1,3 @@
-import { React } from "react";
 import axios from "axios";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import statsAPIToDisplayShort from "../../data/statsData/statsAPIToDisplayShort.json";
@@ -6,7 +5,12 @@ import "../../PageStyle/Entry.css";
 import { getEntryMoveData } from "./getEntryMoveData.tsx";
 import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
 
-export async function getEntryData(pokemon, shinyMode, clickMove, clickType) {
+export async function getEntryData(
+  pokemon: string,
+  shinyMode: boolean,
+  clickMove: CallableFunction,
+  clickType: CallableFunction
+) {
   try {
     console.log(`Getting ${pokemonAPIToDisplay[pokemon]} Entry Data`);
     const response = await axios.get(

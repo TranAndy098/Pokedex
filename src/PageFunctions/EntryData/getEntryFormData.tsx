@@ -1,9 +1,13 @@
-import { React } from "react";
+import { useState } from "react";
 import allSpecialPokemonForms from "../../data/pokemonData/allSpecialPokemonForms.json";
 import "../../PageStyle/Entry.css";
 import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
 
-export function getEntryFormData(pokemon, setForms, shinyMode) {
+export function getEntryFormData(
+  pokemon: string,
+  setForms: typeof useState,
+  shinyMode: boolean
+) {
   console.log(`Getting ${pokemonAPIToDisplay[pokemon]} Form Data`);
 
   if (!Object.keys(allSpecialPokemonForms).includes(pokemon)) {

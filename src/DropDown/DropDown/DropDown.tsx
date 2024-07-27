@@ -1,9 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import DropDownButton from "../DropDownButton/DropDownButton";
 import DropDownContent from "../DropDownContent/DropDownContent";
 import "./DropDown.css";
 
-const DropDown = ({ buttonText, content, open, setOpen }) => {
+const DropDown = ({
+  buttonText,
+  content,
+  open,
+  setOpen,
+}: {
+  buttonText: string;
+  content: string;
+  open: boolean;
+  setOpen: (open: boolean) => void;
+}) => {
   const [dropdownTop, setDropdownTop] = useState(0);
 
   const dropdownRef = useRef();

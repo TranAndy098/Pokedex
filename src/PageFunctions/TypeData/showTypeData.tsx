@@ -1,9 +1,8 @@
-import { React } from "react";
 import allTypeData from "../../data/typeData/allTypeData.json";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import "../../PageStyle/Types.css";
 
-export function showTypeData(curType, clickType) {
+export function showTypeData(curType: string, clickType: CallableFunction) {
   return (
     <div>
       <div className="effective-container">

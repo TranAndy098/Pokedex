@@ -1,10 +1,9 @@
-import { React } from "react";
 import gamesLogos from "../../data/gameNameData/gamesLogos.json";
 import gameVersionsPerGen from "../../data/gameNameData/gameVersionsPerGen.json";
 import gamesAPIToDisplay from "../../data/gameNameData/gamesAPIToDisplay.json";
 import "../../PageStyle/Games.css";
 
-function GameHome({ clickGame }) {
+function GameHome({ clickGame }: { clickGame: CallableFunction }) {
   console.log("Getting Game Home");
   const genNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 

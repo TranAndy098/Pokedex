@@ -1,14 +1,14 @@
-import { React } from "react";
+import { useState } from "react";
 import axios from "axios";
 import allMoveData from "../../data/moveData/allMoveData.json";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
 
 export async function getMoveData(
-  curMove,
-  setMovePokemon,
-  setMovePokemonNames,
-  setMovePokemonLength
+  curMove: string,
+  setMovePokemon: typeof useState,
+  setMovePokemonNames: typeof useState,
+  setMovePokemonLength: typeof useState
 ) {
   console.log(`Getting ${moveAPIToDisplay[curMove]} Data`);
   if (curMove === "") {

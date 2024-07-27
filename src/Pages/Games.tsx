@@ -1,4 +1,4 @@
-import { React, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import DropDown from "../DropDown/DropDown/DropDown";
 import DropDownItem from "../DropDown/DropDownItem/DropDownItem";
 import gamesDisplayToAPI from "../data/gameNameData/gamesDisplayToAPI.json";
@@ -32,6 +32,26 @@ function Games({
 
   setScratch,
   shinyMode,
+}: {
+  curGenGame: string;
+  setGenGame: (game: string) => void;
+
+  openGenGame: boolean;
+  setOpenGenGame: (game: boolean) => void;
+
+  openGameForGen: boolean;
+  setOpenGameForGen: (game: boolean) => void;
+
+  curDropGameForGen: string;
+  setDropGameForGen: (game: string) => void;
+
+  clickPokemon: CallableFunction;
+  clickLocation: CallableFunction;
+  clickType: CallableFunction;
+  clickGame: CallableFunction;
+
+  setScratch: (scratch: string) => void;
+  shinyMode: boolean;
 }) {
   const genNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const [gameData, setGameData] = useState([]);
@@ -39,7 +59,7 @@ function Games({
 
   const navigate = useNavigate();
 
-  function goClick(curDropGameForGen) {
+  function goClick(curDropGameForGen: string) {
     if (curDropGameForGen !== "") {
       window.scrollTo(0, 0);
 
@@ -49,7 +69,7 @@ function Games({
     }
   }
 
-  function fetchData(curGame) {
+  function fetchData(curGame: string) {
     if (
       curGame === "home" ||
       !Object.keys(gamesAPIToDisplay).includes(curGame)

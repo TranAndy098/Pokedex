@@ -1,10 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./MoveSearchBar.css";
 import allMoves from "../data/moveData/allMoves.json";
 import moveDisplayToAPI from "../data/moveData/moveDisplayToAPI.json";
 import { useNavigate } from "react-router-dom";
 
-export default function MoveSearchBar({ moveSearch, setMoveSearch }) {
+export default function MoveSearchBar({
+  moveSearch,
+  setMoveSearch,
+}: {
+  moveSearch: string;
+  setMoveSearch: typeof useState;
+}) {
   const navigate = useNavigate();
 
   function onChange(event: any) {
@@ -16,7 +22,7 @@ export default function MoveSearchBar({ moveSearch, setMoveSearch }) {
     console.log("Search", searchTerm);
   }
 
-  function validMon(move) {
+  function validMon(move: string) {
     if (Object.keys(moveDisplayToAPI).includes(move)) {
       return true;
     } else {
@@ -32,6 +38,14 @@ export default function MoveSearchBar({ moveSearch, setMoveSearch }) {
       setMoveSearch("");
     }
   }
+  function enterPressed(
+    searchTerm: string,
+    event: React.KeyboardEvent<object>
+  ) {
+    if (event.keyCode === 13) {
+      searchClick(searchTerm);
+    }
+  }
 
   return (
     <div className="MoveSearchBar-Menu">
@@ -44,6 +58,7 @@ export default function MoveSearchBar({ moveSearch, setMoveSearch }) {
             type="text"
             value={moveSearch}
             onChange={onChange}
+            onKeyDown={(keyPressed) => enterPressed(moveSearch, keyPressed)}
           ></input>
           <button
             className="move-search-btn"

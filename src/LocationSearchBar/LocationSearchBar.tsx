@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./LocationSearchBar.css";
 import locationNamesDisplayToAPI from "../data/locationData/locationNamesDisplayToAPI.json";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,11 @@ export default function LocationSearchBar({
   setLocationSearch,
   setLocationGame,
   setDropLocationForGame,
+}: {
+  locationSearch: string;
+  setLocationSearch: typeof useState;
+  setLocationGame: typeof useState;
+  setDropLocationForGame: typeof useState;
 }) {
   const navigate = useNavigate();
 
@@ -20,7 +25,7 @@ export default function LocationSearchBar({
     console.log("Search", searchTerm);
   }
 
-  function validMon(location) {
+  function validMon(location: string) {
     if (Object.keys(locationNamesDisplayToAPI).includes(location)) {
       return true;
     } else {
@@ -38,6 +43,14 @@ export default function LocationSearchBar({
       window.scrollTo(0, 0);
     }
   }
+  function enterPressed(
+    searchTerm: string,
+    event: React.KeyboardEvent<object>
+  ) {
+    if (event.keyCode === 13) {
+      searchClick(searchTerm);
+    }
+  }
 
   return (
     <div className="LocationSearchBar-Menu">
@@ -50,6 +63,7 @@ export default function LocationSearchBar({
             type="text"
             value={locationSearch}
             onChange={onChange}
+            onKeyDown={(keyPressed) => enterPressed(locationSearch, keyPressed)}
           ></input>
           <button
             className="location-search-btn"

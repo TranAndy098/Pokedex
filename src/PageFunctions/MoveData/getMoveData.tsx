@@ -2,6 +2,7 @@ import { React } from "react";
 import axios from "axios";
 import allMoveData from "../../data/moveData/allMoveData.json";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
+import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
 
 export async function getMoveData(
   curMove,
@@ -9,7 +10,7 @@ export async function getMoveData(
   setMovePokemonNames,
   setMovePokemonLength
 ) {
-  console.log("Getting Move Data");
+  console.log(`Getting ${moveAPIToDisplay[curMove]} Data`);
   if (curMove === "") {
     return "";
   }

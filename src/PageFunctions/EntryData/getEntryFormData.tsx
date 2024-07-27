@@ -1,9 +1,10 @@
 import { React } from "react";
 import allSpecialPokemonForms from "../../data/pokemonData/allSpecialPokemonForms.json";
 import "../../PageStyle/Entry.css";
+import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json";
 
 export function getEntryFormData(pokemon, setForms, shinyMode) {
-  console.log("Getting Pokemon Form Data");
+  console.log(`Getting ${pokemonAPIToDisplay[pokemon]} Form Data`);
 
   if (!Object.keys(allSpecialPokemonForms).includes(pokemon)) {
     return [];
@@ -16,7 +17,7 @@ export function getEntryFormData(pokemon, setForms, shinyMode) {
   for (let i = 0; i < allForms.length; i++) {
     let name = Object.keys(allForms[i]);
     mid.push(
-      <div className="pokemon-form">
+      <div key={allForms[i][name].DisplayTitle} className="pokemon-form">
         <img
           className="pokemon-form-sprite"
           src={

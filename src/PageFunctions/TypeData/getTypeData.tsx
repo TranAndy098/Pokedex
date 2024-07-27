@@ -3,6 +3,7 @@ import axios from "axios";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import allTypeData from "../../data/typeData/allTypeData.json";
 import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
+import typeAPIToDisplay from "../../data/typeData/typeAPIToDisplay.json";
 
 export async function getTypeData(
   curType,
@@ -11,7 +12,7 @@ export async function getTypeData(
   setTypePokemonNames,
   setTypeMoves
 ) {
-  console.log("Getting Type Data");
+  console.log(`Getting ${typeAPIToDisplay[curType]} Data`);
   if (curType === "") {
     return "";
   }

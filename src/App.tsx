@@ -16,11 +16,14 @@ import allPokemons from "./data/pokemonData/allPokemons.json";
 import pokemonDisplayToAPI from "./data/pokemonData/pokemonDisplayToAPI.json";
 import pokemonAPIToDisplay from "./data/pokemonData/pokemonAPIToDisplay.json";
 import allPokemonSprites from "./data/pokemonData/allPokemonSprites.json";
+import nationalPokedexNames from "./data/pokemonData/nationalPokedexNames.json";
+import NoPage from "./Pages/NoPage";
+
+import { useNavigate, Route, Routes } from "react-router-dom";
 
 const App: React.FC = () => {
   const genNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  const [curPokemon, setPokemon] = useState("");
   const [curDropPokemon, setDropPokemon] = useState("");
   const [scratch, setScratch] = useState("");
 
@@ -35,14 +38,10 @@ const App: React.FC = () => {
 
   const [shinyMode, setShinyMode] = useState(false);
 
-  const [curMove, setMove] = useState("");
   const [moveSearch, setMoveSearch] = useState("");
 
-  const [curType, setType] = useState("");
   const [openType, setOpenType] = useState(false);
   const [curDropType, setDropType] = useState("");
-
-  const [curLocation, setLocation] = useState("");
 
   const [curLocationGame, setLocationGame] = useState("");
   const [openGameLocations, setOpenGameLocations] = useState(false);
@@ -52,22 +51,23 @@ const App: React.FC = () => {
 
   const [locationSearch, setLocationSearch] = useState("");
 
-  const [curGame, setGame] = useState("");
-
   const [curGenGame, setGenGame] = useState("");
   const [openGenGame, setOpenGenGame] = useState(false);
 
   const [openGameForGen, setOpenGameForGen] = useState(false);
   const [curDropGameForGen, setDropGameForGen] = useState("");
 
+  const navigate = useNavigate();
+
   function goClick(curDropPokemon) {
     if (curDropPokemon !== "") {
-      setPokemon(pokemonDisplayToAPI[curDropPokemon]);
       setDropPokemon("");
       setGen(0);
       setSearch("");
 
-      if (pageState !== "Entry" && pageState !== "Locations") {
+      navigate(`/entry/${pokemonDisplayToAPI[curDropPokemon]}`);
+
+      if (pageState !== "Entry") {
         setPageState("Entry");
       }
     }
@@ -80,14 +80,9 @@ const App: React.FC = () => {
   function blankSlate() {
     setOpenGen("");
     setDropPokemon("");
-    setPokemon("");
     setSearch("");
-    setMove("");
     setMoveSearch("");
-    setType("");
     setDropType("");
-    setLocation("");
-    setGame("");
     setPageState("");
     setGenGame("");
     setDropGameForGen("");
@@ -96,32 +91,32 @@ const App: React.FC = () => {
 
   function clickPokemon(pokemon) {
     blankSlate();
-    setPokemon(allPokemonSprites[pokemon].EntryMainName);
+    navigate(`/entry/${pokemon}`);
     setPageState("Entry");
   }
 
   function clickLocation(location) {
     console.log("click", location);
     blankSlate();
-    setLocation(location);
+    navigate(`/location/${location}`);
     setPageState("Locations");
   }
 
   function clickMove(move) {
     blankSlate();
-    setMove(move);
+    navigate(`/move/${move}`);
     setPageState("Moves");
   }
 
   function clickType(typing) {
     blankSlate();
-    setType(typing);
+    navigate(`/type/${typing}`);
     setPageState("Types");
   }
 
   function clickGame(game) {
     blankSlate();
-    setGame(game);
+    navigate(`/game/${game}`);
     setPageState("Games");
   }
   function clickTop() {
@@ -130,37 +125,32 @@ const App: React.FC = () => {
 
   return (
     <div className="page">
-      <Navbar
-        setPokemon={setPokemon}
-        pageState={pageState}
-        setPageState={setPageState}
-        setSearch={setSearch}
-        setMove={setMove}
-        setMoveSearch={setMoveSearch}
-        setType={setType}
-        setDropType={setDropType}
-        setLocation={setLocation}
-        setLocationSearch={setLocationSearch}
-        setLocationGame={setLocationGame}
-        setDropLocationForGame={setDropLocationForGame}
-        setGame={setGame}
-        setGenGame={setGenGame}
-        setDropGameForGen={setDropGameForGen}
-      />
+      <>
+        <Navbar
+          pageState={pageState}
+          setPageState={setPageState}
+          setSearch={setSearch}
+          setMoveSearch={setMoveSearch}
+          setDropType={setDropType}
+          setLocationSearch={setLocationSearch}
+          setLocationGame={setLocationGame}
+          setDropLocationForGame={setDropLocationForGame}
+          setGenGame={setGenGame}
+          setDropGameForGen={setDropGameForGen}
+        />
+      </>
+
       <div className="container">
         <div className="box left-box">
           <div className="side-bar">
             <div className="side-bar-item">
               <div className="pokemon-search">
                 <SearchBar
-                  setPokemon={setPokemon}
                   setGen={setGen}
                   setDropPokemon={setDropPokemon}
                   search={search}
                   setSearch={setSearch}
-                  setMove={setMove}
                   setMoveSearch={setMoveSearch}
-                  setType={setType}
                   setDropType={setDropType}
                   setPageState={setPageState}
                   pageState={pageState}
@@ -176,6 +166,7 @@ const App: React.FC = () => {
                     <>
                       {genNumbers.map((genNumbers) => (
                         <DropDownItem
+                          key={genNumbers}
                           content={genNumbers}
                           check={curGen}
                           setMode1={setGen}
@@ -196,6 +187,7 @@ const App: React.FC = () => {
                       <>
                         {pokemonGenerations[curGen].map((pokemons) => (
                           <DropDownItem
+                            key={pokemons}
                             content={pokemons}
                             check={curDropPokemon}
                             setMode1={setDropPokemon}
@@ -208,6 +200,7 @@ const App: React.FC = () => {
                       <>
                         {allPokemons.map((pokemon) => (
                           <DropDownItem
+                            key={pokemon}
                             content={pokemon}
                             check={curDropPokemon}
                             setMode1={setDropPokemon}
@@ -235,7 +228,7 @@ const App: React.FC = () => {
                   <div>
                     Shiny
                     {shinyMode ? (
-                      <img className="shiny-icon" src="./shiny.png" />
+                      <img className="shiny-icon" src="shiny.png" />
                     ) : (
                       ""
                     )}
@@ -251,94 +244,96 @@ const App: React.FC = () => {
         {/* Other components or content */}
         <div className="box right-box">
           <div className="pokemon-data-box">
-            {pageState === "" ? <Home /> : <p />}
-            {pageState === "Entry" ? (
-              <Entry
-                curPokemon={curPokemon}
-                clickPokemon={clickPokemon}
-                clickLocation={clickLocation}
-                clickMove={clickMove}
-                clickType={clickType}
-                clickGame={clickGame}
-                shinyMode={shinyMode}
-              />
-            ) : (
-              <p />
-            )}
-            {pageState === "Locations" ? (
-              <Locations
-                curLocation={curLocation}
-                setLocation={setLocation}
-                curLocationGame={curLocationGame}
-                setLocationGame={setLocationGame}
-                openGameLocations={openGameLocations}
-                setOpenGameLocations={setOpenGameLocations}
-                openLocationForGame={openLocationForGame}
-                setOpenLocationForGame={setOpenLocationForGame}
-                locationSearch={locationSearch}
-                setLocationSearch={setLocationSearch}
-                curDropLocationForGame={curDropLocationForGame}
-                setDropLocationForGame={setDropLocationForGame}
-                clickPokemon={clickPokemon}
-                clickType={clickType}
-                setScratch={setSearch}
-                shinyMode={shinyMode}
-              />
-            ) : (
-              <p />
-            )}
-            {pageState === "Games" ? (
-              <Games
-                curGame={curGame}
-                setGame={setGame}
-                curGenGame={curGenGame}
-                setGenGame={setGenGame}
-                openGenGame={openGenGame}
-                setOpenGenGame={setOpenGenGame}
-                openGameForGen={openGameForGen}
-                setOpenGameForGen={setOpenGameForGen}
-                curDropGameForGen={curDropGameForGen}
-                setDropGameForGen={setDropGameForGen}
-                clickPokemon={clickPokemon}
-                clickLocation={clickLocation}
-                clickType={clickType}
-                clickGame={clickGame}
-                setScratch={setSearch}
-                shinyMode={shinyMode}
-              />
-            ) : (
-              <p />
-            )}
-            {pageState === "Moves" ? (
-              <Moves
-                curMove={curMove}
-                setMove={setMove}
-                moveSearch={moveSearch}
-                setMoveSearch={setMoveSearch}
-                clickPokemon={clickPokemon}
-                clickType={clickType}
-                shinyMode={shinyMode}
-              />
-            ) : (
-              <p />
-            )}
-            {pageState === "Types" ? (
-              <Types
-                curType={curType}
-                setType={setType}
-                openType={openType}
-                setOpenType={setOpenType}
-                curDropType={curDropType}
-                clickPokemon={clickPokemon}
-                clickMove={clickMove}
-                clickType={clickType}
-                shinyMode={shinyMode}
-                setScratch={setScratch}
-              />
-            ) : (
-              <p />
-            )}
-            {pageState === "Scan" ? <Scan /> : <p />}
+            <div>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route
+                  path="/entry/:curPokemon"
+                  element={
+                    <Entry
+                      clickPokemon={clickPokemon}
+                      clickLocation={clickLocation}
+                      clickMove={clickMove}
+                      clickType={clickType}
+                      clickGame={clickGame}
+                      shinyMode={shinyMode}
+                    />
+                  }
+                />
+                <Route
+                  path="/location/:curLocation"
+                  element={
+                    <Locations
+                      curLocationGame={curLocationGame}
+                      setLocationGame={setLocationGame}
+                      openGameLocations={openGameLocations}
+                      setOpenGameLocations={setOpenGameLocations}
+                      openLocationForGame={openLocationForGame}
+                      setOpenLocationForGame={setOpenLocationForGame}
+                      locationSearch={locationSearch}
+                      setLocationSearch={setLocationSearch}
+                      curDropLocationForGame={curDropLocationForGame}
+                      setDropLocationForGame={setDropLocationForGame}
+                      clickPokemon={clickPokemon}
+                      clickType={clickType}
+                      setScratch={setSearch}
+                      shinyMode={shinyMode}
+                    />
+                  }
+                />
+                <Route
+                  path="/game/:curGame"
+                  element={
+                    <Games
+                      curGenGame={curGenGame}
+                      setGenGame={setGenGame}
+                      openGenGame={openGenGame}
+                      setOpenGenGame={setOpenGenGame}
+                      openGameForGen={openGameForGen}
+                      setOpenGameForGen={setOpenGameForGen}
+                      curDropGameForGen={curDropGameForGen}
+                      setDropGameForGen={setDropGameForGen}
+                      clickPokemon={clickPokemon}
+                      clickLocation={clickLocation}
+                      clickType={clickType}
+                      clickGame={clickGame}
+                      setScratch={setSearch}
+                      shinyMode={shinyMode}
+                    />
+                  }
+                />
+                <Route
+                  path="/move/:curMove"
+                  element={
+                    <Moves
+                      moveSearch={moveSearch}
+                      setMoveSearch={setMoveSearch}
+                      clickPokemon={clickPokemon}
+                      clickType={clickType}
+                      shinyMode={shinyMode}
+                    />
+                  }
+                />
+                <Route
+                  path="/type/:curType"
+                  element={
+                    <Types
+                      openType={openType}
+                      setOpenType={setOpenType}
+                      curDropType={curDropType}
+                      setDropType={setDropType}
+                      clickPokemon={clickPokemon}
+                      clickMove={clickMove}
+                      clickType={clickType}
+                      shinyMode={shinyMode}
+                      setScratch={setScratch}
+                    />
+                  }
+                />
+                <Route path="/scan" element={<Scan />} />
+                <Route path="*" element={<NoPage />} />
+              </Routes>
+            </div>
           </div>
         </div>
       </div>

@@ -3,35 +3,50 @@ import DropDown from "../DropDown/DropDown/DropDown";
 import DropDownItem from "../DropDown/DropDownItem/DropDownItem";
 import allTypeLogos from "../data/typeData/allTypeLogos.json";
 import typeAPIToDisplay from "../data/typeData/typeAPIToDisplay.json";
+import typeDisplayToAPI from "../data/typeData/typeDisplayToAPI.json";
 import "../PageStyle/Types.css";
 import { getTypeData } from "../PageFunctions/TypeData/getTypeData";
 import { showTypeData } from "../PageFunctions/TypeData/showTypeData";
 import { showTypePokemonData } from "../PageFunctions/TypeData/showTypePokemonData";
 import { showTypeMoveData } from "../PageFunctions/TypeData/showTypeMoveData";
+import { useParams } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 function Types({
-  curType,
-  setType,
   openType,
   setOpenType,
   curDropType,
+  setDropType,
   clickPokemon,
   clickMove,
   clickType,
   shinyMode,
   setScratch,
 }) {
-  console.log(curType);
+  let { curType } = useParams();
 
-  setType(curType.toLowerCase());
   const [typePokemonNames, setTypePokemonNames] = useState([]);
   const [typePokemon, setTypePokemon] = useState([]);
   const [typePokemonLength, setTypePokemonLength] = useState([]);
   const [typeMoves, setTypeMoves] = useState([]);
 
+  const navigate = useNavigate();
+
+  function typeSelect(curDropType) {
+    if (curDropType !== "") {
+      curType = typeDisplayToAPI[curDropType];
+      setDropType(typeAPIToDisplay[curType]);
+
+      navigate(`/type/${typeDisplayToAPI[curDropType]}`);
+    }
+  }
+
   async function fetchData(curType) {
-    if (curType === "") {
-      return "";
+    if (
+      curType === "home" ||
+      !Object.keys(typeAPIToDisplay).includes(curType)
+    ) {
+      return;
     }
     try {
       await getTypeData(
@@ -41,6 +56,7 @@ function Types({
         setTypePokemonNames,
         setTypeMoves
       );
+      console.log(`Showing ${typeAPIToDisplay[curType]}`);
     } catch (error) {
       console.log("Error");
     }
@@ -53,18 +69,17 @@ function Types({
       <div className="type-menu">
         <div className="type-dropdown">
           <DropDown
-            buttonText={`${
-              curType === "" ? "Type" : typeAPIToDisplay[curType]
-            }`}
+            buttonText={`${curDropType === "" ? "Type" : curDropType}`}
             open={openType}
             setOpen={setOpenType}
             content={
               <>
                 {Object.keys(typeAPIToDisplay).map((typing) => (
                   <DropDownItem
+                    key={typing}
                     content={typeAPIToDisplay[typing]}
                     check={curDropType}
-                    setMode1={setType}
+                    setMode1={typeSelect}
                     setMode2={setScratch}
                     setOpen={setOpenType}
                   ></DropDownItem>
@@ -75,32 +90,44 @@ function Types({
         </div>
 
         <h1 className="type-name">
-          {curType === "" ? (
+          {curType === "home" ? (
             ""
           ) : (
-            <img src={allTypeLogos[curType].TypeTextLogo} />
+            <div className="type-name-logo">
+              {Object.keys(typeAPIToDisplay).includes(curType) ? (
+                <img src={allTypeLogos[curType].TypeTextLogo} />
+              ) : (
+                <></>
+              )}
+            </div>
           )}
         </h1>
       </div>
 
       <div>
-        {curType !== "" ? (
+        {curType !== "home" ? (
           <div>
-            <div>{showTypeData(curType, clickType)}</div>
-            <div>
-              {showTypePokemonData(
-                curType,
-                shinyMode,
-                clickPokemon,
-                clickType,
-                typePokemon,
-                typePokemonNames,
-                typePokemonLength
-              )}
-            </div>
-            <div>
-              {showTypeMoveData(curType, typeMoves, clickMove, clickType)}
-            </div>
+            {Object.keys(typeAPIToDisplay).includes(curType) ? (
+              <div>
+                <div>{showTypeData(curType, clickType)}</div>
+                <div>
+                  {showTypePokemonData(
+                    curType,
+                    shinyMode,
+                    clickPokemon,
+                    clickType,
+                    typePokemon,
+                    typePokemonNames,
+                    typePokemonLength
+                  )}
+                </div>
+                <div>
+                  {showTypeMoveData(curType, typeMoves, clickMove, clickType)}
+                </div>
+              </div>
+            ) : (
+              <h2>Entry Not Valid</h2>
+            )}
           </div>
         ) : (
           ""

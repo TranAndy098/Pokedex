@@ -5,9 +5,11 @@ import { getEntryEvolutionData } from "../PageFunctions/EntryData/getEntryEvolut
 import { getEntryLocationData } from "../PageFunctions/EntryData/getEntryLocationData.tsx";
 import { getEntryData } from "../PageFunctions/EntryData/getEntryData.tsx";
 import { showEntryData } from "../PageFunctions/EntryData/showEntryData.tsx";
+import nationalPokedexNames from "../data/pokemonData/nationalPokedexNames.json";
+import pokemonAPIToDisplay from "../data/pokemonData/pokemonAPIToDisplay.json";
+import { useParams } from "react-router";
 
 function Entry({
-  curPokemon,
   clickPokemon,
   clickLocation,
   clickMove,
@@ -20,12 +22,17 @@ function Entry({
   const [differentForms, setDifferentForms] = useState([]);
   const [forms, setForms] = useState(false);
   const [gameLocations, setGameLocations] = useState([]);
-  console.log(curPokemon);
+
+  const { curPokemon } = useParams();
 
   async function fetchEntryData(pokemon) {
-    if (pokemon === "") {
+    if (
+      pokemon === "home" ||
+      !Object.keys(nationalPokedexNames).includes(pokemon)
+    ) {
       return;
     }
+
     try {
       setEntryInfo(
         await getEntryData(pokemon, shinyMode, clickMove, clickType)
@@ -49,6 +56,7 @@ function Entry({
           clickPokemon
         )
       );
+      console.log(`Showing ${pokemonAPIToDisplay[pokemon]}`);
     } catch (error) {
       console.log("Error");
     }
@@ -61,7 +69,7 @@ function Entry({
 
   return (
     <div>
-      {curPokemon === "" ? (
+      {curPokemon === "home" ? (
         <EntryHome
           clickPokemon={clickPokemon}
           clickType={clickType}
@@ -82,7 +90,13 @@ function Entry({
               )}
             </div>
           ) : (
-            <h2>Error Entry</h2>
+            <div>
+              {!Object.keys(nationalPokedexNames).includes(curPokemon) ? (
+                <h2>Entry Not Valid</h2>
+              ) : (
+                <></>
+              )}
+            </div>
           )}
         </>
       )}

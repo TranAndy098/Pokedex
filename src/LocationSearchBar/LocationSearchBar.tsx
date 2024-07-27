@@ -1,14 +1,16 @@
 import { useState } from "react";
 import "./LocationSearchBar.css";
 import locationNamesDisplayToAPI from "../data/locationData/locationNamesDisplayToAPI.json";
+import { useNavigate } from "react-router-dom";
 
 export default function LocationSearchBar({
-  setLocation,
   locationSearch,
   setLocationSearch,
   setLocationGame,
   setDropLocationForGame,
 }) {
+  const navigate = useNavigate();
+
   function onChange(event: any) {
     setLocationSearch(event?.target?.value);
   }
@@ -29,10 +31,11 @@ export default function LocationSearchBar({
 
   function searchClick(searchTerm: string) {
     if (searchTerm !== "" && validMon(searchTerm)) {
-      setLocation(locationNamesDisplayToAPI[searchTerm]);
       setLocationSearch("");
       setLocationGame("");
       setDropLocationForGame("");
+      navigate(`/location/${locationNamesDisplayToAPI[searchTerm]}`);
+      window.scrollTo(0, 0);
     }
   }
 

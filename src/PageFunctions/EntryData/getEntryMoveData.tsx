@@ -10,7 +10,10 @@ import "../../PageStyle/MoveColors.css";
 export function getEntryMoveData(APImove, clickMove, clickType) {
   console.log("Getting Pokemon Move Data");
   return (
-    <div className={`move-pokemon-entry-box ${allMoveData[APImove].Type}`}>
+    <div
+      key={APImove}
+      className={`move-pokemon-entry-box ${allMoveData[APImove].Type}`}
+    >
       <div className="move-pokemon-display">
         <div className="move-pokemon-display-header">
           <div

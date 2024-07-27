@@ -7,6 +7,7 @@ import encounterMethodsAPIToDisplay from "../../data/encounterMethodData/encount
 import pokemonTypingChart from "../../data/pokemonData/pokemonTypingChart.json";
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import "../../PageStyle/LocationEncounters.css";
+import locationNamesAPIToDisplay from "../../data/locationData/locationNamesAPIToDisplay.json";
 
 export function getLocationData(
   curLocation,
@@ -14,7 +15,7 @@ export function getLocationData(
   clickType,
   shinyMode
 ) {
-  console.log("Getting Location Data");
+  console.log(`Getting ${locationNamesAPIToDisplay[curLocation]} Data`);
   if (curLocation === "") {
     return;
   }
@@ -32,7 +33,7 @@ export function getLocationData(
 
       for (let j = 0; j < methods.length; j++) {
         mid.push(
-          <div className="encounter-box">
+          <div key={`${pokemons[i]} ${methods[j]}`} className="encounter-box">
             <div className="encounter-header">
               <div className="encounter-header-name-type">
                 <div
@@ -47,6 +48,7 @@ export function getLocationData(
                   {Object.keys(pokemonTypingChart).includes(pokemons[i]) ? (
                     pokemonTypingChart[pokemons[i]].map((typing) => (
                       <img
+                        key={typing}
                         className="encounter-type"
                         src={allTypeLogos[typing].TypeTextLogo}
                         onClick={() => clickType(typing)}

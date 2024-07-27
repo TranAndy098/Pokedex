@@ -5,7 +5,7 @@ import pokemonAPIToDisplay from "../../data/pokemonData/pokemonAPIToDisplay.json
 import "../../PageStyle/Entry.css";
 
 export function getEntryEvolutionData(curPokemon, shinyMode, clickPokemon) {
-  console.log("Getting Pokemon Evolution Data");
+  console.log(`Getting ${pokemonAPIToDisplay[curPokemon]} Evolution Data`);
   // evolve
   let mid = [];
   let chains = allPokemonEvolutions[curPokemon].EvolveChain;
@@ -14,7 +14,11 @@ export function getEntryEvolutionData(curPokemon, shinyMode, clickPokemon) {
     let interm = [];
     for (let j = 0; j < chains[i].length; j++) {
       interm.push(
-        <div className="pokemon-evolution">
+        <div
+          className="pokemon-evolution"
+          key={chains[i][j]}
+          onClick={() => clickPokemon(chains[i][j])}
+        >
           <img
             className="pokemon-evolution-sprite"
             src={
@@ -22,7 +26,6 @@ export function getEntryEvolutionData(curPokemon, shinyMode, clickPokemon) {
                 ? allPokemonSprites[chains[i][j]].FrontShiny
                 : allPokemonSprites[chains[i][j]].FrontDefault
             }
-            onClick={() => clickPokemon(chains[i][j])}
           />
           <div className="pokemon-evolution-name">
             {pokemonAPIToDisplay[chains[i][j]]}
@@ -30,7 +33,11 @@ export function getEntryEvolutionData(curPokemon, shinyMode, clickPokemon) {
         </div>
       );
     }
-    mid.push(interm);
+    mid.push(
+      <div key={i} className="entry-evolutions-data">
+        {interm}
+      </div>
+    );
   }
 
   return mid;

@@ -6,11 +6,11 @@ import nationalPokedexNames from "../../data/pokemonData/nationalPokedexNames.js
 import "../../PageStyle/Pokedex.css";
 
 function EntryHome({ clickPokemon, clickType, shinyMode }) {
-  console.log("Getting Pokemon Entry Home");
   const [value, setValue] = useState([]);
 
   async function fetchData() {
     try {
+      console.log("Getting National Pokedex");
       let overall = [];
 
       let pokemons = Object.keys(nationalPokedexTyping);
@@ -18,7 +18,7 @@ function EntryHome({ clickPokemon, clickType, shinyMode }) {
       // pokemons
       for (let i = 0; i < pokemons.length; i++) {
         overall.push(
-          <div className="pokedex-entry-box">
+          <div className="pokedex-entry-box" key={pokemons[i]}>
             <div className="pokedex-display">
               <img
                 className="pokedex-sprite-display"
@@ -59,6 +59,7 @@ function EntryHome({ clickPokemon, clickType, shinyMode }) {
               <div className="pokedex-footer">
                 {nationalPokedexTyping[pokemons[i]].map((type) => (
                   <img
+                    key={type}
                     className="pokedex-type"
                     src={allTypeLogos[type].TypeTextLogo}
                     onClick={() => clickType(type)}

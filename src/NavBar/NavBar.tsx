@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import "./NavBar.css"; // Assuming you have a CSS file for styling
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = ({
-  setPokemon,
   pageState,
   setPageState,
   setSearch,
-  setMove,
   setMoveSearch,
-  setType,
   setDropType,
-  setLocation,
 
   setLocationSearch,
   setLocationGame,
   setDropLocationForGame,
-  setGame,
   setGenGame,
   setDropGameForGen,
 }) => {
@@ -26,18 +22,13 @@ const Navbar: React.FC = ({
   };
 
   function handleClick(value) {
-    setPokemon("");
     setSearch("");
-    setMove("");
     setMoveSearch("");
-    setType("");
     setDropType("");
-    setLocation("");
 
     setLocationSearch("");
     setLocationGame("");
     setDropLocationForGame("");
-    setGame("");
     setGenGame("");
     setDropGameForGen("");
     setPageState(value);
@@ -63,68 +54,78 @@ const Navbar: React.FC = ({
           <span className="bar"></span>
         </div>
         <ul className={`navbar_menu ${isActive ? "active" : ""}`}>
-          <li className="navbar_item">
-            <p
+          <li className="navbar_item" key={"home-tab"}>
+            <Link
               className={`navbar_links ${pageState === "" ? "active" : ""}`}
               onClick={() => handleClick("")}
+              to="/"
             >
               Home
-            </p>
+            </Link>
           </li>
-          <li className="navbar_item">
-            <p
+          <li className="navbar_item" key={"entry-tab"}>
+            <Link
               className={`navbar_links ${
                 pageState === "Entry" ? "active" : ""
               }`}
               onClick={() => handleClick("Entry")}
+              to="/entry/home"
             >
               Entry
-            </p>
+            </Link>
           </li>
-          <li className="navbar_item">
-            <p
+          <li className="navbar_item" key={"location-tab"}>
+            <Link
               className={`navbar_links ${
                 pageState === "Locations" ? "active" : ""
               }`}
               onClick={() => handleClick("Locations")}
+              to="/location/home"
             >
               Locations
-            </p>
+            </Link>
           </li>
-          <li className="navbar_item">
-            <p
+          <li className="navbar_item" key={"game-tab"}>
+            <Link
               className={`navbar_links ${
                 pageState === "Games" ? "active" : ""
               }`}
               onClick={() => handleClick("Games")}
+              to="/game/home"
             >
               Games
-            </p>
+            </Link>
           </li>
-          <li className="navbar_item">
-            <p
+          <li className="navbar_item" key={"move-tab"}>
+            <Link
               className={`navbar_links ${
                 pageState === "Moves" ? "active" : ""
               }`}
               onClick={() => handleClick("Moves")}
+              to="/move/home"
             >
               Moves
-            </p>
+            </Link>
           </li>
-          <li className="navbar_item">
-            <p
+          <li className="navbar_item" key={"type-tab"}>
+            <Link
               className={`navbar_links ${
                 pageState === "Types" ? "active" : ""
               }`}
               onClick={() => handleClick("Types")}
+              to="/type/home"
             >
               Types
-            </p>
+            </Link>
           </li>
-          <li className="navbar_btn">
-            <p className="button" onClick={() => handleClick("Scan")}>
+          <li className="navbar_btn" key={"scan-button"}>
+            <Link
+              className="button"
+              onClick={() => handleClick("Scan")}
+              to="/scan"
+            >
               Scan
-            </p>
+            </Link>
           </li>
         </ul>
       </div>

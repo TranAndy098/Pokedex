@@ -8,7 +8,7 @@ import "../../PageStyle/Moves.css";
 import "../../PageStyle/MoveColors.css";
 
 export function getMoveInfoData(curMove, clickType) {
-  console.log("Getting Move Info Data");
+  console.log(`Getting ${moveAPIToDisplay[curMove]} Information`);
   if (curMove === "") {
     return "";
   }

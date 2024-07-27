@@ -14,17 +14,13 @@ export function showTypePokemonData(
   typePokemonNames,
   typePokemonLength
 ) {
-  console.log("Showing Type Pokemon Data");
-  if (curType === "") {
-    return "";
-  }
   return (
     <div>
       <div className="types-pokemon">
         <h1>Pokemon</h1>
         <div className="pokedex-container">
           {typePokemonLength.map((mon_num) => (
-            <div className="pokedex-entry-box">
+            <div key={mon_num} className="pokedex-entry-box">
               <div className="pokedex-display">
                 <img
                   className="pokedex-sprite-display"
@@ -63,6 +59,7 @@ export function showTypePokemonData(
                     pokemonTypingChart[typePokemonNames[mon_num]].map(
                       (mon_type) => (
                         <img
+                          key={mon_type}
                           className="pokedex-type"
                           src={allTypeLogos[mon_type].TypeTextLogo}
                           onClick={() => clickType(mon_type)}

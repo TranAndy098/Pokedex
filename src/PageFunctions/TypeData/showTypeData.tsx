@@ -4,10 +4,6 @@ import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import "../../PageStyle/Types.css";
 
 export function showTypeData(curType, clickType) {
-  console.log("Showing Type Data");
-  if (curType === "") {
-    return "";
-  }
   return (
     <div>
       <div className="effective-container">
@@ -19,6 +15,7 @@ export function showTypeData(curType, clickType) {
           <div className="effective-item-types">
             {allTypeData[curType].StrongTo.map((typing) => (
               <img
+                key={typing}
                 src={allTypeLogos[typing].TypeTextLogo}
                 onClick={() => clickType(typing)}
               />
@@ -30,6 +27,7 @@ export function showTypeData(curType, clickType) {
           <div className="effective-item-types">
             {allTypeData[curType].NormalTo.map((typing) => (
               <img
+                key={typing}
                 src={allTypeLogos[typing].TypeTextLogo}
                 onClick={() => clickType(typing)}
               />
@@ -41,6 +39,7 @@ export function showTypeData(curType, clickType) {
           <div className="effective-item-types">
             {allTypeData[curType].WeakTo.map((typing) => (
               <img
+                key={typing}
                 src={allTypeLogos[typing].TypeTextLogo}
                 onClick={() => clickType(typing)}
               />
@@ -52,6 +51,7 @@ export function showTypeData(curType, clickType) {
           <div className="effective-item-types">
             {allTypeData[curType].ImmuneTo.map((typing) => (
               <img
+                key={typing}
                 src={allTypeLogos[typing].TypeTextLogo}
                 onClick={() => clickType(typing)}
               />
@@ -69,6 +69,7 @@ export function showTypeData(curType, clickType) {
           <div className="effective-item-types">
             {allTypeData[curType].StrongFrom.map((typing) => (
               <img
+                key={typing}
                 src={allTypeLogos[typing].TypeTextLogo}
                 onClick={() => clickType(typing)}
               />
@@ -80,6 +81,7 @@ export function showTypeData(curType, clickType) {
           <div className="effective-item-types">
             {allTypeData[curType].NormalFrom.map((typing) => (
               <img
+                key={typing}
                 src={allTypeLogos[typing].TypeTextLogo}
                 onClick={() => clickType(typing)}
               />
@@ -91,6 +93,7 @@ export function showTypeData(curType, clickType) {
           <div className="effective-item-types">
             {allTypeData[curType].WeakFrom.map((typing) => (
               <img
+                key={typing}
                 src={allTypeLogos[typing].TypeTextLogo}
                 onClick={() => clickType(typing)}
               />
@@ -102,6 +105,7 @@ export function showTypeData(curType, clickType) {
           <div className="effective-item-types">
             {allTypeData[curType].ImmuneFrom.map((typing) => (
               <img
+                key={typing}
                 src={allTypeLogos[typing].TypeTextLogo}
                 onClick={() => clickType(typing)}
               />

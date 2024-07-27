@@ -2,8 +2,11 @@ import { useState } from "react";
 import "./MoveSearchBar.css";
 import allMoves from "../data/moveData/allMoves.json";
 import moveDisplayToAPI from "../data/moveData/moveDisplayToAPI.json";
+import { useNavigate } from "react-router-dom";
 
-export default function MoveSearchBar({ setMove, moveSearch, setMoveSearch }) {
+export default function MoveSearchBar({ moveSearch, setMoveSearch }) {
+  const navigate = useNavigate();
+
   function onChange(event: any) {
     setMoveSearch(event?.target?.value);
   }
@@ -24,7 +27,8 @@ export default function MoveSearchBar({ setMove, moveSearch, setMoveSearch }) {
 
   function searchClick(searchTerm: string) {
     if (searchTerm !== "" && validMon(searchTerm)) {
-      setMove(moveDisplayToAPI[searchTerm]);
+      window.scrollTo(0, 0);
+      navigate(`/move/${moveDisplayToAPI[searchTerm]}`);
       setMoveSearch("");
     }
   }

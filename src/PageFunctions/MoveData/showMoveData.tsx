@@ -13,13 +13,12 @@ export function showMoveData(
   clickType,
   movePokemonNames
 ) {
-  console.log("Showing Move Data");
   return (
     <div>
       <h1>Pokemon</h1>
       <div className="pokedex-container">
         {movePokemonLength.map((mon_num) => (
-          <div className="pokedex-entry-box">
+          <div key={mon_num} className="pokedex-entry-box">
             <div className="pokedex-display">
               <img
                 className="pokedex-sprite-display"
@@ -58,6 +57,7 @@ export function showMoveData(
                 ) ? (
                   pokemonTypingChart[movePokemon[mon_num]].map((typing) => (
                     <img
+                      key={typing}
                       className="pokedex-type"
                       src={allTypeLogos[typing].TypeTextLogo}
                       onClick={() => clickType(typing)}

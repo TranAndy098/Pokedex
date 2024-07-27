@@ -6,6 +6,7 @@ import pokedexAPIToDisplay from "../../data/gameNameData/pokedexAPIToDisplay.jso
 import allTypeLogos from "../../data/typeData/allTypeLogos.json";
 import pokemonTypingChart from "../../data/pokemonData/pokemonTypingChart.json";
 import "../../PageStyle/Pokedex.css";
+import gamesAPIToDisplay from "../../data/gameNameData/gamesAPIToDisplay.json";
 
 export function getGameData(
   curGame,
@@ -16,7 +17,7 @@ export function getGameData(
 
   shinyMode
 ) {
-  console.log("Getting Game Data");
+  console.log(`Getting Pokemon ${gamesAPIToDisplay[curGame]} Data`);
   if (curGame === "") {
     return;
   }
@@ -27,11 +28,11 @@ export function getGameData(
   for (let i = 0; i < pokedexes.length; i++) {
     let pokedex = pokedexes[i];
     overall.push(
-      <div>
+      <div key={pokedexAPIToDisplay[pokedex]}>
         <h3>{pokedexAPIToDisplay[pokedex]}</h3>
         <div className="pokedex-container">
           {Object.keys(pokedexPerGame[curGame][pokedex]).map((id) => (
-            <div className="pokedex-entry-box">
+            <div key={id} className="pokedex-entry-box">
               <div className="pokedex-display">
                 <img
                   className="pokedex-sprite-display"
@@ -87,6 +88,7 @@ export function getGameData(
                   {pokemonTypingChart[pokedexPerGame[curGame][pokedex][id]].map(
                     (type) => (
                       <img
+                        key={type}
                         className="pokedex-type"
                         src={allTypeLogos[type].TypeTextLogo}
                         onClick={() => clickType(type)}

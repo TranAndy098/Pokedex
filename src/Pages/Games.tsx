@@ -9,11 +9,10 @@ import locationPerGame from "../data/locationData/locationsPerGame.json";
 import locationNamesAPIToDisplay from "../data/locationData/locationNamesAPIToDisplay.json";
 import "../PageStyle/GameLocations.css";
 import { getGameData } from "../PageFunctions/GameData/getGameData";
+import { useParams } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 function Games({
-  curGame,
-  setGame,
-
   curGenGame,
   setGenGame,
 
@@ -36,24 +35,30 @@ function Games({
 }) {
   const genNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const [gameData, setGameData] = useState([]);
+  const { curGame } = useParams();
+
+  const navigate = useNavigate();
 
   function goClick(curDropGameForGen) {
-    console.log(curDropGameForGen);
     if (curDropGameForGen !== "") {
       window.scrollTo(0, 0);
-      setGame(gamesDisplayToAPI[curDropGameForGen]);
 
       setGenGame("");
       setDropGameForGen("");
+      navigate(`/game/${gamesDisplayToAPI[curDropGameForGen]}`);
     }
   }
 
   function fetchData(curGame) {
-    if (curGame === "") {
+    if (
+      curGame === "home" ||
+      !Object.keys(gamesAPIToDisplay).includes(curGame)
+    ) {
       return;
     }
 
     setGameData(getGameData(curGame, clickPokemon, clickType, shinyMode));
+    console.log(`Showing Pokemon ${gamesAPIToDisplay[curGame]}`);
   }
 
   const reRending = useMemo(() => fetchData(curGame), [curGame, shinyMode]);
@@ -61,7 +66,7 @@ function Games({
   return (
     <div>
       <h1 className="game-title">
-        {curGame === "" ? "Games Page" : gamesAPIToDisplay[curGame]}
+        {curGame === "home" ? "Games Page" : gamesAPIToDisplay[curGame]}
       </h1>
 
       <div className="game-select-menu">
@@ -74,6 +79,7 @@ function Games({
               <>
                 {genNumbers.map((gen) => (
                   <DropDownItem
+                    key={gen}
                     content={gen}
                     check={curGenGame}
                     setMode1={setGenGame}
@@ -95,6 +101,7 @@ function Games({
                 <>
                   {gamesPerGen[curGenGame].map((game) => (
                     <DropDownItem
+                      key={game}
                       content={gamesAPIToDisplay[game]}
                       check={curDropGameForGen}
                       setMode1={setDropGameForGen}
@@ -107,6 +114,7 @@ function Games({
                 <>
                   {Object.keys(gamesDisplayToAPI).map((game) => (
                     <DropDownItem
+                      key={game}
                       content={game}
                       check={curDropGameForGen}
                       setMode1={setDropGameForGen}
@@ -126,27 +134,37 @@ function Games({
         </div>
       </div>
 
-      {curGame === "" ? (
+      {curGame === "home" ? (
         <GameHome clickGame={clickGame}></GameHome>
       ) : (
         <div>
-          <div>{gameData.map((pokemon) => pokemon)}</div>
-
-          <div>
-            <div className="location-title">Game Locations</div>
-            <div className="location-container">
-              <div className="location-box">
-                {locationPerGame[curGame].map((location) => (
-                  <div
-                    className="location-entry location-text"
-                    onClick={() => clickLocation(location)}
-                  >
-                    {locationNamesAPIToDisplay[location]}
-                  </div>
+          {Object.keys(gamesAPIToDisplay).includes(curGame) ? (
+            <div>
+              <div>
+                {gameData.map((pokemon) => (
+                  <div key={pokemon.key}>{pokemon}</div>
                 ))}
               </div>
+              <div>
+                <div className="location-title">Game Locations</div>
+                <div className="location-container">
+                  <div className="location-box">
+                    {locationPerGame[curGame].map((location) => (
+                      <div
+                        key={location}
+                        className="location-entry location-text"
+                        onClick={() => clickLocation(location)}
+                      >
+                        {locationNamesAPIToDisplay[location]}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          ) : (
+            <h2>Entry Not Valid</h2>
+          )}
         </div>
       )}
     </div>

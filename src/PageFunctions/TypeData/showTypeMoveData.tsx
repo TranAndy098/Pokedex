@@ -7,17 +7,16 @@ import allDamageClassLogos from "../../data/moveData/allDamageClassLogos.json";
 import "../../PageStyle/MoveColors.css";
 
 export function showTypeMoveData(curType, typeMoves, clickMove, clickType) {
-  console.log("Showing Type Move Data");
-  if (curType === "") {
-    return "";
-  }
   return (
     <div>
       <div className="types-moves">
         <h1>Moves</h1>
         <div className="move-type-container">
           {typeMoves.map((moves) => (
-            <div className={`move-type-display ${allMoveData[moves].Type}`}>
+            <div
+              key={moves}
+              className={`move-type-display ${allMoveData[moves].Type}`}
+            >
               <div className="move-type-display-header">
                 <div
                   className="move-type-display-name move-type-display-header-item"

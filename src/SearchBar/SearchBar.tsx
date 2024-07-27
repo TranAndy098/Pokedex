@@ -2,20 +2,20 @@ import { useState } from "react";
 import "./SearchBar.css";
 import allPokemons from "../data/pokemonData/allPokemons.json";
 import pokemonDisplayToAPI from "../data/pokemonData/pokemonDisplayToAPI.json";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchBar({
-  setPokemon,
   setGen,
   setDropPokemon,
   search,
   setSearch,
-  setMove,
   setMoveSearch,
-  setType,
   setDropType,
   setPageState,
   pageState,
 }) {
+  const navigate = useNavigate();
+
   function onChange(event: any) {
     setSearch(event?.target?.value);
   }
@@ -37,14 +37,12 @@ export default function SearchBar({
 
   function searchClick(searchTerm: string) {
     if (searchTerm !== "" && validMon(searchTerm)) {
-      setPokemon(pokemonDisplayToAPI[searchTerm]);
       setSearch("");
       setGen(0);
       setDropPokemon("");
-      setMove("");
       setMoveSearch("");
-      setType("");
       setDropType("");
+      navigate(`/entry/${pokemonDisplayToAPI[searchTerm]}`);
       if (pageState !== "Entry") {
         setPageState("Entry");
       }

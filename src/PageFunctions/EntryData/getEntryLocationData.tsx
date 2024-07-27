@@ -16,7 +16,7 @@ export function getEntryLocationData(
   clickLocation,
   clickPokemon
 ) {
-  console.log("Getting Pokemon Location Data");
+  console.log(`Getting ${pokemonAPIToDisplay[pokemon]} Form Data`);
   // evolve
 
   let mid = [];
@@ -31,13 +31,13 @@ export function getEntryLocationData(
 
   for (let i = 0; i < games.length; i++) {
     mid.push(
-      <div>
+      <div key={games[i]}>
         {Object.keys(allLocations[games[i]]).map((area) => (
-          <div>
+          <div key={area}>
             {area !== "evolutions" ? (
               <div>
                 {Object.keys(allLocations[games[i]][area]).map((method) => (
-                  <div className="entry-encounter-container">
+                  <div key={method} className="entry-encounter-container">
                     <div
                       className="entry-encounter-game"
                       onClick={() => clickGame(games[i])}
@@ -115,7 +115,10 @@ export function getEntryLocationData(
                             {allLocations[games[i]][area][
                               method
                             ].Conditions.map((condition) => (
-                              <div className="entry-encounter-footer-item">
+                              <div
+                                key={condition}
+                                className="entry-encounter-footer-item"
+                              >
                                 {encounterConditionsAPIToDisplay[condition]}
                               </div>
                             ))}

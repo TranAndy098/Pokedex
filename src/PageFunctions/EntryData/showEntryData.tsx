@@ -16,7 +16,6 @@ export function showEntryData(
   evolutionLine,
   gameLocations
 ) {
-  console.log("Showing Pokemon Entry Data");
   return (
     <div>
       <div className="entry-data">
@@ -33,6 +32,7 @@ export function showEntryData(
               <div className="entry-types">
                 {entryInfo[1].map((name) => (
                   <img
+                    key={name}
                     className="entry-type"
                     onClick={() => clickType(name)}
                     src={allTypeLogos[name].TypeTextLogo}
@@ -49,7 +49,7 @@ export function showEntryData(
                   <div className="entry-ability-title">Abilities</div>
                   <div className="entry-ability-data">
                     {entryInfo[2].map((name) => (
-                      <div className="entry-ability-entry">
+                      <div key={name} className="entry-ability-entry">
                         {abilitiesAPIToDisplay[name]}
                       </div>
                     ))}
@@ -60,7 +60,7 @@ export function showEntryData(
                     Hidden Abilities
                   </div>{" "}
                   {entryInfo[3].map((name) => (
-                    <div className="entry-hidden-ability-data">
+                    <div key={name} className="entry-hidden-ability-data">
                       {abilitiesAPIToDisplay[name]}
                     </div>
                   ))}
@@ -84,7 +84,7 @@ export function showEntryData(
               <div className="entry-forms-title">Forms</div>
               <div className="entry-forms-data">
                 {differentForms.map((differentForm) => {
-                  return <div>{differentForm}</div>;
+                  return <div key={differentForm.key}>{differentForm}</div>;
                 })}
               </div>
             </div>
@@ -96,13 +96,9 @@ export function showEntryData(
         <div className="entry-footer">
           {evolutionLine.map((evolveLine) => {
             return (
-              <div className="entry-evolutions">
+              <div key={evolveLine.key} className="entry-evolutions">
                 <div className="entry-evolutions-title">Evolutions</div>
-                <div className="entry-evolutions-data">
-                  {evolveLine.map((member) => {
-                    return <div>{member}</div>;
-                  })}
-                </div>
+                <div className="entry-evolutions-data">{evolveLine}</div>
               </div>
             );
           })}
@@ -113,7 +109,7 @@ export function showEntryData(
           <h2>Moves</h2>
           <div className="move-pokemon-container">
             {entryInfo[5].map((name) => (
-              <div>{name}</div>
+              <div key={name.key}>{name}</div>
             ))}
           </div>
         </div>
@@ -123,7 +119,9 @@ export function showEntryData(
             <div className="locations">
               <h2>Locations</h2>
               <div className="locations-pokemon-container">
-                {gameLocations.map((data) => data)}
+                {gameLocations.map((data) => (
+                  <div key={data.key}>{data}</div>
+                ))}
               </div>
             </div>
           ) : (

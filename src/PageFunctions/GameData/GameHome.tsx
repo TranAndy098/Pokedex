@@ -11,14 +11,14 @@ function GameHome({ clickGame }) {
   return (
     <div>
       {genNumbers.map((num) => (
-        <div>
+        <div key={num}>
           <h2>Generation: {num}</h2>
           <div>
             {gameVersionsPerGen[num].map((versions) => (
-              <div>
+              <div key={versions}>
                 <div className="version-groups">
                   {versions.map((game) => (
-                    <div className="version-items">
+                    <div key={game} className="version-items">
                       <div className="version-header">
                         <h4 className="game-name version-header-item">
                           {gamesAPIToDisplay[game]}

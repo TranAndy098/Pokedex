@@ -47,7 +47,7 @@
 }
 .type-menu {
   display: flex; /* Enables Flexbox */
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: 1em;
   margin: 10px;

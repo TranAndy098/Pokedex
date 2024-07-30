@@ -1,19 +1,28 @@
-.entry-encounter-container {
+.entry-encounter-container-outer {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   flex-direction: row;
   margin: 10px;
   border: 2px solid black;
-  width: 700px;
+  width: 100%;
+}
+.entry-encounter-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border: 2px solid black;
+  width: 100%;
 }
 
 .entry-encounter-game {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  flex-direction: column;
   border: 2px solid black;
-  width: 15%;
+  width: 12%;
 }
 
 .entry-encounter-box {
@@ -21,7 +30,7 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   border: 2px solid black;
-  width: 85%;
+  width: 88%;
 }
 
 .entry-encounter-header {

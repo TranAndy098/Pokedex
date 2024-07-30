@@ -11,10 +11,10 @@
   border: 2px solid black;
 }
 .move-pokemon-entry-box {
-  min-width: 350px;
-  max-width: 350px;
-  min-height: 120px;
-  max-height: 120px;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100px;
+  max-height: 100px;
   margin: 20px;
   display: flex;
   background-color: b;
@@ -27,10 +27,10 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .move-pokemon-display {
-  min-width: 350px;
-  max-width: 350px;
-  min-height: 120px;
-  max-height: 120px;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100px;
+  max-height: 100px;
   display: flex;
   flex-wrap: wrap;
   border-radius: 5px;
@@ -42,7 +42,6 @@
   max-width: 500px;
   min-height: 120px;
   max-height: 120px;
-  background-color: rgb(255, 100, 100);
   margin: 10px;
   border-radius: 5px;
   border: 2px solid black;
@@ -56,7 +55,7 @@
   opacity: 1;
   pointer-events: auto;
   display: block;
-  transform: translate(-25%, -10%);
+  transform: translate(-30%, -10%);
 }
 
 .move-pokemon-entry-box:hover .move-pokemon-display {
@@ -65,23 +64,25 @@
 }
 
 .move-pokemon-display-header {
-  min-width: 350px;
-  max-width: 350px;
+  min-width: 250px;
+  max-width: 250px;
   min-height: 50px;
   max-height: 50px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-evenly;
   border-radius: 5px;
   border: 2px solid transparent;
 }
 .move-pokemon-display-footer {
-  min-width: 350px;
-  max-width: 350px;
+  min-width: 250px;
+  max-width: 250px;
   min-height: 50px;
   max-height: 50px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-evenly;
   border-radius: 5px;
   border: 2px solid transparent;
@@ -107,31 +108,31 @@
   justify-content: right;
 }
 .move-pokemon-display-name {
-  min-width: 250px;
-  max-width: 250px;
-  font-size: 30px;
+  min-width: 170px;
+  max-width: 170px;
+  font-size: 20px;
 }
 .move-pokemon-display-damage-class {
-  min-width: 80px;
-  max-width: 80px;
+  min-width: 50px;
+  max-width: 50px;
 }
 .move-pokemon-display-damage-class-logo {
-  min-width: 60px;
-  max-width: 60px;
-  min-height: 32px;
-  max-height: 32px;
+  min-width: 50px;
+  max-width: 50px;
+  min-height: 25px;
+  max-height: 25px;
 }
 
 .move-pokemon-display-types {
-  min-width: 180px;
-  max-width: 180px;
+  min-width: 100px;
+  max-width: 100px;
 }
 .move-pokemon-display-pp {
-  min-width: 130px;
-  max-width: 130px;
+  min-width: 100px;
+  max-width: 100px;
 }
 .move-pokemon-display-font {
-  font-size: 20px;
+  font-size: 15px;
   justify-content: center;
 }
 

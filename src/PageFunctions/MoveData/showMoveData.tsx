@@ -10,7 +10,8 @@ export function showMoveData(
   clickPokemon: CallableFunction,
   movePokemon: string[],
   clickType: CallableFunction,
-  movePokemonNames: string[]
+  movePokemonNames: string[],
+  movePokemonEndpoint: string[]
 ) {
   return (
     <div>
@@ -26,14 +27,14 @@ export function showMoveData(
                     ? allPokemonSprites[movePokemon[mon_num]].FrontShiny
                     : allPokemonSprites[movePokemon[mon_num]].FrontDefault
                 }
-                onClick={() => clickPokemon(movePokemon[mon_num])}
+                onClick={() => clickPokemon(movePokemonEndpoint[mon_num])}
               />
             </div>
             <div className="pokedex-entry">
               <div className="pokedex-header">
                 <h2
                   className="pokedex-name pokedex-header-item"
-                  onClick={() => clickPokemon(movePokemon[mon_num])}
+                  onClick={() => clickPokemon(movePokemonEndpoint[mon_num])}
                 >
                   {pokemonAPIToDisplay[movePokemonNames[mon_num]]}
                 </h2>
@@ -46,7 +47,7 @@ export function showMoveData(
                       ? allPokemonSprites[movePokemon[mon_num]].FrontShiny
                       : allPokemonSprites[movePokemon[mon_num]].FrontDefault
                   }
-                  onClick={() => clickPokemon(movePokemon[mon_num])}
+                  onClick={() => clickPokemon(movePokemonEndpoint[mon_num])}
                 />
               </div>
 

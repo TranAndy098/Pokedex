@@ -3,10 +3,12 @@ import axios from "axios";
 import allMoveData from "../../data/moveData/allMoveData.json";
 import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
+import nationalPokedexNames from "../../data/pokemonData/nationalPokedexNames.json";
 
 export async function getMoveData(
   curMove: string,
   setMovePokemon: typeof useState,
+  setMovePokemonEndpoint: typeof useState,
   setMovePokemonNames: typeof useState,
   setMovePokemonLength: typeof useState
 ) {
@@ -23,6 +25,7 @@ export async function getMoveData(
 
     let cur = [];
     let names = [];
+    let endpoints = [];
     let indexes = [];
 
     // learned by pokemon
@@ -39,6 +42,13 @@ export async function getMoveData(
           cur.push(allPokemonSprites[currentPokemonForMove].EntryMainName);
         }
         names.push(currentPokemonForMove);
+        if (Object.keys(nationalPokedexNames).includes(currentPokemonForMove)) {
+          endpoints.push(currentPokemonForMove);
+        } else {
+          endpoints.push(
+            allPokemonSprites[currentPokemonForMove].EntryMainName
+          );
+        }
       } else {
         console.log("Move: Cannot Find Sprite for", currentPokemonForMove);
       }
@@ -51,6 +61,7 @@ export async function getMoveData(
     setMovePokemon(cur);
     setMovePokemonNames(names);
     setMovePokemonLength(indexes);
+    setMovePokemonEndpoint(endpoints);
 
     return cur;
   } catch (error) {

@@ -29,13 +29,13 @@ export function getEntryLocationData(
 
   for (let i = 0; i < games.length; i++) {
     mid.push(
-      <div key={games[i]}>
+      <div key={games[i]} className="entry-encounter-container">
         {Object.keys(allLocations[games[i]]).map((area) => (
-          <div key={area}>
+          <>
             {area !== "evolutions" ? (
-              <div>
+              <>
                 {Object.keys(allLocations[games[i]][area]).map((method) => (
-                  <div key={method} className="entry-encounter-container">
+                  <>
                     <div
                       className="entry-encounter-game"
                       onClick={() => clickGame(games[i])}
@@ -126,11 +126,11 @@ export function getEntryLocationData(
                         <></>
                       )}
                     </div>
-                  </div>
+                  </>
                 ))}
-              </div>
+              </>
             ) : (
-              <div className="entry-encounter-container">
+              <>
                 <div
                   className="entry-encounter-game"
                   onClick={() => clickGame(games[i])}
@@ -157,9 +157,9 @@ export function getEntryLocationData(
                     {pokemonAPIToDisplay[allLocations[games[i]][area]]}
                   </div>
                 </div>
-              </div>
+              </>
             )}
-          </div>
+          </>
         ))}
       </div>
     );

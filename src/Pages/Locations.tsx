@@ -183,7 +183,9 @@ function Locations({
                 <div className="encounter-title">Encounters</div>
                 <div className="encounter-container">
                   {locationData.map((pokemon) => (
-                    <div key={pokemon.key}>{pokemon}</div>
+                    <div key={pokemon.key} className="encounter-entry">
+                      {pokemon}
+                    </div>
                   ))}
                 </div>
               </div>

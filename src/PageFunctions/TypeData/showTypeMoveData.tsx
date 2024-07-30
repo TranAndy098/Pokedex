@@ -48,10 +48,7 @@ export function showTypeMoveData(
 
                 <div className="move-type-display-pp move-type-display-footer-item">
                   <div className="move-type-display-footer-subitem move-type-display-font">
-                    PP
-                  </div>
-                  <div className="move-type-display-footer-subitem move-type-display-font">
-                    {allMoveData[moves].PP}/{allMoveData[moves].PP}
+                    PP {allMoveData[moves].PP}/{allMoveData[moves].PP}
                   </div>
                 </div>
               </div>

@@ -9,6 +9,7 @@ export function showTypePokemonData(
   clickPokemon: CallableFunction,
   clickType: CallableFunction,
   typePokemon: string[],
+  typePokemonEndpoint: string[],
   typePokemonNames: string[],
   typePokemonLength: string[]
 ) {
@@ -27,16 +28,16 @@ export function showTypePokemonData(
                       ? allPokemonSprites[typePokemon[mon_num]].FrontShiny
                       : allPokemonSprites[typePokemon[mon_num]].FrontDefault
                   }
-                  onClick={() => clickPokemon(typePokemon[mon_num])}
+                  onClick={() => clickPokemon(typePokemonEndpoint[mon_num])}
                 />
               </div>
               <div className="pokedex-entry">
                 <div className="pokedex-header">
                   <h2
                     className="pokedex-name pokedex-header-item"
-                    onClick={() => clickPokemon(typePokemon[mon_num])}
+                    onClick={() => clickPokemon(typePokemonEndpoint[mon_num])}
                   >
-                    {pokemonAPIToDisplay[typePokemonNames[mon_num]]}
+                    {pokemonAPIToDisplay[typePokemon[mon_num]]}
                   </h2>
                 </div>
                 <div className="pokedex-body">
@@ -47,7 +48,7 @@ export function showTypePokemonData(
                         ? allPokemonSprites[typePokemon[mon_num]].FrontShiny
                         : allPokemonSprites[typePokemon[mon_num]].FrontDefault
                     }
-                    onClick={() => clickPokemon(typePokemon[mon_num])}
+                    onClick={() => clickPokemon(typePokemonEndpoint[mon_num])}
                   />
                 </div>
                 <div className="pokedex-footer">

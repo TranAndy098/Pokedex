@@ -4,10 +4,12 @@ import allPokemonSprites from "../../data/pokemonData/allPokemonSprites.json";
 import allTypeData from "../../data/typeData/allTypeData.json";
 import moveAPIToDisplay from "../../data/moveData/moveAPIToDisplay.json";
 import typeAPIToDisplay from "../../data/typeData/typeAPIToDisplay.json";
+import nationalPokedexNames from "../../data/pokemonData/nationalPokedexNames.json";
 
 export async function getTypeData(
   curType: string,
   setTypePokemon: typeof useState,
+  setTypePokemonEndpoint: typeof useState,
   setTypePokemonLength: typeof useState,
   setTypePokemonNames: typeof useState,
   setTypeMoves: typeof useState
@@ -25,6 +27,7 @@ export async function getTypeData(
 
     let cur = [];
     let names = [];
+    let endpoints = [];
     let indexes = [];
 
     // pokemon
@@ -39,6 +42,13 @@ export async function getTypeData(
           cur.push(allPokemonSprites[currentPokemonForType].EntryMainName);
         }
         names.push(currentPokemonForType);
+        if (Object.keys(nationalPokedexNames).includes(currentPokemonForType)) {
+          endpoints.push(currentPokemonForType);
+        } else {
+          endpoints.push(
+            allPokemonSprites[currentPokemonForType].EntryMainName
+          );
+        }
       } else {
         console.log("Type: Cannot Find Pokemon for", currentPokemonForType);
       }
@@ -50,6 +60,7 @@ export async function getTypeData(
     setTypePokemon(cur);
     setTypePokemonNames(names);
     setTypePokemonLength(indexes);
+    setTypePokemonEndpoint(endpoints);
 
     cur = [];
 

@@ -119,7 +119,12 @@ export function showEntryData(
               <h2>Locations</h2>
               <div className="locations-pokemon-container">
                 {gameLocations.map((data) => (
-                  <div key={data.key}>{data}</div>
+                  <div
+                    key={data.key}
+                    className="entry-encounter-container-outer"
+                  >
+                    {data}
+                  </div>
                 ))}
               </div>
             </div>

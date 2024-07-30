@@ -8,9 +8,9 @@ const DropDownItem = ({
   setMode2,
   setOpen,
 }: {
-  content: string | number;
+  content: any;
   check: string | number;
-  setMode1: (mode1: string | number) => void;
+  setMode1: (mode1: any) => void;
   setMode2: (mode2: string) => void;
   setOpen: (open: boolean) => void;
 }) => {

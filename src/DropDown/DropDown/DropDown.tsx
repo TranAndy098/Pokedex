@@ -10,7 +10,7 @@ const DropDown = ({
   setOpen,
 }: {
   buttonText: string;
-  content: string;
+  content: any;
   open: boolean;
   setOpen: (open: boolean) => void;
 }) => {

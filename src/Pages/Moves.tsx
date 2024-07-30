@@ -25,6 +25,7 @@ function Moves({
   const [movePokemonNames, setMovePokemonNames] = useState([]);
   const [movePokemon, setMovePokemon] = useState([]);
   const [movePokemonLength, setMovePokemonLength] = useState([]);
+  const [movePokemonEndpoint, setMovePokemonEndpoint] = useState([]);
   const [moveData, setMoveData] = useState("");
 
   async function fetchMoveData(move: string) {
@@ -35,6 +36,7 @@ function Moves({
       await getMoveData(
         curMove,
         setMovePokemon,
+        setMovePokemonEndpoint,
         setMovePokemonNames,
         setMovePokemonLength
       );
@@ -84,7 +86,8 @@ function Moves({
                 clickPokemon,
                 movePokemon,
                 clickType,
-                movePokemonNames
+                movePokemonNames,
+                movePokemonEndpoint
               )}
             </div>
           ) : (

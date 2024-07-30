@@ -36,6 +36,7 @@ function Types({
   let { curType } = useParams();
 
   const [typePokemonNames, setTypePokemonNames] = useState([]);
+  const [typePokemonEndpoint, setTypePokemonEndpoint] = useState([]);
   const [typePokemon, setTypePokemon] = useState([]);
   const [typePokemonLength, setTypePokemonLength] = useState([]);
   const [typeMoves, setTypeMoves] = useState([]);
@@ -62,6 +63,7 @@ function Types({
       await getTypeData(
         curType,
         setTypePokemon,
+        setTypePokemonEndpoint,
         setTypePokemonLength,
         setTypePokemonNames,
         setTypeMoves
@@ -126,6 +128,7 @@ function Types({
                     clickPokemon,
                     clickType,
                     typePokemon,
+                    typePokemonEndpoint,
                     typePokemonNames,
                     typePokemonLength
                   )}

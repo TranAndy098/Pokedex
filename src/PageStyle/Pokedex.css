@@ -58,7 +58,6 @@
   opacity: 1;
   pointer-events: auto;
   display: block;
-  transform: translateX(-10%);
 }
 
 .pokedex-entry-box:hover .pokedex-display {
